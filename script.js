@@ -5,7 +5,8 @@ const funFacts = [
   'I enjoy jailbreaking older phones to explore features and customizations beyond the default settings.',
   'Bird photography is one of my favorite excuses to travel to new places and wake up early.',
   'I like building projects that sit between data science and storytelling, especially when they help non-technical audiences understand a topic.',
-  'I once wrote about AI and the fracking industry and received a silver medal from the Harvard International Review for it.'
+  'I once wrote about AI and the fracking industry and received a silver medal from the Harvard International Review for it.',
+  'I am a project lead at Illinois Data Science Club (IDSC)'
 ];
 
 document.addEventListener('DOMContentLoaded', () => {
