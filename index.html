@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yoyo Lin | Personal Website</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header>
+    <div class="nav-shell">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true">YL</div>
+        <span>Yoyo Lin</span>
+      </div>
+      <nav aria-label="Main navigation">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#research">Research</a></li>
+          <li><a href="#awards">Awards</a></li>
+          <li><a href="#hobbies">Hobbies</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- About / Hero -->
+    <section id="about" class="section">
+      <div class="hero-layout">
+        <div>
+          <div class="hero-badge-row">
+            <div class="hero-badge">Information Sciences + Data Science @ UIUC</div>
+            <div class="hero-badge">Data storytelling & research</div>
+          </div>
+          <h1 class="hero-title-main">
+            Hi, I’m <span>Yoyo Lin</span>,
+            an information & data science student who loves connecting technology, stories, and everyday life.
+          </h1>
+          <p class="hero-tagline">
+            I explore how data, design, and human experience intersect — whether that’s analyzing crops and climate,
+            training language models for peer review, or turning a flight log into a personal story of travel.
+          </p>
+          <div class="hero-links">
+            <a class="btn-primary" href="#projects">View my projects</a>
+            <a class="btn-ghost" href="https://github.com/YoyoLin008" target="_blank" rel="noopener noreferrer">
+              GitHub: YoyoLin008
+            </a>
+            <a class="btn-ghost" href="https://www.linkedin.com/in/yoyo-lin-631889299" target="_blank" rel="noopener noreferrer">
+              LinkedIn profile
+            </a>
+          </div>
+          <p class="hero-mini">
+            I’m currently studying at the University of Illinois Urbana-Champaign and working on projects that combine
+            machine learning, human-centered design, and storytelling.
+          </p>
+        </div>
+
+        <aside class="hero-photo-card" aria-label="Photo and quick facts">
+          <div class="photo-frame">
+            <!-- Make sure this file is in the same folder as index.html -->
+            <img src="YoyoLin_Photo.jpeg" alt="Portrait of Yoyo Lin" />
+          </div>
+          <p class="photo-caption">
+            This is me at Shenzhen's McDonald's Island (I'm lovin it)
+          </p>
+          <div class="hero-meta-list">
+            <div class="hero-meta-item">
+              <div class="hero-meta-label">Major</div>
+              <div class="hero-meta-value">Information Sciences + Data Science</div>
+            </div>
+            <div class="hero-meta-item">
+              <div class="hero-meta-label">Current focus</div>
+              <div class="hero-meta-value">LLMs, peer review, crop analytics</div>
+            </div>
+            <div class="hero-meta-item">
+              <div class="hero-meta-label">Tech hobbies</div>
+              <div class="hero-meta-value">HiFi earphones, phones & jailbreaking</div>
+            </div>
+            <div class="hero-meta-item">
+              <div class="hero-meta-label">Travel quirk</div>
+              <div class="hero-meta-value">I maintain my own detailed flight log ✈️</div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Research & Academic Work -->
+    <section id="research" class="section">
+      <header class="section-header">
+        <div class="section-kicker">Research & Academic Projects</div>
+        <h2 class="section-title">What I’m working on right now</h2>
+        <p class="section-subtitle">
+          My research and projects live at the intersection of information science, data analysis, and real-world
+          impact — from how people review academic work to how farmers (or policymakers) might think about crops and
+          climate.
+        </p>
+      </header>
+
+      <div class="card-grid">
+        <article class="card">
+          <div class="card-title-row">
+            <h3 class="card-title">Large Language Models as Peer Reviewers</h3>
+            <span class="card-tag">Current research</span>
+          </div>
+          <p class="card-body">
+            I am working with faculty to explore how large language models can support academic peer review. My focus is
+            on designing prompts and evaluation frameworks that encourage models to provide helpful, specific feedback
+            rather than vague summaries.
+          </p>
+          <div class="pill-row">
+            <span class="pill">LLMs & AI</span>
+            <span class="pill">Research methods</span>
+            <span class="pill">Academic writing</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-title-row">
+            <h3 class="card-title">Crop Recommendation & Climate Data</h3>
+            <span class="card-tag">Data science</span>
+          </div>
+          <p class="card-body">
+            As part of a data science project, I work on a crop recommendation system that uses environmental features
+            (such as rainfall or soil conditions) to suggest suitable crops for different regions. This project lets me
+            connect data analysis with real-world agriculture and sustainability questions.
+          </p>
+          <div class="pill-row">
+            <span class="pill">Machine learning</span>
+            <span class="pill">Agriculture</span>
+            <span class="pill">Python / data viz</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-title-row">
+            <h3 class="card-title">Data storytelling & visualization</h3>
+            <span class="card-tag">Story + data</span>
+          </div>
+          <p class="card-body">
+            I enjoy turning complex datasets into approachable narratives for non-technical audiences. I experiment with
+            interactive charts, maps, and design choices that make patterns easy to see without losing nuance.
+          </p>
+          <div class="pill-row">
+            <span class="pill">Information design</span>
+            <span class="pill">User perspective</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Awards & Recognition -->
+    <section id="awards" class="section">
+      <header class="section-header">
+        <div class="section-kicker">Awards & Recognition</div>
+        <h2 class="section-title">Moments I’m proud of</h2>
+        <p class="section-subtitle">
+          These awards reflect both academic performance and the time I spend digging into topics that fascinate me,
+          from data-driven storytelling to global issues.
+        </p>
+      </header>
+
+      <div class="awards-layout">
+        <div class="awards-highlight">
+          <p>
+            I’m grateful for the opportunities I’ve had so far, and I see each recognition as a reminder to keep
+            learning, asking questions, and building projects that help people see the world a little more clearly.
+          </p>
+        </div>
+
+        <div class="awards-list">
+          <article>
+            <h3 class="award-item-title">Illinois for Illinois (I4I) / 141 Scholarship</h3>
+            <p class="award-item-meta">Scholarship recipient</p>
+            <p class="award-item-body">
+              Awarded in recognition of strong academic performance and a sustained commitment to learning. This support
+              allows me to spend more time on research, projects, and exploring new ideas.
+            </p>
+          </article>
+
+          <article>
+            <h3 class="award-item-title">Dean’s List</h3>
+            <p class="award-item-meta">University of Illinois Urbana-Champaign</p>
+            <p class="award-item-body">
+              Maintaining a high GPA while balancing research, coursework, and extracurricular work in data science and
+              information science.
+            </p>
+          </article>
+
+          <article>
+            <h3 class="award-item-title">Harvard International Review — Silver Medal</h3>
+            <p class="award-item-meta">International Review competition</p>
+            <p class="award-item-body">
+              Recognized for an article that explored the use of AI in the fracking industry — combining policy,
+              technology, and data into a single narrative. This project strengthened my interest in using data to talk
+              about complex global issues.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Hobbies & Interests -->
+    <section id="hobbies" class="section">
+      <header class="section-header">
+        <div class="section-kicker">Outside the classroom</div>
+        <h2 class="section-title">Things I do for fun (and curiosity)</h2>
+        <p class="section-subtitle">
+          My hobbies are where tech, travel, and small everyday details come together: from birds in different
+          countries, to the sound signature of a new earphone, to the history hidden in an old operating system.
+        </p>
+      </header>
+
+      <div class="hobby-grid">
+        <article class="hobby-card">
+          <div class="hobby-emoji" aria-hidden="true">🦉</div>
+          <h3 class="hobby-title">Bird photography</h3>
+          <p class="hobby-body">
+            I travel to different places to photograph birds and observe how they live in their environments. It’s both
+            a quiet hobby and a way to document small details that most people walk past.
+          </p>
+          <p class="hobby-note">
+            Looking at the photos later often feels like revisiting the same day with new data: light, color, and the
+            patterns of where birds choose to appear.
+          </p>
+        </article>
+
+        <article class="hobby-card">
+          <div class="hobby-emoji" aria-hidden="true">🎧</div>
+          <h3 class="hobby-title">HiFi earphones & amplifiers</h3>
+          <p class="hobby-body">
+            I enjoy pairing different earphones, DACs, and amplifiers with various phones and music styles. Tiny changes
+            in hardware or setup can completely change how a familiar track feels.
+          </p>
+          <p class="hobby-note">
+            It’s like running experiments for sound: same song, different chain, new insight.
+          </p>
+        </article>
+
+        <article class="hobby-card">
+          <div class="hobby-emoji" aria-hidden="true">📱</div>
+          <h3 class="hobby-title">Phones & jailbreaking</h3>
+          <p class="hobby-body">
+            I like exploring older phones, custom ROMs, and different OS versions. Jailbreaking lets me see what devices
+            can do when you move beyond the default settings.
+          </p>
+          <p class="hobby-note">
+            It’s part nostalgia, part curiosity about system design and user control.
+          </p>
+        </article>
+
+        <article class="hobby-card">
+          <div class="hobby-emoji" aria-hidden="true">✈️</div>
+          <h3 class="hobby-title">Airplanes & flight logging</h3>
+          <p class="hobby-body">
+            I keep my own flight log that tracks every trip: routes, aircraft types, airlines, dates, and memorable
+            details from each journey.
+          </p>
+          <p class="hobby-note">
+            Over time, the log becomes a personal dataset of where I’ve been and how I move through the world.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Projects & GitHub -->
+    <section id="projects" class="section">
+      <header class="section-header">
+        <div class="section-kicker">Projects & Code</div>
+        <h2 class="section-title">What lives on my GitHub</h2>
+        <p class="section-subtitle">
+          My GitHub username is <strong>YoyoLin008</strong>. I use it to organize coursework, personal experiments in
+          data science, and side projects that connect code with storytelling.
+        </p>
+      </header>
+
+      <div class="projects-layout">
+        <div>
+          <article class="card project-card">
+            <div class="card-title-row">
+              <h3 class="card-title">Ongoing & recent projects</h3>
+              <span class="card-tag">GitHub</span>
+            </div>
+            <div class="card-body">
+              <ul>
+                <li>Academic projects in data science and information science.</li>
+                <li>Exploratory notebooks for crop recommendation and environmental data.</li>
+                <li>Interactive visualizations from class and personal data storytelling work.</li>
+              </ul>
+              <p class="project-link">
+                <span>Visit my profile:</span>
+                <a href="https://github.com/YoyoLin008" target="_blank" rel="noopener noreferrer">
+                  github.com/YoyoLin008
+                </a>
+              </p>
+            </div>
+          </article>
+
+          <article class="card project-card">
+            <div class="card-title-row">
+              <h3 class="card-title">How I approach projects</h3>
+              <span class="card-tag">Process</span>
+            </div>
+            <p class="card-body">
+              I like to start with a question (“What story does this data tell?” or “Who could use this tool?”) and
+              then design both the analysis and presentation around that. Clean structure, readable code, and clear
+              visuals all matter as much as the model or algorithm.
+            </p>
+          </article>
+        </div>
+
+        <aside>
+          <div class="fun-fact-box" aria-live="polite">
+            <div class="fun-fact-label">Random fun fact about me</div>
+            <div class="fun-fact-text" id="funFactText">
+              Click the button to generate a fun fact.
+            </div>
+            <button class="fun-fact-btn" type="button" id="funFactBtn">
+              <span aria-hidden="true">✨</span>
+              New fun fact
+            </button>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section">
+      <header class="section-header">
+        <div class="section-kicker">Get in touch</div>
+        <h2 class="section-title">Let’s connect</h2>
+        <p class="section-subtitle">
+          I’m always open to conversations about data, research, design, or any of the very nerdy hobbies I’ve listed
+          above.
+        </p>
+      </header>
+
+      <div class="contact-card">
+        <div class="contact-main">
+          <p>
+            If you’d like to talk about research, potential collaborations, or just want to compare flight logs and
+            favorite audio setups, feel free to reach out.
+          </p>
+          <p>
+            Email is usually the best way to contact me, but you can also connect with me on LinkedIn or browse my code
+            on GitHub.
+          </p>
+        </div>
+        <div>
+          <ul class="contact-list">
+            <li><span>Email:</span> <a href="mailto:yoyolin2@illinois.edu">yoyolin2@illinois.edu</a></li>
+            <li>
+              <span>GitHub:</span>
+              <a href="https://github.com/YoyoLin008" target="_blank" rel="noopener noreferrer">YoyoLin008</a>
+            </li>
+            <li>
+              <span>LinkedIn:</span>
+              <a href="https://www.linkedin.com/in/yoyo-lin-631889299" target="_blank" rel="noopener noreferrer">
+                yoyo-lin-631889299
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>
+      &copy; <span id="yearSpan"></span> Yoyo Lin. Built with HTML, CSS, and a bit of JavaScript.
+    </p>
+  </footer>
+</body>
+</html>
