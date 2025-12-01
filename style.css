@@ -25,6 +25,10 @@ body {
   scroll-behavior: smooth;
 }
 
+html {
+  scroll-padding-top: 78px;
+}
+
 img {
   max-width: 100%;
   display: block;
@@ -117,6 +121,7 @@ main {
 .section {
   padding: 2.5rem 0 1.5rem;
   border-bottom: 1px solid rgba(226, 232, 240, 0.9);
+  scroll-margin-top: 90px;
 }
 
 .section:last-of-type {
@@ -125,6 +130,11 @@ main {
 
 .section-header {
   margin-bottom: 1.5rem;
+  background: linear-gradient(135deg, #f9fafb, #ffffff);
+  border-radius: 1rem;
+  padding: 1rem 1.1rem;
+  border: 1px solid var(--border-soft);
+  box-shadow: var(--shadow-soft);
 }
 
 .section-kicker {
@@ -479,6 +489,57 @@ main {
 
 .project-card {
   margin-bottom: 0.9rem;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.75rem;
+  margin: 0.75rem 0 0.35rem;
+}
+
+.project-status {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  margin: 0.45rem 0 0.2rem;
+}
+
+.project-tile {
+  display: block;
+  background: linear-gradient(145deg, #ffffff, #f9fafb);
+  border: 1px solid var(--border-soft);
+  border-radius: 0.95rem;
+  padding: 0.75rem 0.85rem 0.8rem;
+  color: inherit;
+  box-shadow: 0 10px 18px rgba(15, 23, 42, 0.06);
+  transition: transform 0.12s ease, box-shadow 0.18s ease, border-color 0.12s ease;
+}
+
+.project-tile:hover,
+.project-tile:focus-visible {
+  transform: translateY(-2px);
+  border-color: rgba(148, 163, 184, 0.9);
+  box-shadow: 0 16px 26px rgba(15, 23, 42, 0.11);
+  text-decoration: none;
+}
+
+.project-tile-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.35rem;
+}
+
+.project-tile-title {
+  font-weight: 700;
+  font-size: 0.95rem;
+  word-break: break-word;
+}
+
+.project-tile-body {
+  font-size: 0.87rem;
+  color: var(--text-muted);
 }
 
 .project-link {

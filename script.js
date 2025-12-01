@@ -13,6 +13,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const funFactText = document.getElementById('funFactText');
   const funFactBtn = document.getElementById('funFactBtn');
   const yearSpan = document.getElementById('yearSpan');
+  const repoGrid = document.getElementById('repoGrid');
+  const repoStatus = document.getElementById('repoStatus');
 
   if (funFactBtn && funFactText) {
     funFactBtn.addEventListener('click', () => {
@@ -24,4 +26,51 @@ document.addEventListener('DOMContentLoaded', () => {
   if (yearSpan) {
     yearSpan.textContent = new Date().getFullYear();
   }
+
+  if (repoGrid) {
+    loadGithubRepos('YoyoLin008', repoGrid, repoStatus);
+  }
 });
+
+async function loadGithubRepos(username, gridEl, statusEl) {
+  const endpoint = `https://api.github.com/users/${username}/repos?sort=updated&per_page=6`;
+
+  try {
+    const response = await fetch(endpoint);
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+
+    const repos = await response.json();
+    const visibleRepos = repos.filter((repo) => !repo.fork);
+
+    if (!visibleRepos.length) {
+      updateRepoStatus(statusEl, 'No public repositories found right now.');
+      return;
+    }
+
+    gridEl.innerHTML = visibleRepos
+      .map(
+        (repo) => `
+        <a class="project-tile" href="${repo.html_url}" target="_blank" rel="noopener noreferrer">
+          <div class="project-tile-top">
+            <span class="project-tile-title">${repo.name}</span>
+            <span class="pill">${repo.language || 'Repo'}</span>
+          </div>
+          <p class="project-tile-body">${repo.description || 'Visit the repository to learn more.'}</p>
+        </a>
+      `
+      )
+      .join('');
+
+    updateRepoStatus(statusEl, `Showing ${visibleRepos.length} public repos from GitHub.`);
+  } catch (error) {
+    console.error('Error loading repositories:', error);
+    updateRepoStatus(statusEl, 'Unable to load repositories right now. Please try again later.');
+  }
+}
+
+function updateRepoStatus(el, message) {
+  if (!el) return;
+  el.textContent = message;
+}
