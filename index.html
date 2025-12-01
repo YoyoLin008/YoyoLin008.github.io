@@ -4,11 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Yoyo Lin | Personal Website</title>
-  <link rel="stylesheet" href="style.css" />
-  <script src="script.js" defer></script>
+  <link rel="stylesheet" href="style.css?v=20240611" />
+  <script src="script.js?v=20240611" defer></script>
 </head>
 <body>
-  <header>
+  <header class="site-header">
     <div class="nav-shell">
       <div class="brand">
         <div class="brand-mark" aria-hidden="true">YL</div>
@@ -282,22 +282,21 @@
         <div>
           <article class="card project-card">
             <div class="card-title-row">
-              <h3 class="card-title">Ongoing & recent projects</h3>
-              <span class="card-tag">GitHub</span>
+              <h3 class="card-title">Featured GitHub work</h3>
+              <span class="card-tag">Repos</span>
             </div>
-            <div class="card-body">
-              <ul>
-                <li>Academic projects in data science and information science.</li>
-                <li>Exploratory notebooks for crop recommendation and environmental data.</li>
-                <li>Interactive visualizations from class and personal data storytelling work.</li>
-              </ul>
-              <p class="project-link">
-                <span>Visit my profile:</span>
-                <a href="https://github.com/YoyoLin008" target="_blank" rel="noopener noreferrer">
-                  github.com/YoyoLin008
-                </a>
-              </p>
-            </div>
+            <p class="card-body">Quick snapshots of what I build. Tap a tile to jump into the repo.</p>
+
+            <p class="project-status" id="repoStatus">Loading public repositories…</p>
+
+            <div class="project-grid" id="repoGrid" aria-live="polite"></div>
+
+            <p class="project-link">
+              <span>See everything:</span>
+              <a href="https://github.com/YoyoLin008" target="_blank" rel="noopener noreferrer">
+                github.com/YoyoLin008
+              </a>
+            </p>
           </article>
 
           <article class="card project-card">
@@ -306,9 +305,8 @@
               <span class="card-tag">Process</span>
             </div>
             <p class="card-body">
-              I like to start with a question (“What story does this data tell?” or “Who could use this tool?”) and
-              then design both the analysis and presentation around that. Clean structure, readable code, and clear
-              visuals all matter as much as the model or algorithm.
+              I start with a clear question, write tidy code, and share findings with visuals or short summaries so
+              people can get the point fast.
             </p>
           </article>
         </div>
