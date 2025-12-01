@@ -479,6 +479,26 @@ main {
   opacity: 0.9;
 }
 
+.hobby-link {
+  display: inline-flex;
+  margin-top: 0.65rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #7c2d12;
+  padding: 0.4rem 0.6rem;
+  border-radius: 0.75rem;
+  background: var(--accent-soft);
+  border: 1px solid rgba(245, 196, 81, 0.4);
+  transition: transform 0.12s ease, box-shadow 0.16s ease;
+}
+
+.hobby-link:hover,
+.hobby-link:focus-visible {
+  text-decoration: none;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 14px rgba(15, 23, 42, 0.12);
+}
+
 /* Projects */
 .projects-layout {
   display: grid;
@@ -588,6 +608,71 @@ main {
 .fun-fact-btn:hover {
   transform: translateY(-1px);
   box-shadow: 0 8px 18px rgba(15, 23, 42, 0.22);
+}
+
+/* Subpages */
+.subpage-body {
+  background: var(--bg);
+}
+
+.subpage-header {
+  margin-bottom: 0.5rem;
+}
+
+.subpage-main {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 1.2rem 1.1rem 2.4rem;
+}
+
+.subpage-hero {
+  background: linear-gradient(135deg, #fff7ed, #eef2ff);
+  border: 1px solid var(--border-soft);
+  border-radius: 1rem;
+  padding: 1rem 1.1rem 1.2rem;
+  box-shadow: var(--shadow-soft);
+  margin-bottom: 1.5rem;
+}
+
+.gallery-section .section-header {
+  margin-bottom: 1rem;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+}
+
+.photo-card {
+  background: #ffffff;
+  border: 1px solid var(--border-soft);
+  border-radius: 1rem;
+  box-shadow: var(--shadow-soft);
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+
+.photo-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  background: linear-gradient(135deg, #fef3c7, #bfdbfe);
+}
+
+.photo-card figcaption {
+  padding: 0.75rem 0.8rem 0.9rem;
+}
+
+.photo-title {
+  font-size: 0.98rem;
+  margin-bottom: 0.25rem;
+}
+
+.photo-note {
+  font-size: 0.86rem;
+  color: var(--text-muted);
 }
 
 /* Contact */
