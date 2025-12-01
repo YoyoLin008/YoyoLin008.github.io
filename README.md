@@ -26,3 +26,7 @@ You can open `index.html` directly in your browser, but running a tiny local ser
 3. Open the printed localhost URL (often http://localhost:3000).
 
 The GitHub Projects tiles load directly from the GitHub API, so keep an internet connection when previewing.
+Welcome to my digital garden ✿
+
+This repository hosts my personal website at https://YoyoLin008.github.io
+, where I share my projects, data stories, creative work, and a little bit of my life as an IS+DS student at UIUC.
