@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360" role="img" aria-labelledby="title desc">
+  <title id="title">Placeholder for personal photo</title>
+  <desc id="desc">A soft gradient card reminding you to add your own image.</desc>
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fef3c7" />
+      <stop offset="100%" stop-color="#bfdbfe" />
+    </linearGradient>
+  </defs>
+  <rect x="0" y="0" width="640" height="360" rx="24" fill="url(#grad)" />
+  <g fill="#1f2937" opacity="0.9">
+    <circle cx="100" cy="100" r="26" fill="#fbbf24" opacity="0.8" />
+    <circle cx="540" cy="120" r="18" fill="#60a5fa" opacity="0.85" />
+    <circle cx="480" cy="280" r="22" fill="#a78bfa" opacity="0.85" />
+    <path d="M180 260c22-48 58-86 112-86 62 0 104 60 132 120H130c10-10 34-21 50-34 10-8 18-16 20-28z" fill="#ffffff" opacity="0.75" />
+    <rect x="206" y="86" width="228" height="126" rx="18" fill="#ffffff" opacity="0.85" />
+    <rect x="230" y="110" width="68" height="12" rx="6" />
+    <rect x="230" y="132" width="132" height="12" rx="6" />
+    <rect x="230" y="154" width="108" height="12" rx="6" />
+    <rect x="230" y="176" width="86" height="12" rx="6" />
+    <rect x="230" y="198" width="64" height="12" rx="6" />
+  </g>
+  <text x="50%" y="76%" text-anchor="middle" font-family="'Inter', 'Segoe UI', system-ui, sans-serif" font-size="20" fill="#1f2937" opacity="0.9">Add your photo here</text>
+  <text x="50%" y="84%" text-anchor="middle" font-family="'Inter', 'Segoe UI', system-ui, sans-serif" font-size="16" fill="#4b5563" opacity="0.9">Replace this file with your own image</text>
+</svg>
