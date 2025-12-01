@@ -49,19 +49,42 @@ async function loadGithubRepos(username, gridEl, statusEl) {
       return;
     }
 
-    gridEl.innerHTML = visibleRepos
-      .map(
-        (repo) => `
-        <a class="project-tile" href="${repo.html_url}" target="_blank" rel="noopener noreferrer">
-          <div class="project-tile-top">
-            <span class="project-tile-title">${repo.name}</span>
-            <span class="pill">${repo.language || 'Repo'}</span>
-          </div>
-          <p class="project-tile-body">${repo.description || 'Visit the repository to learn more.'}</p>
-        </a>
-      `
-      )
-      .join('');
+    gridEl.innerHTML = '';
+
+    const fragment = document.createDocumentFragment();
+
+    visibleRepos.forEach((repo) => {
+      const link = document.createElement('a');
+      link.className = 'project-tile';
+      link.href = repo.html_url;
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+
+      const top = document.createElement('div');
+      top.className = 'project-tile-top';
+
+      const title = document.createElement('span');
+      title.className = 'project-tile-title';
+      title.textContent = repo.name || 'Repository';
+
+      const pill = document.createElement('span');
+      pill.className = 'pill';
+      pill.textContent = repo.language || 'Repo';
+
+      top.appendChild(title);
+      top.appendChild(pill);
+
+      const body = document.createElement('p');
+      body.className = 'project-tile-body';
+      body.textContent = repo.description || 'Visit the repository to learn more.';
+
+      link.appendChild(top);
+      link.appendChild(body);
+
+      fragment.appendChild(link);
+    });
+
+    gridEl.appendChild(fragment);
 
     updateRepoStatus(statusEl, `Showing ${visibleRepos.length} public repos from GitHub.`);
   } catch (error) {
