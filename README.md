@@ -1,45 +1,34 @@
-# YoyoLin008.github.io
+# Personal site for Yoyo Lin
 
-This repository holds the source for Yoyo Lin's personal site. It is a static site — no build step is required.
+A static HTML/CSS/JS site that showcases projects, hobbies, and photos—no build step required.
 
-## Run locally
-1. From the repo root, start a simple HTTP server:
-   ```bash
-   python3 -m http.server 8000
-   ```
-2. Visit http://localhost:8000 in your browser.
-3. Hobby subpages live under `/hobbies/` (for birds, HiFi, phones, and flight logging).
+## What’s inside
+- `index.html` – homepage with GitHub Projects tiles and links to hobby pages.
+- `hobbies/` – standalone pages for bird photography, HiFi gear, phones, and flight logs.
+- `assets/` – shared images and placeholders (swap with your own files as needed).
+- `script.js` – fetches public repos for **YoyoLin008** and injects them into the Projects section.
+- `style.css` – global styles and hobby page layouts.
 
-If you change files, refresh the browser to see updates.
-# Yoyo Lin Personal Website
+## Preview locally
+You can open `index.html` directly, but a tiny server avoids browser security warnings and mirrors GitHub Pages.
 
-A simple static site built with HTML, CSS, and JavaScript. It automatically pulls public repositories for GitHub user **YoyoLin008** and shows them in the Projects section.
+**Option 1: Python (built-in)**
+```bash
+python3 -m http.server 8000
+```
+Visit http://localhost:8000.
 
-## Preview the site locally
+**Option 2: Node.js**
+```bash
+npm install -g serve
+serve .
+```
+Open the printed localhost URL (often http://localhost:3000).
 
-You can open `index.html` directly in your browser, but running a tiny local server avoids any browser security restrictions and mirrors how the site behaves when deployed.
+## Updating content
+- **Photos and assets:** Replace placeholder images in `assets/` or point gallery cards to new filenames you add there.
+- **Hobby pages:** Edit the gallery cards in each file under `hobbies/` to drop in your photos and captions. The HiFi page has one card per device for an image plus a short comment.
+- **Projects section:** `script.js` auto-loads your public GitHub repos; keep an internet connection when previewing to see them populate.
 
-### Option 1: Python (built-in)
-1. Open a terminal in the project folder.
-2. Start the server:
-   ```bash
-   python3 -m http.server 8000
-   ```
-3. Visit http://localhost:8000 in your browser.
-
-### Option 2: Node.js (if you prefer)
-1. Install the `serve` package if you don't have it:
-   ```bash
-   npm install -g serve
-   ```
-2. Run the server:
-   ```bash
-   serve .
-   ```
-3. Open the printed localhost URL (often http://localhost:3000).
-
-The GitHub Projects tiles load directly from the GitHub API, so keep an internet connection when previewing.
-Welcome to my digital garden ✿
-
-This repository hosts my personal website at https://YoyoLin008.github.io
-, where I share my projects, data stories, creative work, and a little bit of my life as an IS+DS student at UIUC.
+## Deploying changes
+Push the updated files to the branch configured for GitHub Pages (typically `main`) and the site will refresh on https://YoyoLin008.github.io.
