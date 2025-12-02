@@ -2,6 +2,23 @@
 
 This repository holds the source for Yoyo Lin's personal site. It is a static site — no build step is required.
 
+## Run locally
+1. From the repo root, start a simple HTTP server:
+   ```bash
+   python3 -m http.server 8000
+   ```
+2. Visit http://localhost:8000 in your browser.
+3. Hobby subpages live under `/hobbies/` (for birds, HiFi, phones, and flight logging).
+
+If you change files, refresh the browser to see updates.
+# Yoyo Lin Personal Website
+
+A simple static site built with HTML, CSS, and JavaScript. It automatically pulls public repositories for GitHub user **YoyoLin008** and shows them in the Projects section.
+
+## Preview the site locally
+
+You can open `index.html` directly in your browser, but running a tiny local server avoids any browser security restrictions and mirrors how the site behaves when deployed.
+
 ### Option 1: Python (built-in)
 1. Open a terminal in the project folder.
 2. Start the server:
