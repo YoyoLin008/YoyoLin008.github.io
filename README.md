@@ -2,12 +2,27 @@
 
 This repository holds the source for Yoyo Lin's personal site. It is a static site — no build step is required.
 
-## Run locally
-1. From the repo root, start a simple HTTP server:
+### Option 1: Python (built-in)
+1. Open a terminal in the project folder.
+2. Start the server:
    ```bash
    python3 -m http.server 8000
    ```
-2. Visit http://localhost:8000 in your browser.
-3. Hobby subpages live under `/hobbies/` (for birds, HiFi, phones, and flight logging).
+3. Visit http://localhost:8000 in your browser.
 
-If you change files, refresh the browser to see updates.
+### Option 2: Node.js (if you prefer)
+1. Install the `serve` package if you don't have it:
+   ```bash
+   npm install -g serve
+   ```
+2. Run the server:
+   ```bash
+   serve .
+   ```
+3. Open the printed localhost URL (often http://localhost:3000).
+
+The GitHub Projects tiles load directly from the GitHub API, so keep an internet connection when previewing.
+Welcome to my digital garden ✿
+
+This repository hosts my personal website at https://YoyoLin008.github.io
+, where I share my projects, data stories, creative work, and a little bit of my life as an IS+DS student at UIUC.
