@@ -1,45 +1,76 @@
-# YoyoLin008.github.io
+YoyoLin008 Personal Website
 
-This repository holds the source for Yoyo Lin's personal site. It is a static site — no build step is required.
+Welcome to the source code for Yoyo Lin’s personal website, hosted at https://YoyoLin008.github.io
+.
+This is a simple static site built with HTML, CSS, and JavaScript, with no build tools or frameworks required.
+The website showcases my projects, data visualizations, research work, and hobby pages (birds, HiFi, phones, and flight logs).
 
-## Run locally
-1. From the repo root, start a simple HTTP server:
-   ```bash
-   python3 -m http.server 8000
-   ```
-2. Visit http://localhost:8000 in your browser.
-3. Hobby subpages live under `/hobbies/` (for birds, HiFi, phones, and flight logging).
+🔗 Live Site
 
-If you change files, refresh the browser to see updates.
-# Yoyo Lin Personal Website
+https://YoyoLin008.github.io
 
-A simple static site built with HTML, CSS, and JavaScript. It automatically pulls public repositories for GitHub user **YoyoLin008** and shows them in the Projects section.
+📁 About This Repository
 
-## Preview the site locally
+Fully static site — no build step needed
 
-You can open `index.html` directly in your browser, but running a tiny local server avoids any browser security restrictions and mirrors how the site behaves when deployed.
+GitHub Pages automatically serves the contents of the repository
 
-### Option 1: Python (built-in)
-1. Open a terminal in the project folder.
-2. Start the server:
-   ```bash
-   python3 -m http.server 8000
-   ```
-3. Visit http://localhost:8000 in your browser.
+The Projects section dynamically loads my public GitHub repositories using the GitHub API
 
-### Option 2: Node.js (if you prefer)
-1. Install the `serve` package if you don't have it:
-   ```bash
-   npm install -g serve
-   ```
-2. Run the server:
-   ```bash
-   serve .
-   ```
-3. Open the printed localhost URL (often http://localhost:3000).
+Hobby subpages are located under /hobbies/
 
-The GitHub Projects tiles load directly from the GitHub API, so keep an internet connection when previewing.
-Welcome to my digital garden ✿
+🏃‍♀️ Run the Site Locally
 
-This repository hosts my personal website at https://YoyoLin008.github.io
-, where I share my projects, data stories, creative work, and a little bit of my life as an IS+DS student at UIUC.
+Although you can open index.html directly in your browser, running a simple local server avoids browser security limitations and makes your local preview match GitHub Pages behavior.
+
+Option 1 — Python (built-in)
+python3 -m http.server 8000
+
+
+Then open:
+http://localhost:8000
+
+Option 2 — Node.js
+
+Install serve if you don’t have it:
+
+npm install -g serve
+
+
+Run:
+
+serve .
+
+
+Then open the printed URL (usually http://localhost:3000
+).
+
+The GitHub Projects section loads through the GitHub API, so an internet connection is required when previewing locally.
+
+📂 Directory Structure
+/
+├── index.html        # Main homepage
+├── style.css         # Global styling
+├── script.js         # Website logic + GitHub repo fetching
+├── hobbies/
+│   ├── birds.html
+│   ├── hifi.html
+│   ├── phones.html
+│   └── flights.html
+└── assets/           # Images, icons, etc.
+
+🌱 About the Site
+
+This site acts as my personal digital garden, where I share:
+
+Data science & visualization projects
+
+GitHub work and research updates
+
+Coursework-related demos
+
+Photography & hobby logs
+
+Creative experiments in UI/UX
+
+I’m currently an IS+DS student at UIUC, building a portfolio in data science, analysis, visualization, and interactive storytelling.
