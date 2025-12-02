@@ -1,26 +1,45 @@
-# Personal site for Yoyo Lin
+# YoyoLin008.github.io
 
-Static site for sharing hobbies, photos, and notes. No build step is required—open the files directly or serve them with any simple HTTP server.
+This repository holds the source for Yoyo Lin's personal site. It is a static site — no build step is required.
 
-## Project structure
-- `index.html` – homepage with links to hobby pages.
-- `hobbies/` – individual pages for bird photography, HiFi gear, phones, and flight logs.
-- `assets/` – images and placeholders used across the site.
-- `script.js` and `style.css` – shared behavior and styling.
-
-## Preview locally
-1. From the repo root, start a lightweight server:
+## Run locally
+1. From the repo root, start a simple HTTP server:
    ```bash
    python3 -m http.server 8000
    ```
 2. Visit http://localhost:8000 in your browser.
-3. Open the hobby pages via the homepage cards or directly at `/hobbies/<page>.html`.
-4. Refresh the browser after making edits to see your changes.
+3. Hobby subpages live under `/hobbies/` (for birds, HiFi, phones, and flight logging).
 
-## Adding your photos and notes
-- Replace placeholder images in `assets/` with your own files (keep filenames or update the references in HTML).
-- Drop new photos into the relevant `hobbies/` page by editing the gallery card markup and captions.
-- Use the HiFi page's individual device cards to attach a picture and a short comment to each item.
+If you change files, refresh the browser to see updates.
+# Yoyo Lin Personal Website
 
-## Deployment
-The site is static. To publish updates, push changes to the branch that GitHub Pages is configured to serve.
+A simple static site built with HTML, CSS, and JavaScript. It automatically pulls public repositories for GitHub user **YoyoLin008** and shows them in the Projects section.
+
+## Preview the site locally
+
+You can open `index.html` directly in your browser, but running a tiny local server avoids any browser security restrictions and mirrors how the site behaves when deployed.
+
+### Option 1: Python (built-in)
+1. Open a terminal in the project folder.
+2. Start the server:
+   ```bash
+   python3 -m http.server 8000
+   ```
+3. Visit http://localhost:8000 in your browser.
+
+### Option 2: Node.js (if you prefer)
+1. Install the `serve` package if you don't have it:
+   ```bash
+   npm install -g serve
+   ```
+2. Run the server:
+   ```bash
+   serve .
+   ```
+3. Open the printed localhost URL (often http://localhost:3000).
+
+The GitHub Projects tiles load directly from the GitHub API, so keep an internet connection when previewing.
+Welcome to my digital garden ✿
+
+This repository hosts my personal website at https://YoyoLin008.github.io
+, where I share my projects, data stories, creative work, and a little bit of my life as an IS+DS student at UIUC.
