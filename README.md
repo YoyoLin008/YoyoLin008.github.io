@@ -1,53 +1,32 @@
-YoyoLin008 Personal Website
+## Yoyo Lin — Personal Website
 
-Welcome to the source code for Yoyo Lin’s personal website, hosted at https://YoyoLin008.github.io
-.
-This is a simple static site built with HTML, CSS, and JavaScript, with no build tools or frameworks required.
-The website showcases my projects, data visualizations, research work, and hobby pages (birds, HiFi, phones, and flight logs).
+Welcome to the source code for **Yoyo Lin’s** personal website, hosted at <https://YoyoLin008.github.io>. This is a fully static site built with **HTML, CSS, and JavaScript**—no build tools or frameworks required.
 
-🔗 Live Site
+### Quick Links
+- **Live site:** <https://YoyoLin008.github.io>
+- **Tech stack:** Static HTML/CSS/JS served by GitHub Pages
+- **Content:** Projects, data visualizations, research updates, and hobby pages (birds, HiFi, phones, flight logs)
 
-https://YoyoLin008.github.io
+### Running Locally
+You can open `index.html` directly, but using a lightweight server avoids browser security limitations and mirrors GitHub Pages behavior.
 
-📁 About This Repository
-
-Fully static site — no build step needed
-
-GitHub Pages automatically serves the contents of the repository
-
-The Projects section dynamically loads my public GitHub repositories using the GitHub API
-
-Hobby subpages are located under /hobbies/
-
-🏃‍♀️ Run the Site Locally
-
-Although you can open index.html directly in your browser, running a simple local server avoids browser security limitations and makes your local preview match GitHub Pages behavior.
-
-Option 1 — Python (built-in)
+**Python (built-in)**
+```bash
 python3 -m http.server 8000
+```
+Then open <http://localhost:8000>.
 
-
-Then open:
-http://localhost:8000
-
-Option 2 — Node.js
-
-Install serve if you don’t have it:
-
+**Node.js**
+```bash
 npm install -g serve
-
-
-Run:
-
 serve .
+```
+Then open the printed URL (usually <http://localhost:3000>).
 
+> The Projects section fetches data from the GitHub API, so you’ll need an internet connection when previewing locally.
 
-Then open the printed URL (usually http://localhost:3000
-).
-
-The GitHub Projects section loads through the GitHub API, so an internet connection is required when previewing locally.
-
-📂 Directory Structure
+### Repository Layout
+```
 /
 ├── index.html        # Main homepage
 ├── style.css         # Global styling
@@ -58,19 +37,14 @@ The GitHub Projects section loads through the GitHub API, so an internet connect
 │   ├── phones.html
 │   └── flights.html
 └── assets/           # Images, icons, etc.
+```
 
-🌱 About the Site
+### About the Site
+This site acts as my personal digital garden, featuring:
+- Data science and visualization projects
+- GitHub work and research updates
+- Coursework demos
+- Photography and hobby logs
+- Creative UI/UX experiments
 
-This site acts as my personal digital garden, where I share:
-
-Data science & visualization projects
-
-GitHub work and research updates
-
-Coursework-related demos
-
-Photography & hobby logs
-
-Creative experiments in UI/UX
-
-I’m currently an IS+DS student at UIUC, building a portfolio in data science, analysis, visualization, and interactive storytelling.
+I’m currently an **IS+DS student at UIUC**, building a portfolio across data science, analysis, visualization, and interactive storytelling.
