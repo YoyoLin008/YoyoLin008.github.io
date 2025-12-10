@@ -32,12 +32,22 @@ Then open the printed URL (usually <http://localhost:3000>).
 ├── style.css         # Global styling
 ├── script.js         # Website logic + GitHub repo fetching
 ├── hobbies/
-│   ├── birds.html
-│   ├── hifi.html
-│   ├── phones.html
-│   └── flights.html
+│   ├── bird-photography.html
+│   ├── hifi-earphones.html
+│   ├── phones-jailbreaking.html
+│   └── flight-log.html
 └── assets/           # Images, icons, etc.
 ```
+
+### Hobby page previews
+Links to the hobby pages for quick local previews:
+
+- Bird photography: [hobbies/bird-photography.html](hobbies/bird-photography.html)
+- Airplanes & Flight Log: [hobbies/flight-log.html](hobbies/flight-log.html)
+- HiFi Earphones and Amplifiers: [hobbies/hifi-earphones.html](hobbies/hifi-earphones.html)
+- Phones and Jailbreaking: [hobbies/phones-jailbreaking.html](hobbies/phones-jailbreaking.html)
+
+Run `python3 -m http.server 8000` from the repo root and open the links above in your browser to view the exact pages.
 
 ### About the Site
 This site acts as my personal digital garden, featuring:
