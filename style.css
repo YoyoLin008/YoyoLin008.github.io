@@ -644,6 +644,18 @@ main {
   gap: 1rem;
 }
 
+.copy-block {
+  display: grid;
+  gap: 0.75rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  background: #ffffff;
+  border: 1px solid var(--border-soft);
+  border-radius: 1rem;
+  padding: 1rem 1.1rem;
+  box-shadow: var(--shadow-soft);
+}
+
 .photo-card {
   background: #ffffff;
   border: 1px solid var(--border-soft);
