@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-labelledby="title desc">
+  <title id="title">Illinois Data Science Club logo</title>
+  <desc id="desc">Local placeholder for the Illinois Data Science Club logo.</desc>
+  <rect width="256" height="256" rx="24" fill="#ffffff"/>
+  <path fill="#b34f6a" d="M88 34h82v28h-22v132h22v28H88v-28h22V62H88z"/>
+  <path d="M128 58v132M107 91c23 1 43 18 49 42M103 149c16-18 47-18 64 0M112 118h32M116 83l24 31M142 84l-22 31M117 168l24-30" fill="none" stroke="#b34f6a" stroke-width="7" stroke-linecap="round"/>
+  <circle cx="108" cy="91" r="6" fill="#b34f6a"/>
+  <circle cx="144" cy="83" r="6" fill="#b34f6a"/>
+  <circle cx="156" cy="134" r="6" fill="#b34f6a"/>
+  <circle cx="104" cy="150" r="6" fill="#b34f6a"/>
+  <path fill="#6b1436" d="M44 178c22 24 51 39 84 39s62-15 84-39l12 14c-25 28-58 43-96 43s-71-15-96-43z"/>
+</svg>

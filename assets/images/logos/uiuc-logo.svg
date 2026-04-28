@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-labelledby="title desc">
+  <title id="title">University of Illinois Urbana-Champaign logo</title>
+  <desc id="desc">Block I logo placeholder for UIUC.</desc>
+  <rect width="256" height="256" fill="#13294b"/>
+  <path fill="#ffffff" d="M70 38h116v46h-31v88h31v46H70v-46h31V84H70z"/>
+  <path fill="#ff5f05" d="M82 50h92v22h-31v112h31v22H82v-22h31V72H82z"/>
+</svg>

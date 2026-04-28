@@ -28,16 +28,37 @@ Then open the printed URL (usually <http://localhost:3000>).
 ### Repository Layout
 ```
 /
-├── index.html        # Main homepage
-├── style.css         # Global styling
-├── script.js         # Website logic + GitHub repo fetching
+├── index.html                      # Main homepage for GitHub Pages
+├── google18ea2a16324435d3.html     # Google site verification file
+├── assets/
+│   ├── css/
+│   │   └── site.css                # Global styling
+│   ├── js/
+│   │   └── site.js                 # Website logic + GitHub repo fetching
+│   └── images/
+│       ├── profile/
+│       │   └── yoyo-lin-photo.jpeg
+│       ├── logos/
+│       │   ├── uiuc-logo.svg
+│       │   ├── cuhksz-logo.svg
+│       │   └── illinois-data-science-club-logo.svg
+│       ├── gallery/                # Personal photo uploads for hobbies
+│       └── placeholders/
 ├── hobbies/
 │   ├── bird-photography.html
 │   ├── hifi-earphones.html
 │   ├── phones-jailbreaking.html
 │   └── flight-log.html
-└── assets/           # Images, icons, etc.
+└── README.md
 ```
+
+### Adding Images
+
+- Timeline logos live in `assets/images/logos/`.
+- Profile images live in `assets/images/profile/`.
+- Hobby gallery photos should go in `assets/images/gallery/`.
+- Keep filenames lowercase and descriptive, for example `uiuc-logo.svg` or `birds-001.jpg`.
+- The homepage timeline currently reads logo paths from `assets/js/site.js`.
 
 ### Hobby page previews
 Links to the hobby pages for quick local previews:

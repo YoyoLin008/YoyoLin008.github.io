@@ -24,7 +24,7 @@ const timelineData = [
     role: 'Research Assistant (Blockchain & LLMs)',
     organization: 'Chinese University of Hong Kong, Shenzhen',
     date: 'May 2026 - Aug 2026',
-    logoUrl: 'https://logo.clearbit.com/cuhk.edu.cn',
+    logoUrl: 'assets/images/logos/cuhksz-logo.svg',
     description:
       'Upcoming summer research position working on the intersection of Blockchain and Large Language Models under the guidance of Prof. Chenhao Ma.',
     links: [{ label: 'Prof. Chenhao Ma', href: 'https://sds.cuhk.edu.cn/en/teacher/631' }]
@@ -33,7 +33,7 @@ const timelineData = [
     role: 'Research Assistant (LLMs as Peer Reviewers)',
     organization: 'University of Illinois Urbana-Champaign',
     date: 'Jan 2026 - Present',
-    logoUrl: 'https://logo.clearbit.com/illinois.edu',
+    logoUrl: 'assets/images/logos/uiuc-logo.svg',
     description:
       'Working with Prof. Nitin Verma to explore how large language models can support academic peer review. Designing prompts and evaluation frameworks to generate specific, helpful feedback rather than vague summaries.',
     links: [{ label: 'Prof. Nitin Verma', href: 'https://ischool.illinois.edu/people/nitin-verma' }]
@@ -43,7 +43,7 @@ const timelineData = [
     organization: 'Illinois Data Science Club',
     orgLink: 'https://www.instagram.com/uiucdsc/',
     date: 'May 2025 - Present',
-    logoUrl: 'https://ui-avatars.com/api/?name=DSC&background=f5f5f4&color=78716c&size=128',
+    logoUrl: 'assets/images/logos/illinois-data-science-club-logo.svg',
     description: 'Mentoring and leading student teams to participate in Data Dive projects.'
   }
 ];
@@ -225,7 +225,7 @@ const renderHome = () => `
     <div class="portrait-wrap">
       <div class="portrait-backdrop"></div>
       <img
-        src="YoyoLin_Photo.jpeg"
+        src="assets/images/profile/yoyo-lin-photo.jpeg"
         alt="Yoyo Lin"
         class="portrait"
         onerror="this.src='https://ui-avatars.com/api/?name=Yoyo+Lin&background=d97706&color=fff&size=512'"
@@ -247,7 +247,7 @@ const renderResume = () => `
         <article class="education-item">
           <div class="logo-card">
             <img
-              src="https://logo.clearbit.com/illinois.edu"
+              src="assets/images/logos/uiuc-logo.svg"
               alt="UIUC logo"
               onerror="this.src='${logoFallback('UIUC')}'"
             />

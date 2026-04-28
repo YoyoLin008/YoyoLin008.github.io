@@ -1,0 +1,12 @@
+# Gallery Photos
+
+Use this folder for personal photos that appear in hobby galleries.
+
+Suggested naming:
+
+- `birds-001.jpg`
+- `hifi-001.jpg`
+- `phones-001.jpg`
+- `flights-001.jpg`
+
+After adding photos, update the matching `photos` array in `assets/js/site.js`.
