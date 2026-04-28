@@ -368,6 +368,41 @@ h1 {
   color: var(--muted);
 }
 
+.cv-preview-section {
+  border-top: 1px solid var(--faint);
+  margin-top: 4rem;
+  padding-top: 2rem;
+}
+
+.cv-preview-heading {
+  align-items: end;
+  display: flex;
+  gap: 1.5rem;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.cv-preview-heading h3 {
+  font-size: 1.35rem;
+  margin-bottom: 0.2rem;
+}
+
+.cv-preview-heading p {
+  color: var(--muted);
+  margin-bottom: 0;
+}
+
+.cv-preview-frame {
+  background: var(--surface);
+  border: 1px solid var(--faint);
+  border-radius: 0.75rem;
+  box-shadow: var(--shadow);
+  display: block;
+  height: min(78vh, 58rem);
+  min-height: 34rem;
+  width: 100%;
+}
+
 .timeline {
   border-left: 2px solid var(--faint);
   display: grid;
@@ -853,6 +888,16 @@ figcaption {
   .split-header {
     align-items: flex-start;
     flex-direction: column;
+  }
+
+  .cv-preview-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .cv-preview-frame {
+    min-height: 28rem;
   }
 }
 

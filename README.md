@@ -35,6 +35,8 @@ Then open the printed URL (usually <http://localhost:3000>).
 │   │   └── site.css                # Global styling
 │   ├── js/
 │   │   └── site.js                 # Website logic + GitHub repo fetching
+│   ├── documents/
+│   │   └── yunya-lin-cv.pdf        # CV preview/download
 │   └── images/
 │       ├── profile/
 │       │   └── yoyo-lin-photo.jpeg
@@ -57,6 +59,7 @@ Then open the printed URL (usually <http://localhost:3000>).
 - Timeline logos live in `assets/images/logos/`.
 - Profile images live in `assets/images/profile/`.
 - Hobby gallery photos should go in `assets/images/gallery/`.
+- Documents such as CVs should go in `assets/documents/`.
 - Keep filenames lowercase and descriptive, for example `uiuc-logo.png` or `birds-001.jpg`.
 - The homepage timeline currently reads logo paths from `assets/js/site.js`.
 

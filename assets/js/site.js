@@ -1,7 +1,8 @@
 const CONTACT = {
   github: 'https://github.com/YoyoLin008',
   linkedin: 'https://www.linkedin.com/in/yoyo-lin-631889299',
-  email: 'mailto:yoyolin2@illinois.edu'
+  email: 'mailto:yoyolin2@illinois.edu',
+  cv: 'assets/documents/yunya-lin-cv.pdf?v=20260427-cv'
 };
 
 const pageLabels = {
@@ -258,7 +259,7 @@ const renderResume = () => `
             <p>Current focus: LLMs, peer review, crop analytics, and human-centered design.</p>
           </div>
         </article>
-        <a class="text-link resume-link" href="YoyoLin_Resume.pdf" target="_blank" rel="noreferrer">
+        <a class="text-link resume-link" href="${CONTACT.cv}" target="_blank" rel="noreferrer">
           ${icon('File')} Click here to preview CV
         </a>
       </section>
@@ -275,6 +276,21 @@ const renderResume = () => `
         </ul>
       </section>
     </div>
+
+    <section class="cv-preview-section" aria-labelledby="cvPreviewTitle">
+      <div class="cv-preview-heading">
+        <div>
+          <h3 id="cvPreviewTitle">CV Preview</h3>
+          <p>Open or scroll through my current CV directly on the website.</p>
+        </div>
+        <a class="text-link" href="${CONTACT.cv}" target="_blank" rel="noreferrer">Open PDF</a>
+      </div>
+      <iframe
+        class="cv-preview-frame"
+        src="${CONTACT.cv}"
+        title="Yunya Lin CV preview"
+      ></iframe>
+    </section>
   </section>
 `;
 
