@@ -1,99 +1,458 @@
-// Fun fact generator
-const funFacts = [
-  'I keep a detailed log of my flights, including routes, aircraft types, and small memories from each trip.',
-  'I love experimenting with different combinations of earphones, DACs, and amplifiers to see how they change a song.',
-  'I enjoy jailbreaking older phones to explore features and customizations beyond the default settings.',
-  'Bird photography is one of my favorite excuses to travel to new places and wake up early.',
-  'I like building projects that sit between data science and storytelling, especially when they help non-technical audiences understand a topic.',
-  'I once wrote about AI and the fracking industry and received a silver medal from the Harvard International Review for it.',
-  'I am a project lead at Illinois Data Science Club (IDSC)'
+const CONTACT = {
+  github: 'https://github.com/YoyoLin008',
+  linkedin: 'https://www.linkedin.com/in/yoyo-lin-631889299',
+  email: 'mailto:yoyolin2@illinois.edu'
+};
+
+const pageLabels = {
+  home: 'About',
+  resume: 'Resume',
+  experience: 'Experience',
+  projects: 'Projects',
+  hobbies: 'Hobbies'
+};
+
+const timelineData = [
+  {
+    role: 'Digital Marketing Intern',
+    organization: 'Transsion Holdings',
+    date: 'June 2026 - Aug 2026',
+    logoUrl: 'https://logo.clearbit.com/transsion.com',
+    description: 'Upcoming summer internship focusing on digital marketing strategies and execution within the global mobile communications industry.'
+  },
+  {
+    role: 'Research Assistant (Blockchain & LLMs)',
+    organization: 'Chinese University of Hong Kong, Shenzhen',
+    date: 'May 2026 - Aug 2026',
+    logoUrl: 'https://logo.clearbit.com/cuhk.edu.cn',
+    description:
+      'Upcoming summer research position working on the intersection of Blockchain and Large Language Models under the guidance of Prof. Chenhao Ma.',
+    links: [{ label: 'Prof. Chenhao Ma', href: 'https://sds.cuhk.edu.cn/en/teacher/631' }]
+  },
+  {
+    role: 'Research Assistant (LLMs as Peer Reviewers)',
+    organization: 'University of Illinois Urbana-Champaign',
+    date: 'Jan 2026 - Present',
+    logoUrl: 'https://logo.clearbit.com/illinois.edu',
+    description:
+      'Working with Prof. Nitin Verma to explore how large language models can support academic peer review. Designing prompts and evaluation frameworks to generate specific, helpful feedback rather than vague summaries.',
+    links: [{ label: 'Prof. Nitin Verma', href: 'https://ischool.illinois.edu/people/nitin-verma' }]
+  },
+  {
+    role: 'Project Lead',
+    organization: 'Illinois Data Science Club',
+    orgLink: 'https://www.instagram.com/uiucdsc/',
+    date: 'May 2025 - Present',
+    logoUrl: 'https://ui-avatars.com/api/?name=DSC&background=f5f5f4&color=78716c&size=128',
+    description: 'Mentoring and leading student teams to participate in Data Dive projects.'
+  }
 ];
 
-document.addEventListener('DOMContentLoaded', () => {
-  const funFactText = document.getElementById('funFactText');
-  const funFactBtn = document.getElementById('funFactBtn');
-  const yearSpan = document.getElementById('yearSpan');
-  const repoGrid = document.getElementById('repoGrid');
-  const repoStatus = document.getElementById('repoStatus');
+const awards = [
+  {
+    title: 'Harvard International Review - Silver Medal',
+    description: 'Recognized for an article exploring AI in the fracking industry, combining policy, technology, and data.'
+  },
+  {
+    title: 'Illinois for Illinois (I4I) Scholarship',
+    description: 'Awarded in recognition of strong academic performance and a sustained commitment to learning.'
+  },
+  {
+    title: "Dean's List",
+    description: 'University of Illinois Urbana-Champaign. Recognized for three semesters of maintaining high academic standing alongside research.'
+  }
+];
 
-  if (funFactBtn && funFactText) {
-    funFactBtn.addEventListener('click', () => {
-      const index = Math.floor(Math.random() * funFacts.length);
-      funFactText.textContent = funFacts[index];
+const galleryData = {
+  birds: {
+    title: 'Bird Photography',
+    description: 'Traveling to photograph birds and document the tiny details of their environments.',
+    icon: 'Camera',
+    photos: [
+      {
+        src: 'https://images.unsplash.com/photo-1552728089-571688052309?w=900&q=80',
+        caption: 'Kingfisher spotted near the local river.'
+      },
+      {
+        src: 'https://images.unsplash.com/photo-1550853024-fae8cd4be47f?w=900&q=80',
+        caption: 'A quiet moment with a wild owl.'
+      },
+      {
+        src: 'https://images.unsplash.com/photo-1606567595334-d39972c85d77?w=900&q=80',
+        caption: 'Hummingbird mid-flight.'
+      }
+    ]
+  },
+  hifi: {
+    title: 'HiFi Audio',
+    description: 'Pairing DACs, amps, and earphones to experiment with sound signatures.',
+    icon: 'Audio',
+    photos: [
+      {
+        src: 'https://images.unsplash.com/photo-1590602847861-f357a9332bbc?w=900&q=80',
+        caption: 'My current desktop DAC and amp stack.'
+      },
+      {
+        src: 'https://images.unsplash.com/photo-1505236858219-8359eb29e329?w=900&q=80',
+        caption: 'Testing a new pair of planar magnetic headphones.'
+      }
+    ]
+  },
+  phones: {
+    title: 'Jailbreaking & Custom ROMs',
+    description: 'Exploring custom ROMs and older phones to understand system design.',
+    icon: 'Phone',
+    photos: [
+      {
+        src: 'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=900&q=80',
+        caption: 'Successfully flashed LineageOS on an old flagship.'
+      },
+      {
+        src: 'https://images.unsplash.com/photo-1601784551446-20c9e07cdbfd?w=900&q=80',
+        caption: 'Digging into the bootloader settings.'
+      }
+    ]
+  },
+  flights: {
+    title: 'Flight Logging',
+    description: 'Maintaining a personal dataset of routes, aircraft, and travel memories.',
+    icon: 'Plane',
+    photos: [
+      {
+        src: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=900&q=80',
+        caption: 'View from the window seat on a 737.'
+      },
+      {
+        src: 'https://images.unsplash.com/photo-1504680177363-2287f3944605?w=900&q=80',
+        caption: 'Logging my route across the Pacific.'
+      }
+    ]
+  }
+};
+
+const funFacts = [
+  "I took my profile photo at McDonald's Island in Shenzhen. I'm lovin' it.",
+  'I maintain my own detailed flight log tracking every trip I take.',
+  'I love exploring older phones and testing out custom ROMs.',
+  'I experiment with different DACs and amps to find the perfect sound signature.',
+  'I travel to different places specifically to photograph birds in their natural habitats.'
+];
+
+let currentPage = 'home';
+let currentFactIndex = 0;
+let reposLoaded = false;
+
+const app = document.getElementById('app');
+
+const icon = (name) => `<span class="icon" aria-hidden="true">${name}</span>`;
+
+const escapeHtml = (value) =>
+  String(value)
+    .replaceAll('&', '&amp;')
+    .replaceAll('<', '&lt;')
+    .replaceAll('>', '&gt;')
+    .replaceAll('"', '&quot;')
+    .replaceAll("'", '&#039;');
+
+const renderLinkedDescription = (item) => {
+  let description = escapeHtml(item.description);
+
+  if (item.links) {
+    item.links.forEach((link) => {
+      description = description.replace(
+        escapeHtml(link.label),
+        `<a href="${link.href}" target="_blank" rel="noreferrer">${escapeHtml(link.label)}</a>`
+      );
     });
   }
 
-  if (yearSpan) {
-    yearSpan.textContent = new Date().getFullYear();
-  }
+  return description;
+};
 
-  if (repoGrid) {
-    loadGithubRepos('YoyoLin008', repoGrid, repoStatus);
-  }
-});
+const logoFallback = (name) =>
+  `https://ui-avatars.com/api/?name=${encodeURIComponent(name)}&background=f5f5f4&color=78716c&size=128`;
 
-async function loadGithubRepos(username, gridEl, statusEl) {
-  const endpoint = `https://api.github.com/users/${username}/repos?sort=updated&per_page=6`;
+const setPage = (pageId) => {
+  currentPage = pageId;
+  render();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+};
+
+const updateNavigation = () => {
+  document.querySelectorAll('[data-page]').forEach((button) => {
+    button.classList.toggle('active', button.dataset.page === currentPage);
+  });
+  document.querySelector('.mobile-page-label').textContent = pageLabels[currentPage] || pageLabels.hobbies;
+};
+
+const renderHome = () => `
+  <section class="page page-home">
+    <div class="home-copy">
+      <p class="eyebrow">Information Sciences + Data Science @ UIUC</p>
+      <h1>Hi, I'm Yoyo Lin.</h1>
+      <p class="lead">
+        I explore how technology and human experiences intersect, whether that is analyzing crops and climate,
+        training language models for peer review, or turning a flight log into a personal story of travel.
+      </p>
+      <div class="social-row" aria-label="Social links">
+        <a href="${CONTACT.github}" target="_blank" rel="noreferrer" aria-label="GitHub">${icon('GitHub')}</a>
+        <a href="${CONTACT.linkedin}" target="_blank" rel="noreferrer" aria-label="LinkedIn">${icon('in')}</a>
+        <a href="${CONTACT.email}" aria-label="Email">${icon('Mail')}</a>
+      </div>
+    </div>
+    <div class="portrait-wrap">
+      <div class="portrait-backdrop"></div>
+      <img
+        src="YoyoLin_Photo.jpeg"
+        alt="Yoyo Lin"
+        class="portrait"
+        onerror="this.src='https://ui-avatars.com/api/?name=Yoyo+Lin&background=d97706&color=fff&size=512'"
+      />
+    </div>
+  </section>
+`;
+
+const renderResume = () => `
+  <section class="page">
+    <header class="page-header">
+      <h2>Experience & Education</h2>
+      <p>My academic journey and recognitions.</p>
+    </header>
+
+    <div class="two-column">
+      <section>
+        <h3 class="section-heading">${icon('Grad')} Education</h3>
+        <article class="education-item">
+          <div class="logo-card">
+            <img
+              src="https://logo.clearbit.com/illinois.edu"
+              alt="UIUC logo"
+              onerror="this.src='${logoFallback('UIUC')}'"
+            />
+          </div>
+          <div class="border-note">
+            <h4>University of Illinois Urbana-Champaign</h4>
+            <p class="accent-text">B.S. Information Sciences + Data Science</p>
+            <p>Current focus: LLMs, peer review, crop analytics, and human-centered design.</p>
+          </div>
+        </article>
+        <a class="text-link resume-link" href="YoyoLin_Resume.pdf" target="_blank" rel="noreferrer">
+          ${icon('File')} Click here to preview CV
+        </a>
+      </section>
+
+      <section>
+        <h3 class="section-heading">${icon('Award')} Honors & Awards</h3>
+        <ul class="award-list">
+          ${awards.map((award) => `
+            <li>
+              <h4>${award.title}</h4>
+              <p>${award.description}</p>
+            </li>
+          `).join('')}
+        </ul>
+      </section>
+    </div>
+  </section>
+`;
+
+const renderExperience = () => `
+  <section class="page">
+    <header class="page-header">
+      <h2>Research & Experience</h2>
+      <p>A timeline of my academic research, internships, and data science projects.</p>
+    </header>
+
+    <div class="timeline">
+      ${timelineData.map((item) => `
+        <article class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="logo-card">
+              <img
+                src="${item.logoUrl}"
+                alt="${escapeHtml(item.organization)} logo"
+                onerror="this.src='${logoFallback(item.organization)}'"
+              />
+            </div>
+            <div class="timeline-content">
+              <div class="timeline-title-row">
+                <h3>${escapeHtml(item.role)}</h3>
+                <span>${escapeHtml(item.date)}</span>
+              </div>
+              <p class="organization">
+                ${item.orgLink
+                  ? `<a href="${item.orgLink}" target="_blank" rel="noreferrer">${escapeHtml(item.organization)} ${icon('External')}</a>`
+                  : escapeHtml(item.organization)}
+              </p>
+              <p>${renderLinkedDescription(item)}</p>
+            </div>
+          </div>
+        </article>
+      `).join('')}
+    </div>
+  </section>
+`;
+
+const renderProjects = () => `
+  <section class="page">
+    <header class="page-header split-header">
+      <div>
+        <h2>Featured Code</h2>
+        <p>Live feed from my GitHub. I focus on tidy code and accessible data storytelling.</p>
+      </div>
+      <a class="text-link" href="${CONTACT.github}" target="_blank" rel="noreferrer">
+        View all on GitHub ${icon('External')}
+      </a>
+    </header>
+
+    <div class="repo-grid" id="repoGrid">
+      <div class="loading-card">Loading repositories from YoyoLin008...</div>
+    </div>
+  </section>
+`;
+
+const renderHobbies = () => `
+  <section class="page hobbies-page">
+    <div class="hobbies-intro">
+      <header class="page-header compact">
+        <h2>Outside the Classroom</h2>
+      </header>
+      <p>
+        My hobbies are where tech, travel, and small everyday details come together. I love exploring the nuances
+        in hardware, systems, and nature.
+      </p>
+      <aside class="fact-box" aria-live="polite">
+        <div class="fact-label">${icon('Spark')} Random Fun Fact</div>
+        <p id="factText">${funFacts[currentFactIndex]}</p>
+        <button class="plain-button" type="button" id="factButton">Generate Another</button>
+      </aside>
+    </div>
+
+    <div class="hobby-grid">
+      ${Object.entries(galleryData).map(([id, hobby]) => `
+        <button class="hobby-button" type="button" data-gallery="${id}">
+          <span class="hobby-icon">${icon(hobby.icon)}</span>
+          <span>
+            <strong>${hobby.title}</strong>
+            <small>${hobby.description}</small>
+            <em>View gallery ${icon('Right')}</em>
+          </span>
+        </button>
+      `).join('')}
+    </div>
+  </section>
+`;
+
+const renderGallery = (galleryId) => {
+  const gallery = galleryData[galleryId];
+  if (!gallery) return renderHobbies();
+
+  return `
+    <section class="page">
+      <button class="back-button" type="button" data-back-hobbies>${icon('Left')} Back to Hobbies</button>
+      <header class="page-header">
+        <div class="gallery-title">${icon(gallery.icon)}<h2>${gallery.title}</h2></div>
+        <p>${gallery.description}</p>
+      </header>
+      <div class="photo-grid">
+        ${gallery.photos.map((photo) => `
+          <figure class="photo-card">
+            <div class="photo-frame">
+              <img src="${photo.src}" alt="${escapeHtml(photo.caption)}" />
+            </div>
+            <figcaption>${photo.caption}</figcaption>
+          </figure>
+        `).join('')}
+        <div class="upload-card">
+          ${icon('Image')}
+          <span>Upload more photos</span>
+        </div>
+      </div>
+    </section>
+  `;
+};
+
+const loadRepos = async () => {
+  if (reposLoaded || currentPage !== 'projects') return;
+  reposLoaded = true;
+
+  const repoGrid = document.getElementById('repoGrid');
+  if (!repoGrid) return;
 
   try {
-    const response = await fetch(endpoint);
-    if (!response.ok) {
-      throw new Error('Network response was not ok');
-    }
-
+    const response = await fetch('https://api.github.com/users/YoyoLin008/repos?sort=updated&per_page=6');
     const repos = await response.json();
-    const visibleRepos = repos.filter((repo) => !repo.fork);
 
-    if (!visibleRepos.length) {
-      updateRepoStatus(statusEl, 'No public repositories found right now.');
+    if (!Array.isArray(repos) || repos.length === 0) {
+      repoGrid.innerHTML = '<div class="loading-card">No repositories found.</div>';
       return;
     }
 
-    gridEl.innerHTML = '';
-
-    const fragment = document.createDocumentFragment();
-
-    visibleRepos.forEach((repo) => {
-      const link = document.createElement('a');
-      link.className = 'project-tile';
-      link.href = repo.html_url;
-      link.target = '_blank';
-      link.rel = 'noopener noreferrer';
-
-      const top = document.createElement('div');
-      top.className = 'project-tile-top';
-
-      const title = document.createElement('span');
-      title.className = 'project-tile-title';
-      title.textContent = repo.name || 'Repository';
-
-      const pill = document.createElement('span');
-      pill.className = 'pill';
-      pill.textContent = repo.language || 'Repo';
-
-      top.appendChild(title);
-      top.appendChild(pill);
-
-      const body = document.createElement('p');
-      body.className = 'project-tile-body';
-      body.textContent = repo.description || 'Visit the repository to learn more.';
-
-      link.appendChild(top);
-      link.appendChild(body);
-
-      fragment.appendChild(link);
-    });
-
-    gridEl.appendChild(fragment);
-
-    updateRepoStatus(statusEl, `Showing ${visibleRepos.length} public repos from GitHub.`);
+    repoGrid.innerHTML = repos.map((repo) => `
+      <a class="repo-card" href="${repo.html_url}" target="_blank" rel="noreferrer">
+        <span>
+          <strong>${escapeHtml(repo.name)}</strong>
+          <small>${escapeHtml(repo.language || 'Code')}</small>
+        </span>
+        <p>${escapeHtml(repo.description || 'No description provided.')}</p>
+        <div class="repo-stats">
+          <span>${icon('Star')} ${repo.stargazers_count}</span>
+          <span>${icon('Fork')} ${repo.forks_count}</span>
+        </div>
+      </a>
+    `).join('');
   } catch (error) {
-    console.error('Error loading repositories:', error);
-    updateRepoStatus(statusEl, 'Unable to load repositories right now. Please try again later.');
+    repoGrid.innerHTML = '<div class="loading-card">Could not load repositories. Visit GitHub directly from the link above.</div>';
   }
-}
+};
 
-function updateRepoStatus(el, message) {
-  if (!el) return;
-  el.textContent = message;
-}
+const bindPageEvents = () => {
+  document.querySelectorAll('[data-gallery]').forEach((button) => {
+    button.addEventListener('click', () => setPage(`gallery-${button.dataset.gallery}`));
+  });
+
+  document.querySelector('[data-back-hobbies]')?.addEventListener('click', () => setPage('hobbies'));
+
+  document.getElementById('factButton')?.addEventListener('click', () => {
+    let nextIndex = currentFactIndex;
+    while (nextIndex === currentFactIndex) {
+      nextIndex = Math.floor(Math.random() * funFacts.length);
+    }
+    currentFactIndex = nextIndex;
+    document.getElementById('factText').textContent = funFacts[currentFactIndex];
+  });
+};
+
+const render = () => {
+  if (currentPage.startsWith('gallery-')) {
+    app.innerHTML = renderGallery(currentPage.replace('gallery-', ''));
+  } else {
+    const renderers = {
+      home: renderHome,
+      resume: renderResume,
+      experience: renderExperience,
+      projects: renderProjects,
+      hobbies: renderHobbies
+    };
+    app.innerHTML = (renderers[currentPage] || renderHome)();
+  }
+
+  updateNavigation();
+  bindPageEvents();
+  loadRepos();
+};
+
+document.querySelectorAll('[data-page]').forEach((button) => {
+  button.addEventListener('click', () => {
+    reposLoaded = button.dataset.page === 'projects' ? false : reposLoaded;
+    setPage(button.dataset.page);
+  });
+});
+
+window.addEventListener('scroll', () => {
+  document.querySelector('.site-nav').classList.toggle('scrolled', window.scrollY > 20);
+});
+
+document.getElementById('year').textContent = new Date().getFullYear();
+render();
