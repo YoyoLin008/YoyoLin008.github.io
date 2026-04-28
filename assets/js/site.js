@@ -51,16 +51,16 @@ const timelineData = [
 
 const awards = [
   {
-    title: 'Harvard International Review - Silver Medal',
-    description: 'Recognized for an article exploring AI in the fracking industry, combining policy, technology, and data.'
+    title: "Dean's List",
+    description: 'University of Illinois Urbana-Champaign. Recognized for three semesters of maintaining high academic standing alongside research.'
   },
   {
     title: 'Illinois for Illinois (I4I) Scholarship',
     description: 'Awarded in recognition of strong academic performance and a sustained commitment to learning.'
   },
   {
-    title: "Dean's List",
-    description: 'University of Illinois Urbana-Champaign. Recognized for three semesters of maintaining high academic standing alongside research.'
+    title: 'Harvard International Review - Silver Medal',
+    description: 'Recognized for an article exploring AI in the fracking industry, combining policy, technology, and data.'
   }
 ];
 
