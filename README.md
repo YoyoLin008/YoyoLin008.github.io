@@ -39,9 +39,9 @@ Then open the printed URL (usually <http://localhost:3000>).
 │       ├── profile/
 │       │   └── yoyo-lin-photo.jpeg
 │       ├── logos/
-│       │   ├── uiuc-logo.svg
-│       │   ├── cuhksz-logo.svg
-│       │   └── illinois-data-science-club-logo.svg
+│       │   ├── uiuc-logo.png
+│       │   ├── cuhksz-logo.png
+│       │   └── illinois-data-science-club-logo.png
 │       ├── gallery/                # Personal photo uploads for hobbies
 │       └── placeholders/
 ├── hobbies/
@@ -57,7 +57,7 @@ Then open the printed URL (usually <http://localhost:3000>).
 - Timeline logos live in `assets/images/logos/`.
 - Profile images live in `assets/images/profile/`.
 - Hobby gallery photos should go in `assets/images/gallery/`.
-- Keep filenames lowercase and descriptive, for example `uiuc-logo.svg` or `birds-001.jpg`.
+- Keep filenames lowercase and descriptive, for example `uiuc-logo.png` or `birds-001.jpg`.
 - The homepage timeline currently reads logo paths from `assets/js/site.js`.
 
 ### Hobby page previews

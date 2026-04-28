@@ -2,8 +2,8 @@
 
 These filenames are wired into the Research & Experience timeline:
 
-- `uiuc-logo.svg`
-- `cuhksz-logo.svg`
-- `illinois-data-science-club-logo.svg`
+- `uiuc-logo.png`
+- `cuhksz-logo.png`
+- `illinois-data-science-club-logo.png`
 
-The current SVGs are lightweight local placeholders because the logos shared in chat are not present as files in this repository. To use the exact images, replace these files with the final exported logos and keep the same filenames, or update the paths in `assets/js/site.js`.
+These files are used by the Research & Experience timeline and the education section. Keep replacements under the same filenames unless you also update the paths in `assets/js/site.js`.
