@@ -277,20 +277,6 @@ const renderResume = () => `
       </section>
     </div>
 
-    <section class="cv-preview-section" aria-labelledby="cvPreviewTitle">
-      <div class="cv-preview-heading">
-        <div>
-          <h3 id="cvPreviewTitle">CV Preview</h3>
-          <p>Open or scroll through my current CV directly on the website.</p>
-        </div>
-        <a class="text-link" href="${CONTACT.cv}" target="_blank" rel="noreferrer">Open PDF</a>
-      </div>
-      <iframe
-        class="cv-preview-frame"
-        src="${CONTACT.cv}"
-        title="Yunya Lin CV preview"
-      ></iframe>
-    </section>
   </section>
 `;
 
