@@ -669,6 +669,25 @@ h1 {
   margin: 0;
 }
 
+.photo-card-wide {
+  grid-column: 1 / -1;
+}
+
+.photo-cluster {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1.1fr 1fr 1fr;
+}
+
+.photo-cluster .photo-frame {
+  aspect-ratio: 4 / 5;
+  background: #14110f;
+}
+
+.photo-cluster .photo-frame img {
+  object-fit: contain;
+}
+
 .photo-frame {
   align-items: center;
   aspect-ratio: 1;
@@ -696,6 +715,18 @@ figcaption {
   font-size: 0.9rem;
   margin-top: 0.75rem;
   padding-inline: 0.1rem;
+}
+
+figcaption strong {
+  color: var(--ink);
+  display: block;
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+figcaption span {
+  display: block;
+  max-width: 52rem;
 }
 
 .upload-card {
@@ -841,6 +872,7 @@ figcaption {
   .two-column,
   .hobbies-page,
   .photo-grid,
+  .photo-cluster,
   .repo-grid {
     grid-template-columns: 1fr;
   }

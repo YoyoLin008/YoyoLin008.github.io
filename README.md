@@ -69,7 +69,7 @@ Links to the hobby pages for quick local previews:
 - Bird photography: [hobbies/bird-photography.html](hobbies/bird-photography.html)
 - Airplanes & Flight Log: [hobbies/flight-log.html](hobbies/flight-log.html)
 - HiFi Earphones and Amplifiers: [hobbies/hifi-earphones.html](hobbies/hifi-earphones.html)
-- Phones and Jailbreaking: [hobbies/phones-jailbreaking.html](hobbies/phones-jailbreaking.html)
+- Phones and Mobile UI: [hobbies/phones-jailbreaking.html](hobbies/phones-jailbreaking.html)
 
 Run `python3 -m http.server 8000` from the repo root and open the links above in your browser to view the exact pages.
 

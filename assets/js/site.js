@@ -100,17 +100,20 @@ const galleryData = {
     ]
   },
   phones: {
-    title: 'Jailbreaking & Custom ROMs',
-    description: 'Exploring custom ROMs and older phones to understand system design.',
+    title: 'Phones & Mobile UI',
+    description: 'Exploring phone hardware, mobile operating systems, and the design details that make devices memorable.',
     icon: 'Phone',
     photos: [
       {
-        src: 'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=900&q=80',
-        caption: 'Successfully flashed LineageOS on an old flagship.'
-      },
-      {
-        src: 'https://images.unsplash.com/photo-1601784551446-20c9e07cdbfd?w=900&q=80',
-        caption: 'Digging into the bootloader settings.'
+        layout: 'group',
+        title: 'iPhone 3GS downgrade and jailbreak',
+        images: [
+          'assets/images/gallery/phones/iphone-3gs-ios4-jailbreak-01.jpg',
+          'assets/images/gallery/phones/iphone-3gs-ios4-jailbreak-02.jpg',
+          'assets/images/gallery/phones/iphone-3gs-ios4-jailbreak-03.jpg'
+        ],
+        caption:
+          'After two years, I finally forced my iPhone 3GS down from iOS 6.1 to iOS 4.1, then used Cydia to jailbreak it and bypass activation. It is still a tethered jailbreak, but I love Apple’s skeuomorphic UI era, especially playful details like Cover Flow.'
       }
     ]
   },
@@ -134,7 +137,7 @@ const galleryData = {
 const funFacts = [
   "I took my profile photo at McDonald's Island in Shenzhen. I'm lovin' it.",
   'I maintain my own detailed flight log tracking every trip I take.',
-  'I love exploring older phones and testing out custom ROMs.',
+  'I like comparing phones across generations, especially how hardware constraints shape mobile UI design.',
   'I experiment with different DACs and amps to find the perfect sound signature.',
   'I travel to different places specifically to photograph birds in their natural habitats.'
 ];
@@ -368,6 +371,35 @@ const renderHobbies = () => `
   </section>
 `;
 
+const renderPhotoEntry = (photo) => {
+  if (photo.layout === 'group') {
+    return `
+      <figure class="photo-card photo-card-wide">
+        <div class="photo-cluster">
+          ${photo.images.map((src) => `
+            <div class="photo-frame">
+              <img src="${src}" alt="${escapeHtml(photo.title)}" />
+            </div>
+          `).join('')}
+        </div>
+        <figcaption>
+          <strong>${escapeHtml(photo.title)}</strong>
+          <span>${escapeHtml(photo.caption)}</span>
+        </figcaption>
+      </figure>
+    `;
+  }
+
+  return `
+    <figure class="photo-card">
+      <div class="photo-frame">
+        <img src="${photo.src}" alt="${escapeHtml(photo.caption)}" />
+      </div>
+      <figcaption>${photo.caption}</figcaption>
+    </figure>
+  `;
+};
+
 const renderGallery = (galleryId) => {
   const gallery = galleryData[galleryId];
   if (!gallery) return renderHobbies();
@@ -380,14 +412,7 @@ const renderGallery = (galleryId) => {
         <p>${gallery.description}</p>
       </header>
       <div class="photo-grid">
-        ${gallery.photos.map((photo) => `
-          <figure class="photo-card">
-            <div class="photo-frame">
-              <img src="${photo.src}" alt="${escapeHtml(photo.caption)}" />
-            </div>
-            <figcaption>${photo.caption}</figcaption>
-          </figure>
-        `).join('')}
+        ${gallery.photos.map(renderPhotoEntry).join('')}
         <div class="upload-card">
           ${icon('Image')}
           <span>Upload more photos</span>
