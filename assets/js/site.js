@@ -67,8 +67,17 @@ const awards = [
 const galleryData = {
   birds: {
     title: 'Bird Photography',
-    description: 'Traveling to photograph birds and document the tiny details of their environments.',
+    description: 'I enjoy wildlife photography, especially photographing birds and documenting the small details of their environments.',
     icon: 'Camera',
+    ebird: {
+      profileUrl: 'https://ebird.org/profile/Mzc5ODc4NQ/world',
+      stats: [
+        { value: '179', label: 'species observed' },
+        { value: '6', label: 'complete checklists' },
+        { value: '44', label: 'species with photos' }
+      ],
+      places: ['China', 'United States', 'Canada', 'Japan', 'Costa Rica']
+    },
     photos: [
       {
         src: 'https://images.unsplash.com/photo-1552728089-571688052309?w=900&q=80',
@@ -400,6 +409,43 @@ const renderPhotoEntry = (photo) => {
   `;
 };
 
+const renderEbirdPanel = (gallery) => {
+  if (!gallery.ebird) return '';
+
+  return `
+    <section class="ebird-panel" aria-label="eBird profile and birding map">
+      <div class="ebird-copy">
+        <p class="eyebird-label">eBird record</p>
+        <h3>Wildlife notes beyond the camera</h3>
+        <p>
+          I use eBird to keep track of birding records, photographed species, and the places where I have gone birding.
+          The full interactive map and checklist history live on my eBird profile.
+        </p>
+        <a class="text-link" href="${gallery.ebird.profileUrl}" target="_blank" rel="noreferrer">
+          View my eBird profile
+        </a>
+      </div>
+
+      <div class="ebird-map-card">
+        <div class="ebird-stats">
+          ${gallery.ebird.stats.map((stat) => `
+            <div>
+              <strong>${stat.value}</strong>
+              <span>${stat.label}</span>
+            </div>
+          `).join('')}
+        </div>
+        <div class="ebird-map" aria-label="Simplified map of birding locations">
+          ${gallery.ebird.places.map((place) => `
+            <span class="map-place map-${place.toLowerCase().replaceAll(' ', '-')}" title="${place}">${place}</span>
+          `).join('')}
+        </div>
+        <p class="ebird-note">Simplified preview based on my eBird world profile. Open eBird for the interactive map.</p>
+      </div>
+    </section>
+  `;
+};
+
 const renderGallery = (galleryId) => {
   const gallery = galleryData[galleryId];
   if (!gallery) return renderHobbies();
@@ -411,6 +457,7 @@ const renderGallery = (galleryId) => {
         <div class="gallery-title">${icon(gallery.icon)}<h2>${gallery.title}</h2></div>
         <p>${gallery.description}</p>
       </header>
+      ${renderEbirdPanel(gallery)}
       <div class="photo-grid">
         ${gallery.photos.map(renderPhotoEntry).join('')}
         <div class="upload-card">

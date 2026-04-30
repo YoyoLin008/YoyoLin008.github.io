@@ -659,6 +659,107 @@ h1 {
   color: var(--accent);
 }
 
+.ebird-panel {
+  align-items: stretch;
+  background: #ffffff;
+  border: 1px solid var(--faint);
+  border-radius: 0.75rem;
+  box-shadow: 0 14px 32px rgba(28, 25, 23, 0.06);
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.3fr);
+  margin: -1rem 0 2.5rem;
+  padding: 1.5rem;
+}
+
+.eyebird-label {
+  color: var(--secondary);
+  font-size: 0.78rem;
+  font-weight: 850;
+  letter-spacing: 0.12em;
+  margin-bottom: 0.35rem;
+  text-transform: uppercase;
+}
+
+.ebird-copy h3 {
+  font-size: 1.35rem;
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+}
+
+.ebird-copy p:not(.eyebird-label) {
+  color: var(--muted);
+}
+
+.ebird-map-card {
+  display: grid;
+  gap: 1rem;
+}
+
+.ebird-stats {
+  display: grid;
+  gap: 0.75rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.ebird-stats div {
+  border-left: 2px solid #d9f4ee;
+  padding-left: 0.75rem;
+}
+
+.ebird-stats strong {
+  color: var(--secondary);
+  display: block;
+  font-size: 1.55rem;
+  line-height: 1;
+}
+
+.ebird-stats span {
+  color: var(--muted);
+  display: block;
+  font-size: 0.82rem;
+  margin-top: 0.25rem;
+}
+
+.ebird-map {
+  background:
+    radial-gradient(circle at 23% 44%, rgba(217, 119, 6, 0.22) 0 1.2rem, transparent 1.25rem),
+    radial-gradient(circle at 28% 34%, rgba(15, 118, 110, 0.18) 0 1.1rem, transparent 1.15rem),
+    radial-gradient(circle at 75% 43%, rgba(217, 119, 6, 0.28) 0 1.5rem, transparent 1.55rem),
+    radial-gradient(circle at 83% 42%, rgba(15, 118, 110, 0.18) 0 0.9rem, transparent 0.95rem),
+    radial-gradient(circle at 22% 62%, rgba(217, 119, 6, 0.24) 0 0.55rem, transparent 0.6rem),
+    linear-gradient(135deg, #f7f3ea, #ffffff);
+  border: 1px solid var(--faint);
+  border-radius: 0.75rem;
+  min-height: 12rem;
+  overflow: hidden;
+  position: relative;
+}
+
+.map-place {
+  background: #ffffff;
+  border: 1px solid rgba(216, 208, 196, 0.9);
+  border-radius: 999px;
+  color: #3f3a34;
+  font-size: 0.72rem;
+  font-weight: 750;
+  padding: 0.18rem 0.5rem;
+  position: absolute;
+  white-space: nowrap;
+}
+
+.map-united-states { left: 15%; top: 47%; }
+.map-canada { left: 20%; top: 25%; }
+.map-china { right: 16%; top: 46%; }
+.map-japan { right: 7%; top: 39%; }
+.map-costa-rica { left: 20%; bottom: 21%; }
+
+.ebird-note {
+  color: var(--muted);
+  font-size: 0.82rem;
+  margin-bottom: 0;
+}
+
 .photo-grid {
   display: grid;
   gap: 1.5rem;
@@ -871,6 +972,7 @@ figcaption span {
 
   .two-column,
   .hobbies-page,
+  .ebird-panel,
   .photo-grid,
   .photo-cluster,
   .repo-grid {
@@ -885,6 +987,10 @@ figcaption span {
   .split-header {
     align-items: flex-start;
     flex-direction: column;
+  }
+
+  .ebird-panel {
+    margin-top: -1.5rem;
   }
 
 }
