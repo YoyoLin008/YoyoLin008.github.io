@@ -709,7 +709,7 @@ h1 {
   border-bottom: 1px solid var(--faint);
   border-top: 1px solid var(--faint);
   display: grid;
-  gap: 1.5rem;
+  column-gap: 2rem;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   padding: 1.5rem 0;
 }
@@ -731,7 +731,7 @@ h1 {
 .ebird-stat-grid strong {
   color: var(--secondary);
   display: block;
-  font-size: clamp(4.6rem, 8vw, 6.2rem);
+  font-size: clamp(3.1rem, 5vw, 4.2rem);
   letter-spacing: 0;
   line-height: 0.9;
 }
@@ -739,11 +739,11 @@ h1 {
 .ebird-stat-grid span {
   color: #6f6961;
   display: block;
-  font-size: clamp(1.05rem, 1.7vw, 1.45rem);
+  font-size: clamp(0.76rem, 1.05vw, 0.95rem);
   font-weight: 900;
   letter-spacing: 0.06em;
   line-height: 1.25;
-  margin-top: 1rem;
+  margin-top: 0.75rem;
   text-transform: uppercase;
 }
 
@@ -1082,6 +1082,25 @@ figcaption span {
     margin-top: -3rem;
   }
 
+}
+
+@media (max-width: 1180px) and (min-width: 821px) {
+  .ebird-feature {
+    gap: 2.5rem;
+    grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+  }
+
+  .ebird-stat-grid {
+    column-gap: 1.25rem;
+  }
+
+  .ebird-stat-grid strong {
+    font-size: clamp(2.7rem, 4.2vw, 3.4rem);
+  }
+
+  .ebird-stat-grid span {
+    font-size: 0.72rem;
+  }
 }
 
 @media (max-width: 560px) {
