@@ -178,7 +178,7 @@ const icons = {
   phone: '<rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/>',
   plane: '<path d="M17.8 19.2 16 11l5-5c1.5-1.5-.5-3.5-2-2l-5 5-8.2-1.8-1.1 1.1 6.5 3.5-4 4-3-.5-1 1 4.5 2.2 2.2 4.5 1-1-.5-3 4-4 3.5 6.5z"/>',
   globe: '<circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 0 20"/><path d="M12 2a15.3 15.3 0 0 0 0 20"/>',
-  bird: '<path d="M16 7h.01"/><path d="M3.4 18.7c1.6-1.2 3-2.6 4.1-4.2"/><path d="M10.3 13.2A6 6 0 0 0 20 8l2-2-3-1-1-3-2 2A6 6 0 0 0 6.8 11.7L2 22z"/>',
+  bird: '<path d="M16 7h.01"/><path d="M7.5 17.5 4 22"/><path d="M12 18c-3.3 0-6-2.7-6-6 0-2.4 1.4-4.5 3.5-5.5A5.5 5.5 0 0 1 20 8l2 1-2 2a5.5 5.5 0 0 1-5.5 5.5H13l-1 1.5z"/><path d="M8 12c2.7 0 4.7-1 6-3"/>',
   list: '<path d="M9 6h11"/><path d="M9 12h11"/><path d="M9 18h11"/><path d="m4 6 .5.5L6 5"/><path d="m4 12 .5.5L6 11"/><path d="m4 18 .5.5L6 17"/>',
   pin: '<path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0z"/><circle cx="12" cy="10" r="3"/>',
   spark: '<path d="M12 2v5M12 17v5M4.2 4.2l3.5 3.5M16.3 16.3l3.5 3.5M2 12h5M17 12h5M4.2 19.8l3.5-3.5M16.3 7.7l3.5-3.5"/>',
@@ -439,7 +439,7 @@ const renderEbirdPanel = (gallery) => {
             <div>
               ${stat.label.includes('species observed') ? icon('Bird') : stat.label.includes('checklists') ? icon('List') : icon('Camera')}
               <strong>${stat.value}</strong>
-              <span>${stat.label}</span>
+              <span>${stat.label.replace(' ', '<br>')}</span>
             </div>
           `).join('')}
         </div>
