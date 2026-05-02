@@ -659,105 +659,180 @@ h1 {
   color: var(--accent);
 }
 
-.ebird-panel {
-  align-items: stretch;
-  background: #ffffff;
-  border: 1px solid var(--faint);
-  border-radius: 0.75rem;
-  box-shadow: 0 14px 32px rgba(28, 25, 23, 0.06);
+.ebird-feature {
+  align-items: center;
   display: grid;
-  gap: 2rem;
-  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.3fr);
-  margin: -1rem 0 2.5rem;
-  padding: 1.5rem;
+  gap: 4rem;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.25fr);
+  margin: -0.5rem 0 4rem;
 }
 
-.eyebird-label {
+.ebird-feature-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.ebird-kicker {
+  align-items: center;
   color: var(--secondary);
+  display: inline-flex;
   font-size: 0.78rem;
   font-weight: 850;
+  gap: 0.5rem;
   letter-spacing: 0.12em;
-  margin-bottom: 0.35rem;
+  margin-bottom: 0;
   text-transform: uppercase;
 }
 
-.ebird-copy h3 {
-  font-size: 1.35rem;
-  line-height: 1.2;
-  margin-bottom: 0.5rem;
+.ebird-kicker .icon {
+  height: 1rem;
+  width: 1rem;
 }
 
-.ebird-copy p:not(.eyebird-label) {
+.ebird-feature-copy h3 {
+  color: var(--ink);
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  letter-spacing: 0;
+  line-height: 1.08;
+  margin-bottom: 0;
+}
+
+.ebird-feature-copy p:not(.ebird-kicker) {
   color: var(--muted);
+  font-size: 1.03rem;
+  margin-bottom: 0;
+  max-width: 34rem;
 }
 
-.ebird-map-card {
+.ebird-stat-grid {
+  border-bottom: 1px solid var(--faint);
+  border-top: 1px solid var(--faint);
   display: grid;
-  gap: 1rem;
-}
-
-.ebird-stats {
-  display: grid;
-  gap: 0.75rem;
+  gap: 1.5rem;
   grid-template-columns: repeat(3, minmax(0, 1fr));
+  padding: 1.5rem 0;
 }
 
-.ebird-stats div {
-  border-left: 2px solid #d9f4ee;
-  padding-left: 0.75rem;
+.ebird-stat-grid div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
 }
 
-.ebird-stats strong {
+.ebird-stat-grid .icon {
+  color: #a8a29e;
+  height: 1.25rem;
+  margin-bottom: 0.1rem;
+  width: 1.25rem;
+}
+
+.ebird-stat-grid strong {
   color: var(--secondary);
   display: block;
-  font-size: 1.55rem;
+  font-size: clamp(2rem, 4vw, 2.7rem);
   line-height: 1;
 }
 
-.ebird-stats span {
+.ebird-stat-grid span {
   color: var(--muted);
   display: block;
-  font-size: 0.82rem;
-  margin-top: 0.25rem;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  line-height: 1.3;
+  text-transform: uppercase;
 }
 
-.ebird-map {
-  background:
-    radial-gradient(circle at 23% 44%, rgba(217, 119, 6, 0.22) 0 1.2rem, transparent 1.25rem),
-    radial-gradient(circle at 28% 34%, rgba(15, 118, 110, 0.18) 0 1.1rem, transparent 1.15rem),
-    radial-gradient(circle at 75% 43%, rgba(217, 119, 6, 0.28) 0 1.5rem, transparent 1.55rem),
-    radial-gradient(circle at 83% 42%, rgba(15, 118, 110, 0.18) 0 0.9rem, transparent 0.95rem),
-    radial-gradient(circle at 22% 62%, rgba(217, 119, 6, 0.24) 0 0.55rem, transparent 0.6rem),
-    linear-gradient(135deg, #f7f3ea, #ffffff);
-  border: 1px solid var(--faint);
-  border-radius: 0.75rem;
-  min-height: 12rem;
+.ebird-cta {
+  align-items: center;
+  color: var(--accent);
+  display: inline-flex;
+  font-weight: 800;
+  gap: 0.45rem;
+  text-decoration: none;
+  width: fit-content;
+}
+
+.ebird-cta:hover {
+  color: var(--accent-dark);
+}
+
+.ebird-cta .icon {
+  height: 1.15rem;
+  transition: transform 160ms ease;
+  width: 1.15rem;
+}
+
+.ebird-cta:hover .icon {
+  transform: translateX(3px);
+}
+
+.ebird-map-wrap {
+  background: #fdfcf9;
+  border: 1px solid rgba(28, 25, 23, 0.05);
+  border-radius: 2rem;
+  box-shadow: 0 25px 55px rgba(28, 25, 23, 0.12);
+  min-height: 30rem;
   overflow: hidden;
   position: relative;
 }
 
-.map-place {
-  background: #ffffff;
-  border: 1px solid rgba(216, 208, 196, 0.9);
-  border-radius: 999px;
-  color: #3f3a34;
-  font-size: 0.72rem;
-  font-weight: 750;
-  padding: 0.18rem 0.5rem;
+.ebird-leaflet-map {
+  height: 100%;
+  inset: 0;
+  min-height: 30rem;
   position: absolute;
-  white-space: nowrap;
+  width: 100%;
+  z-index: 2;
 }
 
-.map-united-states { left: 15%; top: 47%; }
-.map-canada { left: 20%; top: 25%; }
-.map-china { right: 16%; top: 46%; }
-.map-japan { right: 7%; top: 39%; }
-.map-costa-rica { left: 20%; bottom: 21%; }
+.ebird-map-loading {
+  align-items: center;
+  color: #a8a29e;
+  display: flex;
+  flex-direction: column;
+  font-size: 0.9rem;
+  font-weight: 700;
+  gap: 0.75rem;
+  inset: 0;
+  justify-content: center;
+  position: absolute;
+  z-index: 1;
+}
 
-.ebird-note {
+.ebird-map-loading .icon {
+  color: #d6d3d1;
+  height: 2rem;
+  width: 2rem;
+}
+
+.ebird-map-wrap::after {
+  border-radius: 2rem;
+  box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.03);
+  content: "";
+  inset: 0;
+  pointer-events: none;
+  position: absolute;
+  z-index: 3;
+}
+
+.ebird-map-caption {
+  align-items: center;
   color: var(--muted);
-  font-size: 0.82rem;
-  margin-bottom: 0;
+  display: flex;
+  font-size: 0.88rem;
+  font-weight: 700;
+  gap: 0.45rem;
+  grid-column: 2;
+  justify-content: flex-start;
+  margin: -2.8rem 1rem 0;
+}
+
+.ebird-map-caption .icon {
+  color: #a8a29e;
+  height: 1rem;
+  width: 1rem;
 }
 
 .photo-grid {
@@ -972,7 +1047,7 @@ figcaption span {
 
   .two-column,
   .hobbies-page,
-  .ebird-panel,
+  .ebird-feature,
   .photo-grid,
   .photo-cluster,
   .repo-grid {
@@ -989,8 +1064,19 @@ figcaption span {
     flex-direction: column;
   }
 
-  .ebird-panel {
+  .ebird-feature {
     margin-top: -1.5rem;
+  }
+
+  .ebird-map-wrap,
+  .ebird-leaflet-map {
+    min-height: 24rem;
+  }
+
+  .ebird-map-caption {
+    grid-column: 1;
+    justify-content: center;
+    margin-top: -3rem;
   }
 
 }

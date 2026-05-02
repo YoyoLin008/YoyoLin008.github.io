@@ -5,6 +5,9 @@ const CONTACT = {
   cv: 'assets/documents/yunya-lin-cv.pdf?v=20260427-cv'
 };
 
+const EBIRD_PROFILE_URL = 'https://ebird.org/profile/Mzc5ODc4NQ/world';
+const LEAFLET_VERSION = '1.9.4';
+
 const pageLabels = {
   home: 'About',
   resume: 'Resume',
@@ -70,13 +73,19 @@ const galleryData = {
     description: 'I enjoy wildlife photography, especially photographing birds and documenting the small details of their environments.',
     icon: 'Camera',
     ebird: {
-      profileUrl: 'https://ebird.org/profile/Mzc5ODc4NQ/world',
+      profileUrl: EBIRD_PROFILE_URL,
       stats: [
         { value: '179', label: 'species observed' },
         { value: '6', label: 'complete checklists' },
         { value: '44', label: 'species with photos' }
       ],
-      places: ['China', 'United States', 'Canada', 'Japan', 'Costa Rica']
+      locations: [
+        { name: 'Canada', coords: [56.1304, -106.3468], color: '#d97736' },
+        { name: 'United States', coords: [37.0902, -95.7129], color: '#1b6357' },
+        { name: 'Costa Rica', coords: [9.7489, -83.7534], color: '#d97736' },
+        { name: 'China', coords: [35.8617, 104.1954], color: '#1b6357' },
+        { name: 'Japan', coords: [36.2048, 138.2529], color: '#d97736' }
+      ]
     },
     photos: [
       {
@@ -168,6 +177,10 @@ const icons = {
   audio: '<path d="M3 18V9a9 9 0 0 1 18 0v9"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2h3z"/><path d="M3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-4a2 2 0 0 0-2-2H3z"/>',
   phone: '<rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/>',
   plane: '<path d="M17.8 19.2 16 11l5-5c1.5-1.5-.5-3.5-2-2l-5 5-8.2-1.8-1.1 1.1 6.5 3.5-4 4-3-.5-1 1 4.5 2.2 2.2 4.5 1-1-.5-3 4-4 3.5 6.5z"/>',
+  globe: '<circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 0 20"/><path d="M12 2a15.3 15.3 0 0 0 0 20"/>',
+  bird: '<path d="M16 7h.01"/><path d="M3.4 18.7c1.6-1.2 3-2.6 4.1-4.2"/><path d="M10.3 13.2A6 6 0 0 0 20 8l2-2-3-1-1-3-2 2A6 6 0 0 0 6.8 11.7L2 22z"/>',
+  list: '<path d="M9 6h11"/><path d="M9 12h11"/><path d="M9 18h11"/><path d="m4 6 .5.5L6 5"/><path d="m4 12 .5.5L6 11"/><path d="m4 18 .5.5L6 17"/>',
+  pin: '<path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0z"/><circle cx="12" cy="10" r="3"/>',
   spark: '<path d="M12 2v5M12 17v5M4.2 4.2l3.5 3.5M16.3 16.3l3.5 3.5M2 12h5M17 12h5M4.2 19.8l3.5-3.5M16.3 7.7l3.5-3.5"/>',
   right: '<path d="m9 18 6-6-6-6"/>',
   left: '<path d="m15 18-6-6 6-6"/>',
@@ -413,35 +426,37 @@ const renderEbirdPanel = (gallery) => {
   if (!gallery.ebird) return '';
 
   return `
-    <section class="ebird-panel" aria-label="eBird profile and birding map">
-      <div class="ebird-copy">
-        <p class="eyebird-label">eBird record</p>
+    <section class="ebird-feature" aria-label="eBird profile and birding map">
+      <div class="ebird-feature-copy">
+        <p class="ebird-kicker">${icon('Globe')} eBird record</p>
         <h3>Wildlife notes beyond the camera</h3>
         <p>
           I use eBird to keep track of birding records, photographed species, and the places where I have gone birding.
           The full interactive map and checklist history live on my eBird profile.
         </p>
-        <a class="text-link" href="${gallery.ebird.profileUrl}" target="_blank" rel="noreferrer">
-          View my eBird profile
-        </a>
-      </div>
-
-      <div class="ebird-map-card">
-        <div class="ebird-stats">
+        <div class="ebird-stat-grid">
           ${gallery.ebird.stats.map((stat) => `
             <div>
+              ${stat.label.includes('species observed') ? icon('Bird') : stat.label.includes('checklists') ? icon('List') : icon('Camera')}
               <strong>${stat.value}</strong>
               <span>${stat.label}</span>
             </div>
           `).join('')}
         </div>
-        <div class="ebird-map" aria-label="Simplified map of birding locations">
-          ${gallery.ebird.places.map((place) => `
-            <span class="map-place map-${place.toLowerCase().replaceAll(' ', '-')}" title="${place}">${place}</span>
-          `).join('')}
-        </div>
-        <p class="ebird-note">Simplified preview based on my eBird world profile. Open eBird for the interactive map.</p>
+        <a class="ebird-cta" href="${gallery.ebird.profileUrl}" target="_blank" rel="noreferrer">
+          <span>View my eBird profile</span>
+          ${icon('Right')}
+        </a>
       </div>
+
+      <div class="ebird-map-wrap">
+        <div class="ebird-leaflet-map" id="ebirdMap" aria-label="Interactive map of my birding locations"></div>
+        <div class="ebird-map-loading">
+          ${icon('Pin')}
+          <span>Loading map...</span>
+        </div>
+      </div>
+      <p class="ebird-map-caption">${icon('Globe')} Interactive map. Drag to explore my birding journey.</p>
     </section>
   `;
 };
@@ -467,6 +482,105 @@ const renderGallery = (galleryId) => {
       </div>
     </section>
   `;
+};
+
+const ensureLeafletAssets = () => {
+  if (!document.getElementById('leaflet-css')) {
+    const link = document.createElement('link');
+    link.id = 'leaflet-css';
+    link.rel = 'stylesheet';
+    link.href = `https://unpkg.com/leaflet@${LEAFLET_VERSION}/dist/leaflet.css`;
+    document.head.appendChild(link);
+  }
+
+  if (!document.getElementById('leaflet-custom-styles')) {
+    const style = document.createElement('style');
+    style.id = 'leaflet-custom-styles';
+    style.textContent = `
+      .leaflet-tooltip.custom-map-tooltip {
+        background-color: #fff;
+        border: 1px solid #e7e5e4;
+        box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.05);
+        border-radius: 999px;
+        padding: 4px 14px;
+        font-family: ui-sans-serif, system-ui, sans-serif;
+        font-weight: 700;
+        font-size: 12px;
+        color: #292524;
+      }
+
+      .leaflet-tooltip-top.custom-map-tooltip::before {
+        border-top-color: #fff;
+      }
+
+      .leaflet-container {
+        background: #fdfcf9 !important;
+        font-family: inherit;
+      }
+    `;
+    document.head.appendChild(style);
+  }
+};
+
+const drawEbirdMap = () => {
+  const mapTarget = document.getElementById('ebirdMap');
+  const birdData = galleryData.birds.ebird;
+
+  if (!window.L || !mapTarget || mapTarget._leaflet_id) return;
+
+  const mapInstance = window.L.map(mapTarget, {
+    center: [35, -20],
+    zoom: window.innerWidth < 1024 ? 1 : 2,
+    zoomControl: false,
+    scrollWheelZoom: false
+  });
+
+  window.L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+    attribution: '&copy; <a href="https://carto.com/">CARTO</a>',
+    subdomains: 'abcd',
+    maxZoom: 19
+  }).addTo(mapInstance);
+
+  birdData.locations.forEach((location) => {
+    const marker = window.L.circleMarker(location.coords, {
+      radius: 7,
+      fillColor: location.color,
+      color: '#ffffff',
+      weight: 2,
+      opacity: 1,
+      fillOpacity: 0.95
+    }).addTo(mapInstance);
+
+    marker.bindTooltip(location.name, {
+      permanent: true,
+      direction: 'top',
+      offset: [0, -10],
+      className: 'custom-map-tooltip'
+    });
+  });
+};
+
+const initEbirdMap = () => {
+  if (currentPage !== 'gallery-birds') return;
+
+  ensureLeafletAssets();
+
+  if (window.L) {
+    drawEbirdMap();
+    return;
+  }
+
+  const existingScript = document.getElementById('leaflet-js');
+  if (existingScript) {
+    existingScript.addEventListener('load', drawEbirdMap, { once: true });
+    return;
+  }
+
+  const script = document.createElement('script');
+  script.id = 'leaflet-js';
+  script.src = `https://unpkg.com/leaflet@${LEAFLET_VERSION}/dist/leaflet.js`;
+  script.onload = drawEbirdMap;
+  document.head.appendChild(script);
 };
 
 const loadRepos = async () => {
@@ -537,6 +651,7 @@ const render = () => {
   updateNavigation();
   bindPageEvents();
   loadRepos();
+  initEbirdMap();
 };
 
 document.querySelectorAll('[data-page]').forEach((button) => {
