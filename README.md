@@ -7,6 +7,12 @@ Welcome to the source code for **Yoyo Lin’s** personal website, hosted at <htt
 - **Tech stack:** Static HTML/CSS/JS served by GitHub Pages
 - **Content:** Projects, data visualizations, research updates, and hobby pages (birds, HiFi, phones, flight logs)
 
+### Google Search
+
+The homepage includes static introductory content, a canonical URL, and personal profile structured data. `robots.txt` points to `sitemap.xml`. Keep the Google verification HTML file at the repository root.
+
+In Google Search Console, verify the URL-prefix property `https://yoyolin008.github.io/`, submit `sitemap.xml`, then inspect the homepage URL and request indexing. The verification file alone does not prove that the property has been verified or that Google has indexed the site. Indexing and rankings are controlled by Google.
+
 ### Running Locally
 You can open `index.html` directly, but using a lightweight server avoids browser security limitations and mirrors GitHub Pages behavior.
 
