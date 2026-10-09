@@ -9,7 +9,7 @@ Welcome to the source code for **Yoyo Lin’s** personal website, hosted at <htt
 
 ### Google Search
 
-The homepage includes static introductory content, a canonical URL, and personal profile structured data. `robots.txt` points to `sitemap.xml`. Keep the Google verification HTML file at the repository root.
+The homepage and four standalone hobby pages each have one canonical URL and an independent description. `sitemap.xml` lists those five canonical pages, and `robots.txt` allows crawling and points to it. The homepage footer links to every standalone hobby page, including without JavaScript. Hash views such as `#hobbies` share the homepage canonical URL and are not separate sitemap entries. Keep the Google verification HTML file at the repository root.
 
 In Google Search Console, verify the URL-prefix property `https://yoyolin008.github.io/`, submit `sitemap.xml`, then inspect the homepage URL and request indexing. The verification file alone does not prove that the property has been verified or that Google has indexed the site. Indexing and rankings are controlled by Google.
 

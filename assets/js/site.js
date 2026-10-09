@@ -160,7 +160,15 @@ const funFacts = [
   'I travel to different places specifically to photograph birds in their natural habitats.'
 ];
 
-let currentPage = 'home';
+const pageFromHash = () => {
+  const pageId = window.location.hash.slice(1);
+  const isPage = Object.prototype.hasOwnProperty.call(pageLabels, pageId);
+  const isGallery = pageId.startsWith('gallery-') &&
+    Object.prototype.hasOwnProperty.call(galleryData, pageId.slice(8));
+  return isPage || isGallery ? pageId : 'home';
+};
+
+let currentPage = pageFromHash();
 let currentFactIndex = 0;
 let reposLoaded = false;
 
@@ -222,6 +230,8 @@ const logoFallback = (name) =>
 
 const setPage = (pageId) => {
   currentPage = pageId;
+  const hash = pageId === 'home' ? '' : `#${pageId}`;
+  window.history.replaceState(null, '', `${window.location.pathname}${window.location.search}${hash}`);
   render();
   window.scrollTo({ top: 0, behavior: 'smooth' });
 };
@@ -663,6 +673,11 @@ document.querySelectorAll('[data-page]').forEach((button) => {
 
 window.addEventListener('scroll', () => {
   document.querySelector('.site-nav').classList.toggle('scrolled', window.scrollY > 20);
+});
+
+window.addEventListener('hashchange', () => {
+  currentPage = pageFromHash();
+  render();
 });
 
 document.getElementById('year').textContent = new Date().getFullYear();
