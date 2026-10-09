@@ -2,7 +2,7 @@ const CONTACT = {
   github: 'https://github.com/YoyoLin008',
   linkedin: 'https://www.linkedin.com/in/yoyo-lin-631889299',
   email: 'mailto:yoyolin2@illinois.edu',
-  cv: 'assets/documents/yunya-lin-cv.pdf?v=20260427-cv'
+  cv: 'assets/documents/yunya-lin-cv.pdf?v=20261005-google-docs'
 };
 
 const EBIRD_PROFILE_URL = 'https://ebird.org/profile/Mzc5ODc4NQ/world';
@@ -18,11 +18,12 @@ const pageLabels = {
 
 const timelineData = [
   {
-    role: 'Digital Marketing Intern',
-    organization: 'Transsion Holdings',
-    date: 'June 2026 - Aug 2026',
-    logoUrl: 'https://logo.clearbit.com/transsion.com',
-    description: 'Upcoming summer internship focusing on digital marketing strategies and execution within the global mobile communications industry.'
+    role: 'Quantitative Research Intern',
+    organization: 'IPSOS',
+    date: 'July 2026 - Oct 2026',
+    logoUrl: 'assets/images/logos/ipsos-logo.png',
+    description:
+      'Preparing and validating Chinese consumer research data for a Fortune Global 500 automotive client in Guangzhou, covering brand perceptions, buyer age distributions, sales, and regional differences. Using Python and SQL to analyze market patterns and support internal research discussions on the client\'s positioning in China.'
   },
   {
     role: 'Research Assistant (Blockchain & LLMs)',
