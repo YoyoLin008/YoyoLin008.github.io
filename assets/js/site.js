@@ -102,21 +102,6 @@ const galleryData = {
       }
     ]
   },
-  hifi: {
-    title: 'HiFi Audio',
-    description: 'Pairing DACs, amps, and earphones to experiment with sound signatures.',
-    icon: 'Audio',
-    photos: [
-      {
-        src: 'https://images.unsplash.com/photo-1590602847861-f357a9332bbc?w=900&q=80',
-        caption: 'My current desktop DAC and amp stack.'
-      },
-      {
-        src: 'https://images.unsplash.com/photo-1505236858219-8359eb29e329?w=900&q=80',
-        caption: 'Testing a new pair of planar magnetic headphones.'
-      }
-    ]
-  },
   phones: {
     title: 'Phones & Mobile UI',
     description: 'Exploring phone hardware, mobile operating systems, and the design details that make devices memorable.',
@@ -134,36 +119,20 @@ const galleryData = {
           'After two years, I finally forced my iPhone 3GS down from iOS 6.1 to iOS 4.1, then used Cydia to jailbreak it and bypass activation. It is still a tethered jailbreak, but I love Apple’s skeuomorphic UI era, especially playful details like Cover Flow.'
       }
     ]
-  },
-  flights: {
-    title: 'Flight Logging',
-    description: 'Maintaining a personal dataset of routes, aircraft, and travel memories.',
-    icon: 'Plane',
-    photos: [
-      {
-        src: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=900&q=80',
-        caption: 'View from the window seat on a 737.'
-      },
-      {
-        src: 'https://images.unsplash.com/photo-1504680177363-2287f3944605?w=900&q=80',
-        caption: 'Logging my route across the Pacific.'
-      }
-    ]
   }
 };
 
 const funFacts = [
   "I took my profile photo at McDonald's Island in Shenzhen. I'm lovin' it.",
-  'I maintain my own detailed flight log tracking every trip I take.',
   'I like comparing phones across generations, especially how hardware constraints shape mobile UI design.',
-  'I experiment with different DACs and amps to find the perfect sound signature.',
   'I travel to different places specifically to photograph birds in their natural habitats.'
 ];
 
 const pageFromHash = () => {
   const requestedPage = window.location.hash.slice(1);
   const pageId = requestedPage === 'projects' ? 'publications'
-    : requestedPage === 'resume' ? 'experience' : requestedPage;
+    : requestedPage === 'resume' ? 'experience'
+    : ['gallery-hifi', 'gallery-flights'].includes(requestedPage) ? 'hobbies' : requestedPage;
   const isPage = Object.prototype.hasOwnProperty.call(pageLabels, pageId);
   const isGallery = pageId.startsWith('gallery-') &&
     Object.prototype.hasOwnProperty.call(galleryData, pageId.slice(8));
@@ -424,8 +393,8 @@ const renderHobbies = () => `
         <h2>Outside the Classroom</h2>
       </header>
       <p>
-        My hobbies are where tech, travel, and small everyday details come together. I love exploring the nuances
-        in hardware, systems, and nature.
+        I enjoy photographing birds and exploring the details of phone hardware and mobile interfaces.
+        These interests take me from time outdoors to hands-on experiments with older devices.
       </p>
       <aside class="fact-box" aria-live="polite">
         <div class="fact-label">${icon('Spark')} Random Fun Fact</div>
