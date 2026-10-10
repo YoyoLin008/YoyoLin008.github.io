@@ -803,7 +803,7 @@ const renderTech = () => `
           <a href="assets/images/gallery/tech/ana-boeing-767.jpg" target="_blank" rel="noopener" aria-label="View full photograph: ANA · Boeing 767"><img src="assets/images/gallery/tech/ana-boeing-767.jpg" alt="ANA · Boeing 767 — JA627A" loading="lazy" width="1800" height="1350" /></a>
           <figcaption><strong>ANA · Boeing 767</strong><span>JA627A</span></figcaption>
         </figure>
-        <figure class="aviation-photo">
+        <figure class="aviation-photo aviation-photo-landscape-crop">
           <a href="assets/images/gallery/tech/lufthansa-boeing-747-8.jpg" target="_blank" rel="noopener" aria-label="View full photograph: Lufthansa · Boeing 747-8"><img src="assets/images/gallery/tech/lufthansa-boeing-747-8.jpg" alt="Lufthansa · Boeing 747-8 — The unmistakable jumbo jet" loading="lazy" width="1350" height="1800" /></a>
           <figcaption><strong>Lufthansa · Boeing 747-8</strong><span>The unmistakable jumbo jet</span></figcaption>
         </figure>
@@ -812,13 +812,7 @@ const renderTech = () => `
           <figcaption><strong>Cathay Pacific · Airbus A350-1000</strong><span>The aircraft I fly on most often</span></figcaption>
         </figure>
       </div>
-      <details class="tech-process aviation-archive">
-        <summary>China Airlines Cargo in Hong Kong</summary>
-        <figure class="tech-story-photo">
-          <img src="assets/images/gallery/tech/china-airlines-cargo-hong-kong.jpg" alt="China Airlines cargo aircraft photographed in Hong Kong" loading="lazy" width="1800" height="1200" />
-          <figcaption>Hong Kong</figcaption>
-        </figure>
-      </details>
+
     </section>
   </section>
 `;
