@@ -1187,11 +1187,12 @@ figcaption span {
 .bird-portfolio .page-header > div { max-width: 42rem; }
 .bird-portfolio .page-header h1,
 .bird-portfolio .page-header h2 {
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(2.7rem, 5vw, 3.8rem);
-  font-weight: 600;
-  letter-spacing: -0.035em;
-  margin-bottom: 0.8rem;
+  font-family: inherit;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: normal;
+  line-height: 1.15;
+  margin-bottom: 0.35rem;
 }
 .bird-portfolio .page-header p { font-size: 1rem; }
 .bird-featured-photo { margin: 0 0 4.5rem; }
@@ -1227,6 +1228,8 @@ figcaption span {
 }
 .bird-location {
   display: block;
+  max-width: none;
+  width: 100%;
   margin-top: 0.35rem;
   color: var(--muted);
   font-size: 0.8rem;
