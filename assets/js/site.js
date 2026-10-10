@@ -70,7 +70,7 @@ const awards = [
 const galleryData = {
   birds: {
     title: 'Bird Photography',
-    description: 'I enjoy wildlife photography, especially photographing birds and documenting the small details of their environments.',
+    description: 'Selected bird photographs from Costa Rica, China, and Illinois — moments of color, movement, and quiet in the field.',
     icon: 'Camera',
     ebird: {
       profileUrl: EBIRD_PROFILE_URL,
@@ -89,18 +89,198 @@ const galleryData = {
     },
     photos: [
       {
-        src: 'https://images.unsplash.com/photo-1552728089-571688052309?w=900&q=80',
-        caption: 'Kingfisher spotted near the local river.'
+            "src": "assets/images/gallery/birds/bird-01.jpg",
+            "caption": "Photographed in Volcano area, Costa Rica.",
+            "location": "Volcano area, Costa Rica",
+            "date": "2026-03-14",
+            "width": 2000,
+            "height": 1333
       },
       {
-        src: 'https://images.unsplash.com/photo-1550853024-fae8cd4be47f?w=900&q=80',
-        caption: 'A quiet moment with a wild owl.'
+            "src": "assets/images/gallery/birds/bird-02.jpg",
+            "caption": "Photographed in Monteverde, Costa Rica.",
+            "location": "Monteverde, Costa Rica",
+            "date": "2026-03-17",
+            "width": 2000,
+            "height": 1333
       },
       {
-        src: 'https://images.unsplash.com/photo-1606567595334-d39972c85d77?w=900&q=80',
-        caption: 'Hummingbird mid-flight.'
+            "src": "assets/images/gallery/birds/bird-03.jpg",
+            "caption": "Photographed in Shenzhen Bay, Shenzhen, China.",
+            "location": "Shenzhen Bay, Shenzhen, China",
+            "date": "2023-12-23",
+            "width": 2000,
+            "height": 1333
+      },
+      {
+            "src": "assets/images/gallery/birds/bird-04.jpg",
+            "caption": "Photographed in Arenal Volcano area, Costa Rica.",
+            "location": "Arenal Volcano area, Costa Rica",
+            "date": "2026-03-16",
+            "width": 2000,
+            "height": 1333
+      },
+      {
+            "src": "assets/images/gallery/birds/bird-05.jpg",
+            "caption": "Photographed in Farm visit, Costa Rica.",
+            "location": "Farm visit, Costa Rica",
+            "date": "2026-03-15",
+            "width": 2000,
+            "height": 1333
+      },
+      {
+            "src": "assets/images/gallery/birds/bird-06.jpg",
+            "caption": "Photographed in Volcano area, Costa Rica.",
+            "location": "Volcano area, Costa Rica",
+            "date": "2026-03-14",
+            "width": 2000,
+            "height": 1333
+      },
+      {
+            "src": "assets/images/gallery/birds/bird-07.jpg",
+            "caption": "Photographed in Volcano area, Costa Rica.",
+            "location": "Volcano area, Costa Rica",
+            "date": "2026-03-14",
+            "width": 2000,
+            "height": 1333
+      },
+      {
+            "src": "assets/images/gallery/birds/bird-08.jpg",
+            "caption": "Photographed in Volcano area, Costa Rica.",
+            "location": "Volcano area, Costa Rica",
+            "date": "2026-03-14",
+            "width": 2000,
+            "height": 1333
+      },
+      {
+            "src": "assets/images/gallery/birds/bird-09.jpg",
+            "caption": "Photographed in Volcano area, Costa Rica.",
+            "location": "Volcano area, Costa Rica",
+            "date": "2026-03-14",
+            "width": 2000,
+            "height": 1333
+      },
+      {
+            "src": "assets/images/gallery/birds/bird-10.jpg",
+            "caption": "Photographed in Volcano area, Costa Rica.",
+            "location": "Volcano area, Costa Rica",
+            "date": "2026-03-14",
+            "width": 2000,
+            "height": 1333
+      },
+      {
+            "src": "assets/images/gallery/birds/bird-11.jpg",
+            "caption": "Photographed in Volcano area, Costa Rica.",
+            "location": "Volcano area, Costa Rica",
+            "date": "2026-03-14",
+            "width": 2000,
+            "height": 1333
+      },
+      {
+            "src": "assets/images/gallery/birds/bird-12.jpg",
+            "caption": "Photographed in Monteverde, Costa Rica.",
+            "location": "Monteverde, Costa Rica",
+            "date": "2026-03-17",
+            "width": 2000,
+            "height": 1333
+      },
+      {
+            "src": "assets/images/gallery/birds/bird-13.jpg",
+            "caption": "Photographed in Arenal Volcano area, Costa Rica.",
+            "location": "Arenal Volcano area, Costa Rica",
+            "date": "2026-03-16",
+            "width": 2000,
+            "height": 1333
+      },
+      {
+            "src": "assets/images/gallery/birds/bird-14.jpg",
+            "caption": "Photographed in Crocodile-watching excursion, Costa Rica.",
+            "location": "Crocodile-watching excursion, Costa Rica",
+            "date": "2026-03-20",
+            "width": 2000,
+            "height": 1333
+      },
+      {
+            "src": "assets/images/gallery/birds/bird-15.jpg",
+            "caption": "Photographed in Crocodile-watching excursion, Costa Rica.",
+            "location": "Crocodile-watching excursion, Costa Rica",
+            "date": "2026-03-20",
+            "width": 2000,
+            "height": 1333
+      },
+      {
+            "src": "assets/images/gallery/birds/bird-16.jpg",
+            "caption": "Photographed in Crocodile-watching excursion, Costa Rica.",
+            "location": "Crocodile-watching excursion, Costa Rica",
+            "date": "2026-03-20",
+            "width": 2000,
+            "height": 1333
+      },
+      {
+            "src": "assets/images/gallery/birds/bird-17.jpg",
+            "caption": "Photographed in OCT Wetland Park, Shenzhen, China.",
+            "location": "OCT Wetland Park, Shenzhen, China",
+            "date": "2023-12-23",
+            "width": 2000,
+            "height": 1333
+      },
+      {
+            "src": "assets/images/gallery/birds/bird-18.jpg",
+            "caption": "Photographed in Shenzhen Bay, Shenzhen, China.",
+            "location": "Shenzhen Bay, Shenzhen, China",
+            "date": "2023-12-23",
+            "width": 2000,
+            "height": 1333
+      },
+      {
+            "src": "assets/images/gallery/birds/bird-19.jpg",
+            "caption": "Photographed in Happy Countryside, Shenzhen, China.",
+            "location": "Happy Countryside, Shenzhen, China",
+            "date": "2024-03-10",
+            "width": 2000,
+            "height": 1333
+      },
+      {
+            "src": "assets/images/gallery/birds/bird-20.jpg",
+            "caption": "Photographed in Yuanshan Scenic Area, Shenzhen, China.",
+            "location": "Yuanshan Scenic Area, Shenzhen, China",
+            "date": "2024-05-05",
+            "width": 2000,
+            "height": 1333
+      },
+      {
+            "src": "assets/images/gallery/birds/bird-21.jpg",
+            "caption": "Photographed in Aha Lake area, Guiyang, China.",
+            "location": "Aha Lake area, Guiyang, China",
+            "date": "2025-06-03",
+            "width": 2000,
+            "height": 1333
+      },
+      {
+            "src": "assets/images/gallery/birds/bird-22.jpg",
+            "caption": "Photographed in Aha Lake area, Guiyang, China.",
+            "location": "Aha Lake area, Guiyang, China",
+            "date": "2025-06-03",
+            "width": 2000,
+            "height": 1333
+      },
+      {
+            "src": "assets/images/gallery/birds/bird-23.jpg",
+            "caption": "Photographed in Arenal Volcano area, Costa Rica.",
+            "location": "Arenal Volcano area, Costa Rica",
+            "date": "2026-03-16",
+            "width": 2000,
+            "height": 1333
+      },
+      {
+            "src": "assets/images/gallery/birds/bird-24.jpg",
+            "caption": "Photographed in Crystal Lake Park, Urbana, Illinois, United States.",
+            "location": "Crystal Lake Park, Urbana, Illinois, United States",
+            "date": "2026-02-07",
+            "width": 2000,
+            "height": 1333
       }
-    ]
+]
   },
   phones: {
     title: 'Phones & Mobile UI',
@@ -486,7 +666,35 @@ const renderEbirdPanel = (gallery) => {
   `;
 };
 
+const renderBirdPhoto = (photo, featured = false) => `
+  <figure class="${featured ? 'bird-featured-photo' : 'bird-photo'}">
+    <a href="${photo.src}" target="_blank" rel="noreferrer" aria-label="View photograph from ${escapeHtml(photo.location)}">
+      <img src="${photo.src}" alt="Bird photographed in ${escapeHtml(photo.location)}" width="${photo.width}" height="${photo.height}" loading="${featured ? 'eager' : 'lazy'}" decoding="async" />
+    </a>
+    <figcaption>${escapeHtml(photo.caption)}</figcaption>
+  </figure>
+`;
+
+const renderBirdPortfolio = () => `
+  <section class="page bird-portfolio">
+    <button class="back-button" type="button" data-back-hobbies>${icon('Left')} Back to Hobbies</button>
+    <header class="page-header split-header">
+      <div>
+        <p class="eyebrow">Selected photographs · 24 frames</p>
+        <h2>Bird Photography</h2>
+        <p>${galleryData.birds.description}</p>
+      </div>
+      <a class="text-link" href="${EBIRD_PROFILE_URL}" target="_blank" rel="noreferrer">My eBird record ${icon('Right')}</a>
+    </header>
+    ${renderBirdPhoto(galleryData.birds.photos[0], true)}
+    <div class="bird-photo-grid">
+      ${galleryData.birds.photos.slice(1).map((photo) => renderBirdPhoto(photo)).join('')}
+    </div>
+  </section>
+`;
+
 const renderGallery = (galleryId) => {
+  if (galleryId === 'birds') return renderBirdPortfolio();
   const gallery = galleryData[galleryId];
   if (!gallery) return renderHobbies();
 
@@ -586,7 +794,7 @@ const drawEbirdMap = () => {
 };
 
 const initEbirdMap = () => {
-  if (currentPage !== 'gallery-birds') return;
+  if (currentPage !== 'gallery-birds' || !document.getElementById('ebirdMap')) return;
 
   ensureLeafletAssets();
 
