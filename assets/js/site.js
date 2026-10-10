@@ -302,12 +302,6 @@ const galleryData = {
   }
 };
 
-const funFacts = [
-  "I took my profile photo at McDonald's Island in Shenzhen. I'm lovin' it.",
-  'I like comparing phones across generations, especially how hardware constraints shape mobile UI design.',
-  'I travel to different places specifically to photograph birds in their natural habitats.'
-];
-
 const pageFromHash = () => {
   const requestedPage = window.location.hash.slice(1);
   const pageId = requestedPage === 'projects' ? 'publications'
@@ -320,7 +314,6 @@ const pageFromHash = () => {
 };
 
 let currentPage = pageFromHash();
-let currentFactIndex = 0;
 
 const app = document.getElementById('app');
 
@@ -567,31 +560,20 @@ const renderPublications = () => `
 `;
 
 const renderHobbies = () => `
-  <section class="page hobbies-page">
-    <div class="hobbies-intro">
-      <header class="page-header compact">
-        <h2>Outside the Classroom</h2>
-      </header>
-      <p>
-        I enjoy photographing birds and exploring the details of phone hardware and mobile interfaces.
-        These interests take me from time outdoors to hands-on experiments with older devices.
-      </p>
-      <aside class="fact-box" aria-live="polite">
-        <div class="fact-label">${icon('Spark')} Random Fun Fact</div>
-        <p id="factText">${funFacts[currentFactIndex]}</p>
-        <button class="plain-button" type="button" id="factButton">Generate Another</button>
-      </aside>
-    </div>
-
+  <section class="page hobbies-page" aria-label="Hobby galleries">
     <div class="hobby-grid">
       ${Object.entries(galleryData).map(([id, hobby]) => `
         <button class="hobby-button" type="button" data-gallery="${id}">
-          <span class="hobby-icon">${icon(hobby.icon)}</span>
-          <span>
+          <span class="hobby-heading">
+            <span class="hobby-icon">${icon(hobby.icon)}</span>
             <strong>${hobby.title}</strong>
-            <small>${hobby.description}</small>
-            <em>View gallery ${icon('Right')}</em>
           </span>
+          <span class="hobby-preview">
+            <img src="${id === 'birds' ? 'assets/images/gallery/birds/bird-03.jpg' : 'assets/images/gallery/phones/iphone-3gs-ios4-jailbreak-02.jpg'}"
+              alt="${id === 'birds' ? 'A blue-winged bird perched on a branch in Shenzhen Bay' : 'An iPhone 3GS displaying the classic Cover Flow music interface'}"
+              width="${id === 'birds' ? '2000' : '1080'}" height="${id === 'birds' ? '1333' : '1440'}" decoding="async" />
+          </span>
+          <span class="hobby-gallery-link">View gallery ${icon('Right')}</span>
         </button>
       `).join('')}
     </div>
@@ -823,14 +805,6 @@ const bindPageEvents = () => {
 
   document.querySelector('[data-back-hobbies]')?.addEventListener('click', () => setPage('hobbies'));
 
-  document.getElementById('factButton')?.addEventListener('click', () => {
-    let nextIndex = currentFactIndex;
-    while (nextIndex === currentFactIndex) {
-      nextIndex = Math.floor(Math.random() * funFacts.length);
-    }
-    currentFactIndex = nextIndex;
-    document.getElementById('factText').textContent = funFacts[currentFactIndex];
-  });
 };
 
 const render = () => {

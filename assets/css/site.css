@@ -566,13 +566,8 @@ h1 {
 }
 
 .hobbies-page {
-  display: grid;
-  gap: 4rem;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
-}
-
-.hobbies-intro > p {
-  color: var(--muted);
+  width: min(100%, 54rem);
+  margin: 1.5rem auto 0;
 }
 
 .fact-box {
@@ -613,7 +608,7 @@ h1 {
 
 .hobby-grid {
   display: grid;
-  gap: 2.5rem;
+  gap: 3rem;
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
@@ -622,9 +617,44 @@ h1 {
   border: 0;
   color: inherit;
   display: flex;
-  gap: 0.9rem;
+  flex-direction: column;
+  gap: 1.2rem;
   padding: 0;
-  text-align: left;
+  text-align: center;
+  align-items: center;
+  min-width: 0;
+  border-radius: 1rem;
+}
+
+.hobby-heading {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  gap: 0.65rem;
+}
+
+.hobby-preview {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: 1rem;
+  background: var(--surface-soft);
+}
+
+.hobby-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 240ms ease;
+}
+
+.hobby-button:hover .hobby-preview img {
+  transform: scale(1.025);
+}
+
+.hobby-button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 8px;
 }
 
 .hobby-icon {
@@ -635,36 +665,22 @@ h1 {
 
 .hobby-button strong {
   display: block;
-  font-size: 1.05rem;
+  font-size: 1.35rem;
   transition: color 180ms ease;
 }
 
-.hobby-button small {
-  color: var(--muted);
-  display: block;
-  margin: 0.2rem 0 0.45rem;
-}
-
-.hobby-button em {
+.hobby-gallery-link {
   align-items: center;
   color: var(--accent);
   display: flex;
   font-style: normal;
   font-weight: 750;
   gap: 0.35rem;
-  opacity: 0;
-  transform: translateX(-0.35rem);
-  transition: opacity 180ms ease, transform 180ms ease;
 }
 
 .hobby-button:hover .hobby-icon,
 .hobby-button:hover strong {
   color: var(--accent);
-}
-
-.hobby-button:hover em {
-  opacity: 1;
-  transform: translateX(0);
 }
 
 .back-button {
