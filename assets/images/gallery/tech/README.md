@@ -8,3 +8,5 @@ Aircraft photographs supplied by the owner on October 10, 2026:
 Web exports preserve orientation and complete composition, resized to a maximum of 1800 pixels. EXIF/GPS omitted; originals untouched. Cathay anniversary A350-900 identified using Cathay’s official 80 Years Together page. Lufthansa 747-8 identified by visible fuselage lettering.
 
 china-eastern-comac-c919.jpg: owner-supplied 9561785128191_.pic_hd.jpg. China Eastern COMAC C919; B-919G visible on fuselage. Web export resized to 1800 pixels, EXIF/GPS omitted. Original untouched.
+
+emirates-airbus-a380.jpg: owner-supplied 20240517_231937.JPG. Emirates Airbus A380, photographed at night. Web export resized to 2000 pixels with EXIF/GPS omitted. Gallery uses a rectangular display crop, preserving visible wingtip, engines and tail; clicking opens the complete photograph. Original untouched.

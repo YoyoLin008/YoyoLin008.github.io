@@ -1292,7 +1292,7 @@ figcaption span {
 /* Trim only the top and bottom of the landscape Cover Flow photograph. */
 .tech-story-photo .tech-cover-flow { aspect-ratio: 25 / 16; }
 .tech-story-photo .tech-cover-flow img { height: 156.25%; top: -31.25%; }
-.aviation-photo-centered { grid-column: 1 / -1; width: calc(50% - 1rem); justify-self: center; }
-@media (max-width: 700px) {
-  .aviation-photo-centered { width: 100%; }
-}
+
+/* A rectangular crop keeps the visible A380 wingtip, engines and tail. */
+.aviation-photo-emirates a { position: relative; }
+.aviation-photo-emirates img { position: absolute; width: 133.3333%; height: 133.3333%; max-width: none; right: 0; bottom: 0; object-fit: cover; }

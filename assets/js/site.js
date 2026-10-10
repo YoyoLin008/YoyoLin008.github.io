@@ -811,9 +811,13 @@ const renderTech = () => `
           <a href="assets/images/gallery/tech/cathay-a350-1000.jpg" target="_blank" rel="noopener" aria-label="View full photograph: Cathay Pacific · Airbus A350-1000"><img src="assets/images/gallery/tech/cathay-a350-1000.jpg" alt="Cathay Pacific · Airbus A350-1000 — The aircraft I fly on most often" loading="lazy" width="1800" height="1350" /></a>
           <figcaption><strong>Cathay Pacific · Airbus A350-1000</strong><span>The aircraft I fly on most often</span></figcaption>
         </figure>
-        <figure class="aviation-photo aviation-photo-centered">
+        <figure class="aviation-photo">
           <a href="assets/images/gallery/tech/china-eastern-comac-c919.jpg" target="_blank" rel="noopener" aria-label="View full photograph: China Eastern · COMAC C919"><img src="assets/images/gallery/tech/china-eastern-comac-c919.jpg" alt="China Eastern COMAC C919, registration B-919G, at the airport gate" loading="lazy" width="1800" height="1350" /></a>
           <figcaption><strong>China Eastern · COMAC C919</strong><span>B-919G</span></figcaption>
+        </figure>
+        <figure class="aviation-photo aviation-photo-emirates">
+          <a href="assets/images/gallery/tech/emirates-airbus-a380.jpg" target="_blank" rel="noopener" aria-label="View full photograph: Emirates · Airbus A380"><img src="assets/images/gallery/tech/emirates-airbus-a380.jpg" alt="Emirates Airbus A380 at night, with its visible engines, wing and tail" loading="lazy" width="2000" height="1500" /></a>
+          <figcaption><strong>Emirates · Airbus A380</strong><span>At the gate after dark</span></figcaption>
         </figure>
       </div>
 
