@@ -1237,3 +1237,13 @@ figcaption span {
   .bird-featured-photo { margin-bottom: 3rem; }
   .bird-portfolio .page-header { align-items: flex-start; margin-bottom: 2rem; }
 }
+
+.tech-topics { display: flex; flex-wrap: wrap; gap: 0.75rem 1.75rem; margin-top: 1.5rem; }
+.tech-topics a { color: var(--accent); font-weight: 700; text-decoration-thickness: 1px; text-underline-offset: 5px; }
+.tech-section { scroll-margin-top: 7rem; }
+.tech-section h3 { display: flex; align-items: center; gap: 0.65rem; font-size: 1.4rem; }
+.tech-section h3 .icon { width: 1.25rem; height: 1.25rem; color: var(--secondary); }
+.tech-section > p { color: var(--muted); }
+.tech-interest-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 3rem; margin-top: 3rem; }
+.tech-interest-grid .tech-section { border-top: 1px solid var(--faint); padding-top: 1.75rem; }
+@media (max-width: 700px) { .tech-interest-grid { grid-template-columns: 1fr; gap: 1.5rem; } }

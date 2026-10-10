@@ -366,9 +366,9 @@ const galleryData = {
       }
 ]
   },
-  phones: {
-    title: 'Phones & Mobile UI',
-    description: 'Exploring phone hardware, mobile operating systems, and the design details that make devices memorable.',
+  tech: {
+    title: 'Tech',
+    description: 'Phones, mobile interfaces, Hi-Fi audio, and airplanes — a few of the technologies I enjoy exploring.',
     icon: 'Phone',
     photos: [
       {
@@ -390,7 +390,7 @@ const pageFromHash = () => {
   const requestedPage = window.location.hash.slice(1);
   const pageId = requestedPage === 'projects' ? 'publications'
     : requestedPage === 'resume' ? 'experience'
-    : ['gallery-hifi', 'gallery-flights'].includes(requestedPage) ? 'hobbies' : requestedPage;
+    : ['gallery-phones', 'gallery-hifi', 'gallery-flights'].includes(requestedPage) ? 'gallery-tech' : requestedPage;
   const isPage = Object.prototype.hasOwnProperty.call(pageLabels, pageId);
   const isGallery = pageId.startsWith('gallery-') &&
     Object.prototype.hasOwnProperty.call(galleryData, pageId.slice(8));
@@ -657,7 +657,7 @@ const renderHobbies = () => `
               alt="${id === 'birds' ? 'A blue-winged bird perched on a branch in Shenzhen Bay' : 'An iPhone 3GS displaying the classic Cover Flow music interface'}"
               width="${id === 'birds' ? '2000' : '1080'}" height="${id === 'birds' ? '1333' : '1440'}" decoding="async" />
           </span>
-          <span class="hobby-gallery-link">View gallery ${icon('Right')}</span>
+          <span class="hobby-gallery-link">${id === 'tech' ? 'Explore Tech' : 'View gallery'} ${icon('Right')}</span>
         </button>
       `).join('')}
     </div>
@@ -762,8 +762,39 @@ const renderBirdPortfolio = () => `
   </section>
 `;
 
+const renderTech = () => `
+  <section class="page tech-page">
+    <button class="back-button" type="button" data-back-hobbies>${icon('Left')} Back to Hobbies</button>
+    <header class="page-header">
+      <h2>Tech</h2>
+      <p>${galleryData.tech.description}</p>
+      <nav class="tech-topics" aria-label="Tech topics">
+        <a href="#tech-phones" data-tech-topic="tech-phones">Phones & Mobile UI</a>
+        <a href="#tech-audio" data-tech-topic="tech-audio">Hi-Fi Audio</a>
+        <a href="#tech-aviation" data-tech-topic="tech-aviation">Aviation</a>
+      </nav>
+    </header>
+    <section class="tech-section" id="tech-phones">
+      <h3>${icon('Phone')} Phones & Mobile UI</h3>
+      <p>Exploring phone hardware, mobile operating systems, and the design details that make devices memorable.</p>
+      <div class="photo-grid">${galleryData.tech.photos.map(renderPhotoEntry).join('')}</div>
+    </section>
+    <div class="tech-interest-grid">
+      <section class="tech-section" id="tech-audio">
+        <h3>${icon('Audio')} Hi-Fi Audio</h3>
+        <p>I enjoy exploring Hi-Fi audio, from earphones to the systems behind the sound.</p>
+      </section>
+      <section class="tech-section" id="tech-aviation">
+        <h3>${icon('Plane')} Aviation</h3>
+        <p>I'm fascinated by airplanes and the technology that makes flight possible.</p>
+      </section>
+    </div>
+  </section>
+`;
+
 const renderGallery = (galleryId) => {
   if (galleryId === 'birds') return renderBirdPortfolio();
+  if (galleryId === 'tech') return renderTech();
   const gallery = galleryData[galleryId];
   if (!gallery) return renderHobbies();
 
@@ -886,6 +917,12 @@ const initEbirdMap = () => {
 };
 
 const bindPageEvents = () => {
+  document.querySelectorAll('[data-tech-topic]').forEach((link) => {
+    link.addEventListener('click', (event) => {
+      event.preventDefault();
+      document.getElementById(link.dataset.techTopic)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
   document.querySelectorAll('[data-gallery]').forEach((button) => {
     button.addEventListener('click', () => setPage(`gallery-${button.dataset.gallery}`));
   });
