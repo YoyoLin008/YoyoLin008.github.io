@@ -1249,8 +1249,8 @@ figcaption span {
 .tech-story-photo { margin: 0; min-width: 0; }
 .tech-story-photo > img { width: 100%; height: auto; border-radius: 0.5rem; }
 .tech-story-photo figcaption { text-align: center; font-size: 0.78rem; margin-top: 0.75rem; }
-.tech-cover-flow { position: relative; aspect-ratio: 16 / 10; overflow: hidden; border-radius: 0.5rem; }
-.tech-cover-flow img { position: absolute; width: 75%; height: 133.3333%; max-width: none; left: 12.5%; top: -16.6667%; object-fit: cover; transform: rotate(-73deg) scale(1.65); }
+.tech-cover-flow { position: relative; aspect-ratio: 16 / 10; overflow: hidden; border-radius: 0.5rem; background: #f2efe8; }
+.tech-cover-flow img { position: absolute; width: 75%; height: 133.3333%; max-width: none; left: 12.5%; top: -16.6667%; object-fit: cover; transform: rotate(-73deg) scale(1.2); clip-path: polygon(10.7% 26.4%, 57.4% 17%, 84% 85.4%, 38% 94%); }
 .tech-process { margin-top: 1.25rem; }
 .tech-process summary { color: var(--accent); cursor: pointer; font-size: 0.88rem; font-weight: 700; }
 .tech-process-photos { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem; }
@@ -1261,7 +1261,7 @@ figcaption span {
   .tech-favorites { margin: 2rem 0; padding: 2rem 0; }
 }
 
-.hobby-button:hover .tech-cover-flow img { transform: rotate(-73deg) scale(1.68); }
+.hobby-button:hover .tech-cover-flow img { transform: rotate(-73deg) scale(1.22); }
 
 .aviation-heading { max-width: 46rem; margin-bottom: 2rem; }
 .aviation-heading h3 { font-size: 1.65rem; margin-bottom: 0.8rem; }
