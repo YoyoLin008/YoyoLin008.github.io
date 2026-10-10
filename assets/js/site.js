@@ -57,7 +57,7 @@ const awards = [
     title: "Dean's List",
     category: 'Academic recognition',
     icon: 'Grad',
-    highlight: 'Three semesters',
+    highlight: 'Four semesters',
     description: 'University of Illinois Urbana-Champaign · High academic standing alongside research.'
   },
   {
