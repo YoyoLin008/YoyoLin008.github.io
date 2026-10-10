@@ -778,8 +778,8 @@ const renderTech = () => `
         <details class="tech-process">
           <summary>See the jailbreak process</summary>
           <div class="tech-process-photos">
-            <img src="assets/images/gallery/phones/iphone-3gs-ios4-jailbreak-01.jpg" alt="iPhone 3GS displaying the downgrade process" loading="lazy" />
-            <img src="assets/images/gallery/phones/iphone-3gs-ios4-jailbreak-03.jpg" alt="iPhone 3GS installing the jailbreak" loading="lazy" />
+            <figure><div class="tech-process-frame tech-process-downgrade"><img src="assets/images/gallery/phones/iphone-3gs-ios4-jailbreak-01.jpg" alt="iPhone 3GS displaying the downgrade process" loading="lazy" /></div><figcaption>Downgrading to iOS 4.1</figcaption></figure>
+            <figure><div class="tech-process-frame tech-process-install"><img src="assets/images/gallery/phones/iphone-3gs-ios4-jailbreak-03.jpg" alt="iPhone 3GS installing the jailbreak" loading="lazy" /></div><figcaption>Installing the jailbreak</figcaption></figure>
           </div>
         </details>
       </div>
@@ -788,18 +788,6 @@ const renderTech = () => `
         <figcaption>Cover Flow on my iPhone 3GS</figcaption>
       </figure>
     </article>
-    <div class="tech-favorites">
-      <article>
-        <p class="tech-kind">A favorite phone</p>
-        <h3>Sony Xperia XZ1 Compact</h3>
-        <p>Mine is silver, and it's one of my favorite small phones.</p>
-      </article>
-      <article>
-        <p class="tech-kind">Hi-Fi Audio</p>
-        <h3>Melodic Artification Alter Ego</h3>
-        <p>One of my favorite pairs of earphones.</p>
-      </article>
-    </div>
     <section class="tech-aviation" aria-labelledby="aviation-title">
       <header class="aviation-heading">
         <p class="tech-kind">Aviation</p>
