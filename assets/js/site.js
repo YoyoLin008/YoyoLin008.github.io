@@ -12,7 +12,7 @@ const pageLabels = {
   home: 'About',
   resume: 'Resume',
   experience: 'Experience',
-  projects: 'Projects',
+  publications: 'Publications',
   hobbies: 'Hobbies'
 };
 
@@ -162,7 +162,8 @@ const funFacts = [
 ];
 
 const pageFromHash = () => {
-  const pageId = window.location.hash.slice(1);
+  const requestedPage = window.location.hash.slice(1);
+  const pageId = requestedPage === 'projects' ? 'publications' : requestedPage;
   const isPage = Object.prototype.hasOwnProperty.call(pageLabels, pageId);
   const isGallery = pageId.startsWith('gallery-') &&
     Object.prototype.hasOwnProperty.call(galleryData, pageId.slice(8));
@@ -171,7 +172,6 @@ const pageFromHash = () => {
 
 let currentPage = pageFromHash();
 let currentFactIndex = 0;
-let reposLoaded = false;
 
 const app = document.getElementById('app');
 
@@ -353,20 +353,53 @@ const renderExperience = () => `
   </section>
 `;
 
-const renderProjects = () => `
-  <section class="page">
-    <header class="page-header split-header">
-      <div>
-        <h2>Featured Code</h2>
-        <p>Live feed from my GitHub. I focus on tidy code and accessible data storytelling.</p>
-      </div>
-      <a class="text-link" href="${CONTACT.github}" target="_blank" rel="noreferrer">
-        View all on GitHub
-      </a>
-    </header>
+const publications = [
+  {
+    title: 'When Evidence Sets Become Relevance Lists: A Controlled Audit of Scientific Retrieval Evaluation',
+    author: 'Yunya Lin',
+    year: '2026',
+    status: 'Submitted',
+    description: 'An empirical audit of scientific retrieval evaluation, examining how flattening annotated evidence sets into relevance lists changes what retrieval metrics measure on QASPER and SciFact.',
+    links: [
+      { label: 'Read manuscript', href: 'https://github.com/YoyoLin008/evidence-sets-retrieval-evaluation/blob/main/paper/manuscript_reading_copy.pdf' },
+      { label: 'Code & materials', href: 'https://github.com/YoyoLin008/evidence-sets-retrieval-evaluation' },
+      { label: 'Research archive', href: 'https://doi.org/10.5281/zenodo.23126392' }
+    ]
+  },
+  {
+    title: 'Historical abstract loss and use-dependent robustness of a semantic novelty indicator',
+    author: 'Yunya Lin',
+    year: '2026',
+    status: 'In progress',
+    description: 'A study of how missing abstracts in historical literature affect a semantic novelty indicator, examining score changes, ranking shifts, and selection outcomes while keeping focal paper inputs fixed.',
+    links: [
+      { label: 'Code & materials', href: 'https://github.com/YoyoLin008/historical-abstract-loss-semantic-novelty' },
+      { label: 'Research archive', href: 'https://doi.org/10.5281/zenodo.23242635' }
+    ]
+  }
+];
 
-    <div class="repo-grid" id="repoGrid">
-      <div class="loading-card">Loading repositories from YoyoLin008...</div>
+const renderPublications = () => `
+  <section class="page publications-page">
+    <header class="page-header">
+      <h2>Publications</h2>
+      <p>Research manuscripts, ongoing work, and accompanying code and reproducibility materials.</p>
+    </header>
+    <div class="publication-list">
+      ${publications.map((paper) => `
+        <article class="publication-card">
+          <div class="publication-meta">
+            <span class="publication-status">${escapeHtml(paper.status)}</span>
+            <span>${escapeHtml(paper.year)}</span>
+          </div>
+          <h3>${escapeHtml(paper.title)}</h3>
+          <p class="publication-authors"><strong>${escapeHtml(paper.author)}</strong> · University of Illinois Urbana-Champaign</p>
+          <p class="publication-description">${escapeHtml(paper.description)}</p>
+          <div class="publication-links" aria-label="Resources for ${escapeHtml(paper.title)}">
+            ${paper.links.map((link) => `<a class="text-link" href="${link.href}" target="_blank" rel="noreferrer">${escapeHtml(link.label)}</a>`).join('')}
+          </div>
+        </article>
+      `).join('')}
     </div>
   </section>
 `;
@@ -593,40 +626,6 @@ const initEbirdMap = () => {
   document.head.appendChild(script);
 };
 
-const loadRepos = async () => {
-  if (reposLoaded || currentPage !== 'projects') return;
-  reposLoaded = true;
-
-  const repoGrid = document.getElementById('repoGrid');
-  if (!repoGrid) return;
-
-  try {
-    const response = await fetch('https://api.github.com/users/YoyoLin008/repos?sort=updated&per_page=6');
-    const repos = await response.json();
-
-    if (!Array.isArray(repos) || repos.length === 0) {
-      repoGrid.innerHTML = '<div class="loading-card">No repositories found.</div>';
-      return;
-    }
-
-    repoGrid.innerHTML = repos.map((repo) => `
-      <a class="repo-card" href="${repo.html_url}" target="_blank" rel="noreferrer">
-        <span>
-          <strong>${escapeHtml(repo.name)}</strong>
-          <small>${escapeHtml(repo.language || 'Code')}</small>
-        </span>
-        <p>${escapeHtml(repo.description || 'No description provided.')}</p>
-        <div class="repo-stats">
-          <span>${icon('Star')} ${repo.stargazers_count}</span>
-          <span>${icon('Fork')} ${repo.forks_count}</span>
-        </div>
-      </a>
-    `).join('');
-  } catch (error) {
-    repoGrid.innerHTML = '<div class="loading-card">Could not load repositories. Visit GitHub directly from the link above.</div>';
-  }
-};
-
 const bindPageEvents = () => {
   document.querySelectorAll('[data-gallery]').forEach((button) => {
     button.addEventListener('click', () => setPage(`gallery-${button.dataset.gallery}`));
@@ -652,7 +651,7 @@ const render = () => {
       home: renderHome,
       resume: renderResume,
       experience: renderExperience,
-      projects: renderProjects,
+      publications: renderPublications,
       hobbies: renderHobbies
     };
     app.innerHTML = (renderers[currentPage] || renderHome)();
@@ -660,13 +659,11 @@ const render = () => {
 
   updateNavigation();
   bindPageEvents();
-  loadRepos();
   initEbirdMap();
 };
 
 document.querySelectorAll('[data-page]').forEach((button) => {
   button.addEventListener('click', () => {
-    reposLoaded = button.dataset.page === 'projects' ? false : reposLoaded;
     setPage(button.dataset.page);
   });
 });

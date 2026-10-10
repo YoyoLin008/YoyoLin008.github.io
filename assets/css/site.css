@@ -434,75 +434,58 @@ h1 {
   text-underline-offset: 3px;
 }
 
-.repo-grid {
+.publication-list {
   display: grid;
-  gap: 2rem;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2.5rem;
 }
 
-.repo-card {
-  color: inherit;
-  display: block;
-  text-decoration: none;
+.publication-card {
+  border-bottom: 1px solid var(--faint);
+  padding-bottom: 2.5rem;
 }
 
-.repo-card > span {
-  align-items: baseline;
+.publication-card h3 {
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  line-height: 1.4;
+  margin: 1rem 0 0.65rem;
+}
+
+.publication-meta,
+.publication-links {
   display: flex;
-  gap: 1rem;
-  justify-content: space-between;
-  margin-bottom: 0.35rem;
-}
-
-.repo-card strong {
-  color: #292524;
-  font-size: 1.05rem;
-  overflow: hidden;
-  text-decoration: underline;
-  text-decoration-color: #d6d3d1;
-  text-overflow: ellipsis;
-  text-underline-offset: 5px;
-  transition: color 180ms ease, text-decoration-color 180ms ease;
-  white-space: nowrap;
-}
-
-.repo-card:hover strong {
-  color: var(--accent);
-  text-decoration-color: #f6d28b;
-}
-
-.repo-card small {
-  color: var(--muted);
-  flex: 0 0 auto;
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-  font-size: 0.82rem;
-}
-
-.repo-card p {
-  color: var(--muted);
-  display: -webkit-box;
-  font-size: 0.92rem;
-  min-height: 2.9rem;
-  overflow: hidden;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
-}
-
-.repo-stats {
-  color: #8a8178;
-  display: flex;
-  font-size: 0.78rem;
-  font-weight: 750;
-  gap: 1rem;
-}
-
-.repo-stats span {
   align-items: center;
-  display: inline-flex;
-  gap: 0.35rem;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
-.repo-stats .icon,
+.publication-meta {
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.publication-status {
+  background: #fef3c7;
+  border: 1px solid #f6d28b;
+  border-radius: 999px;
+  color: #78350f;
+  font-weight: 700;
+  padding: 0.25rem 0.75rem;
+}
+
+.publication-authors,
+.publication-description {
+  color: var(--muted);
+  margin: 0 0 1rem;
+}
+
+.publication-description {
+  max-width: 56rem;
+}
+
+.publication-links {
+  gap: 0.75rem 1.75rem;
+}
+
 .hobby-button .icon,
 .text-link .icon,
 .resume-link .icon,
@@ -1047,10 +1030,6 @@ figcaption span {
   .ebird-feature,
   .photo-grid,
   .photo-cluster,
-  .repo-grid {
-    grid-template-columns: 1fr;
-  }
-
   .timeline-card,
   .education-item {
     align-items: flex-start;
