@@ -6,3 +6,5 @@ Aircraft photographs supplied by the owner on October 10, 2026:
 - lufthansa-boeing-747-8.jpg: IMG_2214.JPG. Lufthansa · Boeing 747-8.
 - cathay-a350-1000.jpg: IMG_6948.JPG. Cathay Pacific · Airbus A350-1000.
 Web exports preserve orientation and complete composition, resized to a maximum of 1800 pixels. EXIF/GPS omitted; originals untouched. Cathay anniversary A350-900 identified using Cathay’s official 80 Years Together page. Lufthansa 747-8 identified by visible fuselage lettering.
+
+china-eastern-comac-c919.jpg: owner-supplied 9561785128191_.pic_hd.jpg. China Eastern COMAC C919; B-919G visible on fuselage. Web export resized to 1800 pixels, EXIF/GPS omitted. Original untouched.

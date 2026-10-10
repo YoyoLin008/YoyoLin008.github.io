@@ -1288,3 +1288,11 @@ figcaption span {
 .tech-aviation { margin-top: 3.5rem; padding-top: 2.5rem; border-top: 1px solid var(--faint); }
 
 .aviation-photo-landscape-crop img { object-fit: cover; object-position: center 46%; }
+
+/* Trim only the top and bottom of the landscape Cover Flow photograph. */
+.tech-story-photo .tech-cover-flow { aspect-ratio: 25 / 16; }
+.tech-story-photo .tech-cover-flow img { height: 156.25%; top: -31.25%; }
+.aviation-photo-centered { grid-column: 1 / -1; width: calc(50% - 1rem); justify-self: center; }
+@media (max-width: 700px) {
+  .aviation-photo-centered { width: 100%; }
+}
