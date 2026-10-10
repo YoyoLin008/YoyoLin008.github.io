@@ -286,6 +286,7 @@ const renderAcademicBackground = () => `
           <div class="border-note">
             <h4>University of Illinois Urbana-Champaign</h4>
             <p class="accent-text">B.S. Information Sciences + Data Science</p>
+            <p>Minor in Computer Science</p>
             <p>Current focus: LLMs, peer review, crop analytics, and human-centered design.</p>
           </div>
         </article>
