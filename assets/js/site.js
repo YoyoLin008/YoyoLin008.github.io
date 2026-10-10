@@ -652,7 +652,7 @@ const renderHobbies = () => `
             <span class="hobby-icon">${icon(hobby.icon)}</span>
             <strong>${hobby.title}</strong>
           </span>
-          <span class="hobby-preview">
+          <span class="hobby-preview ${id === 'tech' ? 'tech-cover-flow' : ''}">
             <img src="${id === 'birds' ? 'assets/images/gallery/birds/bird-03.jpg' : 'assets/images/gallery/phones/iphone-3gs-ios4-jailbreak-02.jpg'}"
               alt="${id === 'birds' ? 'A blue-winged bird perched on a branch in Shenzhen Bay' : 'An iPhone 3GS displaying the classic Cover Flow music interface'}"
               width="${id === 'birds' ? '2000' : '1080'}" height="${id === 'birds' ? '1333' : '1440'}" decoding="async" />
@@ -765,30 +765,52 @@ const renderBirdPortfolio = () => `
 const renderTech = () => `
   <section class="page tech-page">
     <button class="back-button" type="button" data-back-hobbies>${icon('Left')} Back to Hobbies</button>
+
     <header class="page-header">
       <h2>Tech</h2>
-      <p>${galleryData.tech.description}</p>
-      <nav class="tech-topics" aria-label="Tech topics">
-        <a href="#tech-phones" data-tech-topic="tech-phones">Phones & Mobile UI</a>
-        <a href="#tech-audio" data-tech-topic="tech-audio">Hi-Fi Audio</a>
-        <a href="#tech-aviation" data-tech-topic="tech-aviation">Aviation</a>
-      </nav>
+      <p>Devices I love, things I tinker with, and airplanes I've photographed.</p>
     </header>
-    <section class="tech-section" id="tech-phones">
-      <h3>${icon('Phone')} Phones & Mobile UI</h3>
-      <p>Exploring phone hardware, mobile operating systems, and the design details that make devices memorable.</p>
-      <div class="photo-grid">${galleryData.tech.photos.map(renderPhotoEntry).join('')}</div>
-    </section>
-    <div class="tech-interest-grid">
-      <section class="tech-section" id="tech-audio">
-        <h3>${icon('Audio')} Hi-Fi Audio</h3>
-        <p>I enjoy exploring Hi-Fi audio, from earphones to the systems behind the sound.</p>
-      </section>
-      <section class="tech-section" id="tech-aviation">
-        <h3>${icon('Plane')} Aviation</h3>
-        <p>I'm fascinated by airplanes and the technology that makes flight possible.</p>
-      </section>
+    <article class="tech-story">
+      <div class="tech-story-copy">
+        <p class="tech-kind">Tinkering</p>
+        <h3>iPhone 3GS &amp; early iOS</h3>
+        <p>I brought my iPhone 3GS back from iOS 6.1 to iOS 4.1 and jailbroke it with Cydia. I especially love the skeuomorphic details of early iOS, including Cover Flow.</p>
+        <details class="tech-process">
+          <summary>See the jailbreak process</summary>
+          <div class="tech-process-photos">
+            <img src="assets/images/gallery/phones/iphone-3gs-ios4-jailbreak-01.jpg" alt="iPhone 3GS displaying the downgrade process" loading="lazy" />
+            <img src="assets/images/gallery/phones/iphone-3gs-ios4-jailbreak-03.jpg" alt="iPhone 3GS installing the jailbreak" loading="lazy" />
+          </div>
+        </details>
+      </div>
+      <figure class="tech-story-photo">
+        <div class="tech-cover-flow"><img src="assets/images/gallery/phones/iphone-3gs-ios4-jailbreak-02.jpg" alt="My iPhone 3GS showing Cover Flow in landscape orientation" /></div>
+        <figcaption>Cover Flow on my iPhone 3GS</figcaption>
+      </figure>
+    </article>
+    <div class="tech-favorites">
+      <article>
+        <p class="tech-kind">A favorite phone</p>
+        <h3>Sony Xperia XZ1 Compact</h3>
+        <p>Mine is silver, and it's one of my favorite small phones.</p>
+      </article>
+      <article>
+        <p class="tech-kind">Hi-Fi Audio</p>
+        <h3>Melodic Artification Alter Ego</h3>
+        <p>One of my favorite pairs of earphones.</p>
+      </article>
     </div>
+    <article class="tech-story tech-aviation-story">
+      <div class="tech-story-copy">
+        <p class="tech-kind">Aviation</p>
+        <h3>Airplanes at Narita</h3>
+        <p>I don't have one favorite aircraft model. I enjoy photographing airplanes and noticing the designs that catch my eye.</p>
+      </div>
+      <figure class="tech-story-photo">
+        <img src="assets/images/gallery/tech/narita-aircraft.jpg" alt="An aircraft photographed at Narita Airport" loading="lazy" width="1800" height="1200" />
+        <figcaption>Narita Airport, Japan · October 2023</figcaption>
+      </figure>
+    </article>
   </section>
 `;
 
@@ -917,12 +939,6 @@ const initEbirdMap = () => {
 };
 
 const bindPageEvents = () => {
-  document.querySelectorAll('[data-tech-topic]').forEach((link) => {
-    link.addEventListener('click', (event) => {
-      event.preventDefault();
-      document.getElementById(link.dataset.techTopic)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    });
-  });
   document.querySelectorAll('[data-gallery]').forEach((button) => {
     button.addEventListener('click', () => setPage(`gallery-${button.dataset.gallery}`));
   });
