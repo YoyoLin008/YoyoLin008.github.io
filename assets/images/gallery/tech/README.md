@@ -1,4 +1,4 @@
-Narita aircraft photograph: original owner photo from 2023:10:1_成田机场/_DSC7306.jpg. Web export resized to 1800 pixels with EXIF/GPS omitted. Original untouched.
+China Airlines cargo aircraft photograph: Hong Kong, as corrected by the owner. Original source folder: 2023:10:1_成田机场/_DSC7306.jpg; the folder name does not establish the shooting location or date. Web export resized to 1800 pixels with EXIF/GPS omitted. Original untouched.
 
 Aircraft photographs supplied by the owner on October 10, 2026:
 - cathay-a350-900-anniversary.jpg: IMG_6620.JPG. Cathay Pacific · Airbus A350-900.
