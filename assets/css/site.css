@@ -1177,18 +1177,63 @@ figcaption span {
   }
 }
 
-/* Photography portfolio: preserve each original composition. */
-.bird-portfolio .page-header > div { max-width: 48rem; }
-.bird-featured-photo { margin: 0 0 3rem; }
-.bird-featured-photo a, .bird-photo a { display: block; overflow: hidden; background: #eeece5; border-radius: 0.6rem; }
-.bird-featured-photo img { display: block; width: 100%; height: auto; }
-.bird-photo-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2.5rem 2rem; }
+/* Photography portfolio: quiet frames and clear species labels. */
+.bird-portfolio .page-header {
+  align-items: center;
+  border-bottom: 0;
+  margin-bottom: 3rem;
+  padding-bottom: 0;
+}
+.bird-portfolio .page-header > div { max-width: 42rem; }
+.bird-portfolio .page-header h1,
+.bird-portfolio .page-header h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.7rem, 5vw, 3.8rem);
+  font-weight: 600;
+  letter-spacing: -0.035em;
+  margin-bottom: 0.8rem;
+}
+.bird-portfolio .page-header p { font-size: 1rem; }
+.bird-featured-photo { margin: 0 0 4.5rem; }
+.bird-featured-photo a,
+.bird-photo a {
+  display: block;
+  padding: 0.65rem;
+  background: #fff;
+  border: 1px solid #e6e0d5;
+  border-radius: 0.15rem;
+  transition: border-color 180ms ease;
+}
+.bird-featured-photo a:hover,
+.bird-photo a:hover { border-color: #aaa08c; }
+.bird-featured-photo a:focus-visible,
+.bird-photo a:focus-visible { outline: 2px solid var(--accent); outline-offset: 5px; }
+.bird-featured-photo img,
+.bird-photo img { display: block; width: 100%; height: auto; }
+.bird-photo-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4rem 2.5rem; }
 .bird-photo { margin: 0; min-width: 0; }
-.bird-photo a { aspect-ratio: 3 / 2; display: flex; align-items: center; justify-content: center; }
-.bird-photo img { display: block; width: 100%; height: 100%; object-fit: contain; }
-.bird-portfolio figcaption { margin-top: 0.75rem; font-size: 0.82rem; }
-.bird-portfolio .eyebrow { margin-bottom: 0.8rem; }
+.bird-portfolio figcaption {
+  margin-top: 1.15rem;
+  text-align: center;
+  font-style: normal;
+  line-height: 1.5;
+}
+.bird-species {
+  display: block;
+  color: var(--ink);
+  font-size: 1.08rem;
+  font-weight: 750;
+  letter-spacing: 0.015em;
+}
+.bird-location {
+  display: block;
+  margin-top: 0.35rem;
+  color: var(--muted);
+  font-size: 0.8rem;
+  letter-spacing: 0.02em;
+}
 @media (max-width: 700px) {
-  .bird-photo-grid { grid-template-columns: 1fr; gap: 2rem; }
-  .bird-featured-photo { margin-bottom: 2rem; }
+  .bird-photo-grid { grid-template-columns: 1fr; gap: 3rem; }
+  .bird-featured-photo { margin-bottom: 3rem; }
+  .bird-portfolio .page-header { align-items: flex-start; margin-bottom: 2rem; }
 }

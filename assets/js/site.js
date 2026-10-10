@@ -70,7 +70,7 @@ const awards = [
 const galleryData = {
   birds: {
     title: 'Bird Photography',
-    description: 'Selected bird photographs from Costa Rica, China, and Illinois — moments of color, movement, and quiet in the field.',
+    description: 'A collection of bird photographs I\'ve taken over the past five or six years.',
     icon: 'Camera',
     ebird: {
       profileUrl: EBIRD_PROFILE_URL,
@@ -90,195 +90,279 @@ const galleryData = {
     photos: [
       {
             "src": "assets/images/gallery/birds/bird-01.jpg",
-            "caption": "Photographed in Volcano area, Costa Rica.",
+            "caption": "Volcano area, Costa Rica",
             "location": "Volcano area, Costa Rica",
             "date": "2026-03-14",
+            "sourceFolder": "2026:3:14_costa rica volcano",
+            "sourceFile": "DSC08324.jpg",
             "width": 2000,
-            "height": 1333
+            "height": 1333,
+            "species": "Northern Emerald-Toucanet",
+            "identification": "visual identification"
       },
       {
             "src": "assets/images/gallery/birds/bird-02.jpg",
-            "caption": "Photographed in Monteverde, Costa Rica.",
+            "caption": "Monteverde, Costa Rica",
             "location": "Monteverde, Costa Rica",
             "date": "2026-03-17",
+            "sourceFolder": "2026:3:17_Montervede",
+            "sourceFile": "DSC08681.jpg",
             "width": 2000,
-            "height": 1333
+            "height": 1333,
+            "species": "Resplendent Quetzal",
+            "identification": "visual identification"
       },
       {
             "src": "assets/images/gallery/birds/bird-03.jpg",
-            "caption": "Photographed in Shenzhen Bay, Shenzhen, China.",
+            "caption": "Shenzhen Bay, Shenzhen, China",
             "location": "Shenzhen Bay, Shenzhen, China",
             "date": "2023-12-23",
+            "sourceFolder": "2023:12:23_深圳湾",
+            "sourceFile": "_DSC8506.jpg",
             "width": 2000,
-            "height": 1333
+            "height": 1333,
+            "species": "White-throated Kingfisher",
+            "identification": "visual identification"
       },
       {
             "src": "assets/images/gallery/birds/bird-04.jpg",
-            "caption": "Photographed in Arenal Volcano area, Costa Rica.",
+            "caption": "Arenal Volcano area, Costa Rica",
             "location": "Arenal Volcano area, Costa Rica",
             "date": "2026-03-16",
+            "sourceFolder": "2026:3:16_costa rica_arenal volcano",
+            "sourceFile": "DSC08494.jpg",
             "width": 2000,
-            "height": 1333
+            "height": 1333,
+            "species": "White-throated Magpie-Jay",
+            "identification": "visual identification"
       },
       {
             "src": "assets/images/gallery/birds/bird-05.jpg",
-            "caption": "Photographed during a farm visit in Costa Rica.",
+            "caption": "Farm visit, Costa Rica",
             "location": "Farm visit, Costa Rica",
             "date": "2026-03-15",
+            "sourceFolder": "2026:3:15_costa rica farm",
+            "sourceFile": "DSC08427.jpg",
             "width": 2000,
-            "height": 1333
+            "height": 1333,
+            "species": "Collared Aracari",
+            "identification": "visual identification"
       },
       {
             "src": "assets/images/gallery/birds/bird-06.jpg",
-            "caption": "Photographed in Volcano area, Costa Rica.",
+            "caption": "Volcano area, Costa Rica",
             "location": "Volcano area, Costa Rica",
             "date": "2026-03-14",
+            "sourceFolder": "2026:3:14_costa rica volcano",
+            "sourceFile": "DSC08301.jpg",
             "width": 2000,
-            "height": 1333
+            "height": 1333,
+            "species": "Green-crowned Brilliant",
+            "identification": "owner-approved provisional"
       },
       {
             "src": "assets/images/gallery/birds/bird-07.jpg",
-            "caption": "Photographed in Volcano area, Costa Rica.",
+            "caption": "Volcano area, Costa Rica",
             "location": "Volcano area, Costa Rica",
             "date": "2026-03-14",
+            "sourceFolder": "2026:3:14_costa rica volcano",
+            "sourceFile": "DSC08262.jpg",
             "width": 2000,
-            "height": 1333
+            "height": 1333,
+            "species": "Baltimore Oriole",
+            "identification": "visual identification"
       },
       {
             "src": "assets/images/gallery/birds/bird-08.jpg",
-            "caption": "Photographed in Volcano area, Costa Rica.",
+            "caption": "Volcano area, Costa Rica",
             "location": "Volcano area, Costa Rica",
             "date": "2026-03-14",
+            "sourceFolder": "2026:3:14_costa rica volcano",
+            "sourceFile": "DSC08267.jpg",
             "width": 2000,
-            "height": 1333
+            "height": 1333,
+            "species": "Blue-gray Tanager",
+            "identification": "visual identification"
       },
       {
             "src": "assets/images/gallery/birds/bird-09.jpg",
-            "caption": "Photographed in Volcano area, Costa Rica.",
+            "caption": "Volcano area, Costa Rica",
             "location": "Volcano area, Costa Rica",
             "date": "2026-03-14",
+            "sourceFolder": "2026:3:14_costa rica volcano",
+            "sourceFile": "DSC08277.jpg",
             "width": 2000,
-            "height": 1333
+            "height": 1333,
+            "species": "Scarlet-rumped Tanager",
+            "identification": "visual identification"
       },
       {
             "src": "assets/images/gallery/birds/bird-10.jpg",
-            "caption": "Photographed in Volcano area, Costa Rica.",
+            "caption": "Volcano area, Costa Rica",
             "location": "Volcano area, Costa Rica",
             "date": "2026-03-14",
+            "sourceFolder": "2026:3:14_costa rica volcano",
+            "sourceFile": "DSC08309.jpg",
             "width": 2000,
-            "height": 1333
+            "height": 1333,
+            "species": "Northern Emerald-Toucanet",
+            "identification": "visual identification"
       },
       {
             "src": "assets/images/gallery/birds/bird-11.jpg",
-            "caption": "Photographed in Volcano area, Costa Rica.",
+            "caption": "Volcano area, Costa Rica",
             "location": "Volcano area, Costa Rica",
             "date": "2026-03-14",
+            "sourceFolder": "2026:3:14_costa rica volcano",
+            "sourceFile": "DSC08340.jpg",
             "width": 2000,
-            "height": 1333
+            "height": 1333,
+            "species": "Red-legged Honeycreeper",
+            "identification": "visual identification"
       },
       {
             "src": "assets/images/gallery/birds/bird-12.jpg",
-            "caption": "Photographed in Monteverde, Costa Rica.",
+            "caption": "Monteverde, Costa Rica",
             "location": "Monteverde, Costa Rica",
             "date": "2026-03-17",
+            "sourceFolder": "2026:3:17_Montervede",
+            "sourceFile": "DSC08733.jpg",
             "width": 2000,
-            "height": 1333
+            "height": 1333,
+            "species": "Green-crowned Brilliant",
+            "identification": "owner-approved provisional"
       },
       {
             "src": "assets/images/gallery/birds/bird-13.jpg",
-            "caption": "Photographed in Arenal Volcano area, Costa Rica.",
+            "caption": "Arenal Volcano area, Costa Rica",
             "location": "Arenal Volcano area, Costa Rica",
             "date": "2026-03-16",
+            "sourceFolder": "2026:3:16_costa rica_arenal volcano",
+            "sourceFile": "DSC08624.jpg",
             "width": 2000,
-            "height": 1333
+            "height": 1333,
+            "species": "Great-tailed Grackle",
+            "identification": "visual identification"
       },
       {
             "src": "assets/images/gallery/birds/bird-14.jpg",
-            "caption": "Photographed during a crocodile-watching excursion in Costa Rica.",
+            "caption": "Crocodile-watching excursion, Costa Rica",
             "location": "Crocodile-watching excursion, Costa Rica",
             "date": "2026-03-20",
+            "sourceFolder": "2026:3:20_Corcodile watch",
+            "sourceFile": "DSC08902.jpg",
             "width": 2000,
-            "height": 1333
+            "height": 1333,
+            "species": "Anhinga",
+            "identification": "visual identification"
       },
       {
             "src": "assets/images/gallery/birds/bird-15.jpg",
-            "caption": "Photographed during a crocodile-watching excursion in Costa Rica.",
+            "caption": "Crocodile-watching excursion, Costa Rica",
             "location": "Crocodile-watching excursion, Costa Rica",
             "date": "2026-03-20",
+            "sourceFolder": "2026:3:20_Corcodile watch",
+            "sourceFile": "DSC08939.jpg",
             "width": 2000,
-            "height": 1333
+            "height": 1333,
+            "species": "Green Heron",
+            "identification": "visual identification"
       },
       {
             "src": "assets/images/gallery/birds/bird-16.jpg",
-            "caption": "Photographed during a crocodile-watching excursion in Costa Rica.",
+            "caption": "Crocodile-watching excursion, Costa Rica",
             "location": "Crocodile-watching excursion, Costa Rica",
             "date": "2026-03-20",
+            "sourceFolder": "2026:3:20_Corcodile watch",
+            "sourceFile": "DSC08968.jpg",
             "width": 2000,
-            "height": 1333
+            "height": 1333,
+            "species": "Roseate Spoonbill",
+            "identification": "visual identification"
       },
       {
             "src": "assets/images/gallery/birds/bird-17.jpg",
-            "caption": "Photographed in OCT Wetland Park, Shenzhen, China.",
+            "caption": "OCT Wetland Park, Shenzhen, China",
             "location": "OCT Wetland Park, Shenzhen, China",
             "date": "2023-12-23",
+            "sourceFolder": "2023:12:23_华侨城湿地公园",
+            "sourceFile": "_DSC8645.jpg",
             "width": 2000,
-            "height": 1333
+            "height": 1333,
+            "species": "Fork-tailed Sunbird",
+            "identification": "visual identification"
       },
       {
             "src": "assets/images/gallery/birds/bird-18.jpg",
-            "caption": "Photographed in Shenzhen Bay, Shenzhen, China.",
+            "caption": "Shenzhen Bay, Shenzhen, China",
             "location": "Shenzhen Bay, Shenzhen, China",
             "date": "2023-12-23",
+            "sourceFolder": "2023:12:23_深圳湾",
+            "sourceFile": "_DSC8566.jpg",
             "width": 2000,
-            "height": 1333
+            "height": 1333,
+            "species": "Pied Avocet",
+            "identification": "visual identification"
       },
       {
             "src": "assets/images/gallery/birds/bird-19.jpg",
-            "caption": "Photographed in Happy Countryside, Shenzhen, China.",
+            "caption": "Happy Countryside, Shenzhen, China",
             "location": "Happy Countryside, Shenzhen, China",
             "date": "2024-03-10",
+            "sourceFolder": "2024:3:10_欢乐田园",
+            "sourceFile": "_DSC9018.jpg",
             "width": 2000,
-            "height": 1333
+            "height": 1333,
+            "species": "Daurian Redstart",
+            "identification": "owner confirmed"
       },
       {
             "src": "assets/images/gallery/birds/bird-20.jpg",
-            "caption": "Photographed in Yuanshan Scenic Area, Shenzhen, China.",
+            "caption": "Yuanshan Scenic Area, Shenzhen, China",
             "location": "Yuanshan Scenic Area, Shenzhen, China",
             "date": "2024-05-05",
+            "sourceFolder": "2024:5:5_园山风景区",
+            "sourceFile": "_DSC9382.jpg",
             "width": 2000,
-            "height": 1333
+            "height": 1333,
+            "species": "Barred Cuckoo-Dove",
+            "identification": "visual identification"
       },
       {
             "src": "assets/images/gallery/birds/bird-21.jpg",
-            "caption": "Photographed in Aha Lake area, Guiyang, China.",
+            "caption": "Aha Lake area, Guiyang, China",
             "location": "Aha Lake area, Guiyang, China",
             "date": "2025-06-03",
+            "sourceFolder": "2025:6:3_贵阳阿哈木湖",
+            "sourceFile": "_DSC0045.jpg",
             "width": 2000,
-            "height": 1333
+            "height": 1333,
+            "species": "Collared Scops-Owl",
+            "identification": "visual identification"
       },
       {
             "src": "assets/images/gallery/birds/bird-22.jpg",
-            "caption": "Photographed in Aha Lake area, Guiyang, China.",
+            "caption": "Aha Lake area, Guiyang, China",
             "location": "Aha Lake area, Guiyang, China",
             "date": "2025-06-03",
+            "sourceFolder": "2025:6:3_贵阳阿哈木湖",
+            "sourceFile": "_DSC0193.jpg",
             "width": 2000,
-            "height": 1333
-      },
-      {
-            "src": "assets/images/gallery/birds/bird-23.jpg",
-            "caption": "Photographed in Arenal Volcano area, Costa Rica.",
-            "location": "Arenal Volcano area, Costa Rica",
-            "date": "2026-03-16",
-            "width": 2000,
-            "height": 1333
+            "height": 1333,
+            "species": "Green-backed Tit",
+            "identification": "visual identification"
       },
       {
             "src": "assets/images/gallery/birds/bird-24.jpg",
-            "caption": "Photographed in Crystal Lake Park, Urbana, Illinois, United States.",
+            "caption": "Crystal Lake Park, Urbana, Illinois, United States",
             "location": "Crystal Lake Park, Urbana, Illinois, United States",
             "date": "2026-02-07",
+            "sourceFolder": "2026:2:7_crystal lake park",
+            "sourceFile": "DSC08144.jpg",
             "width": 2000,
-            "height": 1333
+            "height": 1333,
+            "species": "Red-tailed Hawk",
+            "identification": "visual identification"
       }
 ]
   },
@@ -650,10 +734,13 @@ const renderEbirdPanel = (gallery) => {
 
 const renderBirdPhoto = (photo, featured = false) => `
   <figure class="${featured ? 'bird-featured-photo' : 'bird-photo'}">
-    <a href="${photo.src}" target="_blank" rel="noreferrer" aria-label="View photograph from ${escapeHtml(photo.location)}">
-      <img src="${photo.src}" alt="Bird photographed in ${escapeHtml(photo.location)}" width="${photo.width}" height="${photo.height}" loading="${featured ? 'eager' : 'lazy'}" decoding="async" />
+    <a href="${photo.src}" target="_blank" rel="noreferrer" aria-label="View ${escapeHtml(photo.species)} in ${escapeHtml(photo.location)}">
+      <img src="${photo.src}" alt="${escapeHtml(photo.species)} in ${escapeHtml(photo.location)}" width="${photo.width}" height="${photo.height}" loading="${featured ? 'eager' : 'lazy'}" decoding="async" />
     </a>
-    <figcaption>${escapeHtml(photo.caption)}</figcaption>
+    <figcaption>
+      <strong class="bird-species">${escapeHtml(photo.species)}</strong>
+      <span class="bird-location">${escapeHtml(photo.location)}</span>
+    </figcaption>
   </figure>
 `;
 
@@ -662,7 +749,7 @@ const renderBirdPortfolio = () => `
     <button class="back-button" type="button" data-back-hobbies>${icon('Left')} Back to Hobbies</button>
     <header class="page-header split-header">
       <div>
-        <p class="eyebrow">Selected photographs · 24 frames</p>
+
         <h2>Bird Photography</h2>
         <p>${galleryData.birds.description}</p>
       </div>
