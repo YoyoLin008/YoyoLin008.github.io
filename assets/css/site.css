@@ -519,12 +519,17 @@ h1 {
 }
 
 .publication-status {
-  background: #fef3c7;
-  border: 1px solid #f6d28b;
-  border-radius: 999px;
-  color: #78350f;
-  font-weight: 700;
-  padding: 0.25rem 0.75rem;
+  color: var(--accent);
+  font-size: 0.75rem;
+  font-weight: 750;
+  letter-spacing: 0.08em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.publication-meta > span + span {
+  border-left: 1px solid var(--faint);
+  padding-left: 1rem;
 }
 
 .publication-authors,
