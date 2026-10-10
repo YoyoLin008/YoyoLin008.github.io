@@ -450,8 +450,53 @@ h1 {
 }
 
 .publication-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 2.5rem;
   border-bottom: 1px solid var(--faint);
   padding-bottom: 2.5rem;
+}
+
+.publication-copy { min-width: 0; }
+
+.publication-visual { margin: 0; }
+
+.publication-visual a {
+  display: flex;
+  align-items: center;
+  min-height: 15rem;
+  padding: 1rem;
+  border: 1px solid var(--faint);
+  border-radius: 1rem;
+  background: #fff;
+  box-shadow: 0 12px 30px rgba(28, 25, 23, 0.06);
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.publication-visual a:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 36px rgba(28, 25, 23, 0.1);
+}
+
+.publication-visual img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+}
+
+.publication-visual figcaption {
+  color: var(--muted);
+  font-size: 0.78rem;
+  margin-top: 0.75rem;
+  text-align: center;
+}
+
+@media (max-width: 820px) {
+  .publication-card { grid-template-columns: 1fr; gap: 1.5rem; }
+  .publication-visual { max-width: 34rem; width: 100%; }
+  .publication-visual a { min-height: 0; }
 }
 
 .publication-card h3 {

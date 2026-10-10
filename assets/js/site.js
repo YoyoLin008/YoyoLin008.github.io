@@ -30,7 +30,7 @@ const timelineData = [
     date: 'May 2026 - Aug 2026',
     logoUrl: 'assets/images/logos/cuhksz-logo.png?v=20260427-logos',
     description:
-      'Upcoming summer research position working on the intersection of Blockchain and Large Language Models under the guidance of Prof. Chenhao Ma.',
+      'Worked on research at the intersection of Blockchain and Large Language Models under the guidance of Prof. Chenhao Ma.',
     links: [{ label: 'Prof. Chenhao Ma', href: 'https://sds.cuhk.edu.cn/en/teacher/631' }]
   },
   {
@@ -357,6 +357,9 @@ const publications = [
     author: 'Yunya Lin',
     year: '2026',
     status: 'Submitted',
+    image: 'assets/images/publications/evidence-annotation-structure.png',
+    imageAlt: 'Paper figure comparing evidence completion gaps by annotation structure in QASPER and SciFact.',
+    imageCaption: 'From the paper · Annotation structure',
     description: 'An empirical audit of scientific retrieval evaluation, examining how flattening annotated evidence sets into relevance lists changes what retrieval metrics measure on QASPER and SciFact.',
     links: [
       { label: 'Read manuscript', href: 'https://github.com/YoyoLin008/evidence-sets-retrieval-evaluation/blob/main/paper/manuscript_reading_copy.pdf' },
@@ -369,6 +372,9 @@ const publications = [
     author: 'Yunya Lin',
     year: '2026',
     status: 'In progress',
+    image: 'assets/images/publications/historical-abstract-overview.svg',
+    imageAlt: 'Conceptual overview: hold the focal paper fixed, compare history with abstracts to title-only history, and examine scores, rankings, and selections.',
+    imageCaption: 'Study overview · Conceptual illustration',
     description: 'A study of how missing abstracts in historical literature affect a semantic novelty indicator, examining score changes, ranking shifts, and selection outcomes while keeping focal paper inputs fixed.',
     links: [
       { label: 'Code & materials', href: 'https://github.com/YoyoLin008/historical-abstract-loss-semantic-novelty' },
@@ -386,6 +392,7 @@ const renderPublications = () => `
     <div class="publication-list">
       ${publications.map((paper) => `
         <article class="publication-card">
+          <div class="publication-copy">
           <div class="publication-meta">
             <span class="publication-status">${escapeHtml(paper.status)}</span>
             <span>${escapeHtml(paper.year)}</span>
@@ -396,6 +403,13 @@ const renderPublications = () => `
           <div class="publication-links" aria-label="Resources for ${escapeHtml(paper.title)}">
             ${paper.links.map((link) => `<a class="text-link" href="${link.href}" target="_blank" rel="noreferrer">${escapeHtml(link.label)}</a>`).join('')}
           </div>
+          </div>
+          <figure class="publication-visual">
+            <a href="${paper.image}" target="_blank" rel="noreferrer" aria-label="View figure for ${escapeHtml(paper.title)}">
+              <img src="${paper.image}" alt="${escapeHtml(paper.imageAlt)}" loading="lazy" />
+            </a>
+            <figcaption>${escapeHtml(paper.imageCaption)}</figcaption>
+          </figure>
         </article>
       `).join('')}
     </div>
