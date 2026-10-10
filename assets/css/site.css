@@ -1296,3 +1296,15 @@ figcaption span {
 /* A rectangular crop keeps the visible A380 wingtip, engines and tail. */
 .aviation-photo-emirates a { position: relative; }
 .aviation-photo-emirates img { position: absolute; width: 133.3333%; height: 133.3333%; max-width: none; right: 0; bottom: 0; object-fit: cover; }
+
+/* Compact recognition records with distinct title and supporting detail. */
+.award-list { gap: 0; }
+.award-entry { display: grid; grid-template-columns: 2.5rem minmax(0, 1fr); gap: 1rem; padding: 1.4rem 0; border-bottom: 1px solid var(--faint); }
+.award-entry:first-child { padding-top: 0.2rem; }
+.award-entry:last-child { border-bottom: 0; padding-bottom: 0; }
+.award-mark { width: 2.5rem; height: 2.5rem; display: flex; align-items: center; justify-content: center; color: var(--secondary); background: #edf1eb; border-radius: 0.5rem; }
+.award-mark svg { width: 1.2rem; height: 1.2rem; }
+.award-copy .award-category { color: var(--muted); font-size: 0.68rem; font-weight: 650; letter-spacing: 0.09em; text-transform: uppercase; margin: 0 0 0.4rem; }
+.award-copy h4 { font-size: 1.12rem; line-height: 1.35; margin: 0 0 0.5rem; }
+.award-copy .award-highlight { color: var(--secondary); font-size: 0.83rem; font-weight: 750; margin: 0 0 0.45rem; }
+.award-copy .award-description { font-size: 0.85rem; line-height: 1.65; margin: 0; }

@@ -55,15 +55,23 @@ const timelineData = [
 const awards = [
   {
     title: "Dean's List",
-    description: 'University of Illinois Urbana-Champaign. Recognized for three semesters of maintaining high academic standing alongside research.'
+    category: 'Academic recognition',
+    icon: 'Grad',
+    highlight: 'Three semesters',
+    description: 'University of Illinois Urbana-Champaign · High academic standing alongside research.'
   },
   {
     title: 'Illinois for Illinois (I4I) Scholarship',
-    description: 'Awarded in recognition of strong academic performance and a sustained commitment to learning.'
+    category: 'Scholarship',
+    icon: 'Award',
+    description: 'Recognizing strong academic performance and a sustained commitment to learning.'
   },
   {
-    title: 'Harvard International Review - Silver Medal',
-    description: 'Recognized for an article exploring AI in the fracking industry, combining policy, technology, and data.'
+    title: 'Harvard International Review',
+    category: 'Writing award',
+    icon: 'File',
+    highlight: 'Silver Medal',
+    description: 'For an article on AI in the fracking industry, connecting policy, technology, and data.'
   }
 ];
 
@@ -522,9 +530,14 @@ const renderAcademicBackground = () => `
         <h3 class="section-heading">${icon('Award')} Honors & Awards</h3>
         <ul class="award-list">
           ${awards.map((award) => `
-            <li>
-              <h4>${award.title}</h4>
-              <p>${award.description}</p>
+            <li class="award-entry">
+              <div class="award-mark" aria-hidden="true">${icon(award.icon)}</div>
+              <div class="award-copy">
+                <p class="award-category">${award.category}</p>
+                <h4>${award.title}</h4>
+                ${award.highlight ? `<p class="award-highlight">${award.highlight}</p>` : ''}
+                <p class="award-description">${award.description}</p>
+              </div>
             </li>
           `).join('')}
         </ul>
