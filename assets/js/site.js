@@ -122,7 +122,7 @@ const galleryData = {
       },
       {
             "src": "assets/images/gallery/birds/bird-05.jpg",
-            "caption": "Photographed in Farm visit, Costa Rica.",
+            "caption": "Photographed during a farm visit in Costa Rica.",
             "location": "Farm visit, Costa Rica",
             "date": "2026-03-15",
             "width": 2000,
@@ -194,7 +194,7 @@ const galleryData = {
       },
       {
             "src": "assets/images/gallery/birds/bird-14.jpg",
-            "caption": "Photographed in Crocodile-watching excursion, Costa Rica.",
+            "caption": "Photographed during a crocodile-watching excursion in Costa Rica.",
             "location": "Crocodile-watching excursion, Costa Rica",
             "date": "2026-03-20",
             "width": 2000,
@@ -202,7 +202,7 @@ const galleryData = {
       },
       {
             "src": "assets/images/gallery/birds/bird-15.jpg",
-            "caption": "Photographed in Crocodile-watching excursion, Costa Rica.",
+            "caption": "Photographed during a crocodile-watching excursion in Costa Rica.",
             "location": "Crocodile-watching excursion, Costa Rica",
             "date": "2026-03-20",
             "width": 2000,
@@ -210,7 +210,7 @@ const galleryData = {
       },
       {
             "src": "assets/images/gallery/birds/bird-16.jpg",
-            "caption": "Photographed in Crocodile-watching excursion, Costa Rica.",
+            "caption": "Photographed during a crocodile-watching excursion in Costa Rica.",
             "location": "Crocodile-watching excursion, Costa Rica",
             "date": "2026-03-20",
             "width": 2000,
