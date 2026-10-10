@@ -310,6 +310,10 @@ h1 {
   width: 100%;
 }
 
+.logo-card img[src*="/uiuc-logo.png"] {
+  border-radius: calc(1rem - 0.5rem - 1px);
+}
+
 .border-note {
   border-left: 2px solid #f6d28b;
   padding-left: 1rem;
