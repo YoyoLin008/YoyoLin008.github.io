@@ -35,7 +35,7 @@ const timelineData = [
     links: [{ label: 'Prof. Chenhao Ma', href: 'https://sds.cuhk.edu.cn/en/teacher/631' }]
   },
   {
-    role: 'Research Assistant (LLMs as Peer Reviewers)',
+    role: 'Undergraduate Research Assistant (LLMs as Peer Reviewers)',
     organization: 'University of Illinois Urbana-Champaign',
     date: 'Jan 2026 - Present',
     logoUrl: 'assets/images/logos/uiuc-logo.png?v=20260427-logos',
