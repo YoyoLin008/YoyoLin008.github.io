@@ -177,7 +177,7 @@ const app = document.getElementById('app');
 
 const icons = {
   github: '<path d="M9 19c-4 1.3-4-2-5.6-2.5m11.2 4.5v-3.4a3 3 0 0 0-.8-2.3c2.7-.3 5.5-1.3 5.5-6A4.7 4.7 0 0 0 18 6a4.3 4.3 0 0 0-.1-3.2s-1-.3-3.4 1.3a11.6 11.6 0 0 0-6.2 0C5.9 2.5 4.9 2.8 4.9 2.8A4.3 4.3 0 0 0 4.8 6a4.7 4.7 0 0 0-1.3 3.3c0 4.7 2.8 5.7 5.5 6a3 3 0 0 0-.8 2.3V21"/>',
-  linkedin: '<path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4V9h4v2a5 5 0 0 1 4-3z"/><path d="M2 9h4v12H2z"/><path d="M4 2a2 2 0 1 1 0 4 2 2 0 0 1 0-4z"/>',
+  linkedin: '<path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><path d="M2 9h4v12H2z"/><path d="M4 2a2 2 0 1 1 0 4 2 2 0 0 1 0-4z"/>',
   mail: '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/>',
   grad: '<path d="m22 10-10-5-10 5 10 5 10-5z"/><path d="M6 12v5c3.5 2.5 8.5 2.5 12 0v-5"/><path d="M22 10v6"/>',
   file: '<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M8 13h8M8 17h6"/>',
@@ -250,8 +250,7 @@ const renderHome = () => `
       <p class="eyebrow">Information Sciences + Data Science @ UIUC</p>
       <h1>Hi, I'm Yoyo Lin.</h1>
       <p class="lead">
-        I explore how technology and human experiences intersect, whether that is analyzing crops and climate,
-        training language models for peer review, or turning a flight log into a personal story of travel.
+        I'm an Information Sciences and Data Science student at the University of Illinois Urbana-Champaign. My work spans data analysis, machine learning, and research on language models, with a focus on turning complex data into useful insights.
       </p>
       <div class="social-row" aria-label="Social links">
         <a href="${CONTACT.github}" target="_blank" rel="noreferrer" aria-label="GitHub">${icon('github')}</a>

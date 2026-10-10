@@ -76,11 +76,10 @@ a {
 .nav-inner {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
   gap: 1.5rem;
 }
 
-.brand-button,
 .nav-link,
 .plain-button,
 .back-button {
@@ -88,12 +87,7 @@ a {
   background: transparent;
 }
 
-.brand-mark {
-  color: #78350f;
-  font-size: 1.3rem;
-  font-weight: 800;
-  letter-spacing: -0.02em;
-}
+
 
 .desktop-nav {
   display: flex;
