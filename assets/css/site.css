@@ -1262,3 +1262,20 @@ figcaption span {
 }
 
 .hobby-button:hover .tech-cover-flow img { transform: rotate(-90deg) scale(1.025); }
+
+.aviation-heading { max-width: 46rem; margin-bottom: 2rem; }
+.aviation-heading h3 { font-size: 1.65rem; margin-bottom: 0.8rem; }
+.aviation-heading > p:not(.tech-kind) { color: var(--muted); }
+.aviation-photo-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2.5rem 2rem; }
+.aviation-photo { margin: 0; min-width: 0; }
+.aviation-photo a { display: flex; align-items: center; justify-content: center; aspect-ratio: 4 / 3; background: #f2efe8; border-radius: 0.4rem; overflow: hidden; }
+.aviation-photo img { display: block; width: 100%; height: 100%; object-fit: contain; }
+.aviation-photo a:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+.aviation-photo figcaption { margin-top: 0.85rem; font-style: normal; text-align: center; }
+.aviation-photo figcaption strong { display: block; font-size: 1rem; color: var(--ink); }
+.aviation-photo figcaption span { display: block; max-width: none; margin-top: 0.25rem; font-size: 0.8rem; color: var(--muted); }
+.aviation-archive { margin-top: 2.5rem; }
+.aviation-archive figure { max-width: 38rem; margin: 1.25rem auto 0; }
+@media (max-width: 700px) {
+  .aviation-photo-grid { grid-template-columns: 1fr; gap: 2rem; }
+}

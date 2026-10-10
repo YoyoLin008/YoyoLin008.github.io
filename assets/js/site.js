@@ -800,17 +800,38 @@ const renderTech = () => `
         <p>One of my favorite pairs of earphones.</p>
       </article>
     </div>
-    <article class="tech-story tech-aviation-story">
-      <div class="tech-story-copy">
+    <section class="tech-aviation" aria-labelledby="aviation-title">
+      <header class="aviation-heading">
         <p class="tech-kind">Aviation</p>
-        <h3>Airplanes at Narita</h3>
-        <p>I don't have one favorite aircraft model. I enjoy photographing airplanes and noticing the designs that catch my eye.</p>
+        <h3 id="aviation-title">Airplanes through my lens</h3>
+        <p>I have a soft spot for the Boeing 737-200: its slim little engines make it look especially cute to me. I also collect aircraft models and enjoy photographing the airplanes I come across.</p>
+      </header>
+      <div class="aviation-photo-grid">
+        <figure class="aviation-photo">
+          <a href="assets/images/gallery/tech/cathay-a350-900-anniversary.jpg" target="_blank" rel="noopener" aria-label="View full photograph: Cathay Pacific · Airbus A350-900"><img src="assets/images/gallery/tech/cathay-a350-900-anniversary.jpg" alt="Cathay Pacific · Airbus A350-900 — 80th anniversary retro livery" loading="lazy" width="1800" height="1350" /></a>
+          <figcaption><strong>Cathay Pacific · Airbus A350-900</strong><span>80th anniversary retro livery</span></figcaption>
+        </figure>
+        <figure class="aviation-photo">
+          <a href="assets/images/gallery/tech/ana-boeing-767.jpg" target="_blank" rel="noopener" aria-label="View full photograph: ANA · Boeing 767"><img src="assets/images/gallery/tech/ana-boeing-767.jpg" alt="ANA · Boeing 767 — JA627A" loading="lazy" width="1800" height="1350" /></a>
+          <figcaption><strong>ANA · Boeing 767</strong><span>JA627A</span></figcaption>
+        </figure>
+        <figure class="aviation-photo">
+          <a href="assets/images/gallery/tech/lufthansa-boeing-747-8.jpg" target="_blank" rel="noopener" aria-label="View full photograph: Lufthansa · Boeing 747-8"><img src="assets/images/gallery/tech/lufthansa-boeing-747-8.jpg" alt="Lufthansa · Boeing 747-8 — The unmistakable jumbo jet" loading="lazy" width="1350" height="1800" /></a>
+          <figcaption><strong>Lufthansa · Boeing 747-8</strong><span>The unmistakable jumbo jet</span></figcaption>
+        </figure>
+        <figure class="aviation-photo">
+          <a href="assets/images/gallery/tech/cathay-a350-1000.jpg" target="_blank" rel="noopener" aria-label="View full photograph: Cathay Pacific · Airbus A350-1000"><img src="assets/images/gallery/tech/cathay-a350-1000.jpg" alt="Cathay Pacific · Airbus A350-1000 — The aircraft I fly on most often" loading="lazy" width="1800" height="1350" /></a>
+          <figcaption><strong>Cathay Pacific · Airbus A350-1000</strong><span>The aircraft I fly on most often</span></figcaption>
+        </figure>
       </div>
-      <figure class="tech-story-photo">
-        <img src="assets/images/gallery/tech/narita-aircraft.jpg" alt="An aircraft photographed at Narita Airport" loading="lazy" width="1800" height="1200" />
-        <figcaption>Narita Airport, Japan · October 2023</figcaption>
-      </figure>
-    </article>
+      <details class="tech-process aviation-archive">
+        <summary>An earlier photograph from Narita</summary>
+        <figure class="tech-story-photo">
+          <img src="assets/images/gallery/tech/narita-aircraft.jpg" alt="An aircraft photographed at Narita Airport" loading="lazy" width="1800" height="1200" />
+          <figcaption>Narita Airport, Japan · October 2023</figcaption>
+        </figure>
+      </details>
+    </section>
   </section>
 `;
 
