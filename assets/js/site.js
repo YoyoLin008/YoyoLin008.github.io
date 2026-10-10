@@ -10,7 +10,6 @@ const LEAFLET_VERSION = '1.9.4';
 
 const pageLabels = {
   home: 'About',
-  resume: 'Resume',
   experience: 'Experience',
   publications: 'Publications',
   hobbies: 'Hobbies'
@@ -163,7 +162,8 @@ const funFacts = [
 
 const pageFromHash = () => {
   const requestedPage = window.location.hash.slice(1);
-  const pageId = requestedPage === 'projects' ? 'publications' : requestedPage;
+  const pageId = requestedPage === 'projects' ? 'publications'
+    : requestedPage === 'resume' ? 'experience' : requestedPage;
   const isPage = Object.prototype.hasOwnProperty.call(pageLabels, pageId);
   const isGallery = pageId.startsWith('gallery-') &&
     Object.prototype.hasOwnProperty.call(galleryData, pageId.slice(8));
@@ -270,13 +270,8 @@ const renderHome = () => `
   </section>
 `;
 
-const renderResume = () => `
-  <section class="page">
-    <header class="page-header">
-      <h2>Experience & Education</h2>
-      <p>My academic journey and recognitions.</p>
-    </header>
-
+const renderAcademicBackground = () => `
+  <section class="academic-background" aria-label="Education and honors">
     <div class="two-column">
       <section>
         <h3 class="section-heading">${icon('Grad')} Education</h3>
@@ -294,9 +289,6 @@ const renderResume = () => `
             <p>Current focus: LLMs, peer review, crop analytics, and human-centered design.</p>
           </div>
         </article>
-        <a class="text-link resume-link" href="${CONTACT.cv}" target="_blank" rel="noreferrer">
-          ${icon('File')} Click here to preview CV
-        </a>
       </section>
 
       <section>
@@ -317,9 +309,14 @@ const renderResume = () => `
 
 const renderExperience = () => `
   <section class="page">
-    <header class="page-header">
-      <h2>Research & Experience</h2>
-      <p>A timeline of my academic research, internships, and data science projects.</p>
+    <header class="page-header split-header">
+      <div>
+        <h2>Experience</h2>
+        <p>My research, internships, education, and academic recognitions.</p>
+      </div>
+      <a class="text-link resume-link" href="${CONTACT.cv}" target="_blank" rel="noreferrer">
+        ${icon('File')} View resume
+      </a>
     </header>
 
     <div class="timeline">
@@ -350,6 +347,7 @@ const renderExperience = () => `
         </article>
       `).join('')}
     </div>
+    ${renderAcademicBackground()}
   </section>
 `;
 
@@ -649,7 +647,6 @@ const render = () => {
   } else {
     const renderers = {
       home: renderHome,
-      resume: renderResume,
       experience: renderExperience,
       publications: renderPublications,
       hobbies: renderHobbies

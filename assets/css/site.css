@@ -434,6 +434,12 @@ h1 {
   text-underline-offset: 3px;
 }
 
+.academic-background {
+  border-top: 1px solid var(--faint);
+  margin-top: 4rem;
+  padding-top: 3rem;
+}
+
 .publication-list {
   display: grid;
   gap: 2.5rem;
