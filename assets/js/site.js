@@ -611,12 +611,13 @@ const publications = [
     title: 'Historical abstract loss and use-dependent robustness of a semantic novelty indicator',
     author: 'Yunya Lin',
     year: '2026',
-    status: 'In progress',
-    image: 'assets/images/publications/historical-abstract-overview.svg',
-    imageAlt: 'Conceptual overview: hold the focal paper fixed, compare history with abstracts to title-only history, and examine scores, rankings, and selections.',
-    imageCaption: 'Study overview · Conceptual illustration',
+    status: 'Submitted',
+    image: 'assets/images/publications/historical-title-substitution.png',
+    imageAlt: 'Figure 1 from the manuscript: historical title substitution with fixed focal papers, retained historical records, nearest-prior scoring, and contrast, selection, and ranking readouts.',
+    imageCaption: 'From the paper · Controlled historical title substitution',
     description: 'A study of how missing abstracts in historical literature affect a semantic novelty indicator, examining score changes, ranking shifts, and selection outcomes while keeping focal paper inputs fixed.',
     links: [
+      { label: 'Read manuscript', href: 'https://github.com/YoyoLin008/historical-abstract-loss-semantic-novelty/blob/main/preprint/manuscript.pdf' },
       { label: 'Code & materials', href: 'https://github.com/YoyoLin008/historical-abstract-loss-semantic-novelty' },
       { label: 'Research archive', href: 'https://doi.org/10.5281/zenodo.23242635' }
     ]
@@ -627,7 +628,7 @@ const renderPublications = () => `
   <section class="page publications-page">
     <header class="page-header">
       <h2>Publications</h2>
-      <p>Research manuscripts, ongoing work, and accompanying code and reproducibility materials.</p>
+      <p>Research manuscripts and accompanying code and reproducibility materials.</p>
     </header>
     <div class="publication-list">
       ${publications.map((paper) => `
