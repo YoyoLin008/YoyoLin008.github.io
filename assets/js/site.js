@@ -646,7 +646,7 @@ const renderPublications = () => `
           </div>
           </div>
           <figure class="publication-visual">
-            <a href="${paper.image}" target="_blank" rel="noreferrer" aria-label="View figure for ${escapeHtml(paper.title)}">
+            <a href="${paper.links.find((link) => link.label === 'Read manuscript').href}" target="_blank" rel="noreferrer" aria-label="Read manuscript: ${escapeHtml(paper.title)}">
               <img src="${paper.image}" alt="${escapeHtml(paper.imageAlt)}" loading="lazy" />
             </a>
             <figcaption>${escapeHtml(paper.imageCaption)}</figcaption>
