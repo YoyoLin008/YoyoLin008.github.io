@@ -746,13 +746,37 @@ const renderEbirdPanel = (gallery) => {
   `;
 };
 
+const birdSpeciesGuides = {
+  "Northern Emerald-Toucanet": "https://ebird.org/species/noremt1?siteLanguage=en",
+  "Resplendent Quetzal": "https://ebird.org/species/resque1?siteLanguage=en",
+  "White-throated Kingfisher": "https://ebird.org/species/whtkin2?siteLanguage=en",
+  "White-throated Magpie-Jay": "https://ebird.org/species/wtmjay1?siteLanguage=en",
+  "Collared Aracari": "https://ebird.org/species/colara1?siteLanguage=en",
+  "Green-crowned Brilliant": "https://ebird.org/species/grcbri1?siteLanguage=en",
+  "Baltimore Oriole": "https://ebird.org/species/balori?siteLanguage=en",
+  "Blue-gray Tanager": "https://ebird.org/species/bugtan?siteLanguage=en",
+  "Scarlet-rumped Tanager": "https://ebird.org/species/pastan1?siteLanguage=en",
+  "Red-legged Honeycreeper": "https://ebird.org/species/relhon1?siteLanguage=en",
+  "Great-tailed Grackle": "https://ebird.org/species/grtgra?siteLanguage=en",
+  "Anhinga": "https://ebird.org/species/anhing?siteLanguage=en",
+  "Green Heron": "https://ebird.org/species/grnher?siteLanguage=en",
+  "Roseate Spoonbill": "https://ebird.org/species/rosspo1?siteLanguage=en",
+  "Fork-tailed Sunbird": "https://ebird.org/species/fotsun1?siteLanguage=en",
+  "Pied Avocet": "https://ebird.org/species/pieavo1?siteLanguage=en",
+  "Daurian Redstart": "https://ebird.org/species/daured1?siteLanguage=en",
+  "Barred Cuckoo-Dove": "https://ebird.org/species/bacdov1?siteLanguage=en",
+  "Collared Scops-Owl": "https://ebird.org/species/cosowl1?siteLanguage=en",
+  "Green-backed Tit": "https://ebird.org/species/grbtit1?siteLanguage=en",
+  "Red-tailed Hawk": "https://ebird.org/species/rethaw?siteLanguage=en"
+};
+
 const renderBirdPhoto = (photo, featured = false) => `
   <figure class="${featured ? 'bird-featured-photo' : 'bird-photo'}">
     <a href="${photo.src}" target="_blank" rel="noreferrer" aria-label="View ${escapeHtml(photo.species)} in ${escapeHtml(photo.location)}">
       <img src="${photo.src}" alt="${escapeHtml(photo.species)} in ${escapeHtml(photo.location)}" width="${photo.width}" height="${photo.height}" loading="${featured ? 'eager' : 'lazy'}" decoding="async" />
     </a>
     <figcaption>
-      <strong class="bird-species">${escapeHtml(photo.species)}</strong>
+      <strong class="bird-species"><a class="bird-species-link" href="${birdSpeciesGuides[photo.species]}" target="_blank" rel="noopener noreferrer" title="Learn about ${escapeHtml(photo.species)} on eBird (opens in a new tab)">${escapeHtml(photo.species)}</a></strong>
       <span class="bird-location">${escapeHtml(photo.location)}</span>
     </figcaption>
   </figure>

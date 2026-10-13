@@ -1206,8 +1206,8 @@ figcaption span {
 }
 .bird-portfolio .page-header p { font-size: 1rem; }
 .bird-featured-photo { margin: 0 0 4.5rem; }
-.bird-featured-photo a,
-.bird-photo a {
+.bird-featured-photo > a,
+.bird-photo > a {
   display: block;
   padding: 0.65rem;
   background: #fff;
@@ -1215,10 +1215,10 @@ figcaption span {
   border-radius: 0.15rem;
   transition: border-color 180ms ease;
 }
-.bird-featured-photo a:hover,
-.bird-photo a:hover { border-color: #aaa08c; }
-.bird-featured-photo a:focus-visible,
-.bird-photo a:focus-visible { outline: 2px solid var(--accent); outline-offset: 5px; }
+.bird-featured-photo > a:hover,
+.bird-photo > a:hover { border-color: #aaa08c; }
+.bird-featured-photo > a:focus-visible,
+.bird-photo > a:focus-visible { outline: 2px solid var(--accent); outline-offset: 5px; }
 .bird-featured-photo img,
 .bird-photo img { display: block; width: 100%; height: auto; }
 .bird-photo-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4rem 2.5rem; }
@@ -1236,6 +1236,16 @@ figcaption span {
   font-weight: 750;
   letter-spacing: 0.015em;
 }
+.bird-species-link {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: var(--faint);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.25em;
+}
+.bird-species-link:hover { color: var(--accent); text-decoration-color: currentColor; }
+.bird-species-link:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+
 .bird-location {
   display: block;
   max-width: none;
