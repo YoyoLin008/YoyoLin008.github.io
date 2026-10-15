@@ -78,7 +78,7 @@ const awards = [
 const galleryData = {
   birds: {
     title: 'Bird Photography',
-    description: 'A collection of bird photographs I\'ve taken over the past five or six years.',
+    description: 'A collection of bird photographs I\'ve taken since 2020.',
     icon: 'Camera',
     ebird: {
       profileUrl: EBIRD_PROFILE_URL,
