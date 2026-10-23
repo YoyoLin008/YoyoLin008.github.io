@@ -2,7 +2,7 @@ const CONTACT = {
   github: 'https://github.com/YoyoLin008',
   linkedin: 'https://www.linkedin.com/in/yoyo-lin-631889299',
   email: 'mailto:yoyolin2@illinois.edu',
-  cv: 'assets/documents/yunya-lin-cv.pdf?v=20261005-google-docs'
+  cv: 'assets/documents/yunya-lin-cv.pdf?v=20261022-project-lead'
 };
 
 const EBIRD_PROFILE_URL = 'https://ebird.org/profile/Mzc5ODc4NQ/world';
