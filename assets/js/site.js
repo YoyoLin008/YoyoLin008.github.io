@@ -17,6 +17,14 @@ const pageLabels = {
 
 const timelineData = [
   {
+    role: 'Undergraduate Researcher (AI-Assisted Conceptual Modeling)',
+    organization: 'University of Illinois Urbana-Champaign',
+    date: 'Fall 2026 - Present',
+    logoUrl: 'assets/images/logos/uiuc-logo.png?v=20260427-logos',
+    description:
+      'Working with Prof. Bertram Ludäscher and Yuanxi Fu on a conceptual model and Neo4j graph database to help university researchers find funding opportunities and collaborators. Developing a human-designed baseline for a planned comparison with LLM-generated graph structures and their representation of domain relationships in Cypher.'
+  },
+  {
     role: 'Quantitative Research Intern',
     organization: 'IPSOS',
     date: 'July 2026 - Oct 2026',
