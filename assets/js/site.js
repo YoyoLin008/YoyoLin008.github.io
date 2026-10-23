@@ -625,6 +625,8 @@ const publications = [
   },
   {
     title: 'Historical abstract loss and use-dependent robustness of a semantic novelty indicator',
+    // Set to true to restore this entry on the public Publications page.
+    visible: false,
     author: 'Yunya Lin',
     year: '2026',
     status: 'Submitted',
@@ -647,7 +649,7 @@ const renderPublications = () => `
       <p>Research manuscripts and accompanying code and reproducibility materials.</p>
     </header>
     <div class="publication-list">
-      ${publications.map((paper) => `
+      ${publications.filter((paper) => paper.visible !== false).map((paper) => `
         <article class="publication-card">
           <div class="publication-copy">
           <div class="publication-meta">

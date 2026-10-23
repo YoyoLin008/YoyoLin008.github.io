@@ -18,6 +18,10 @@ function check(name, html) {
 for (const name of ['renderHome', 'renderExperience', 'renderPublications', 'renderHobbies', 'renderBirdPortfolio', 'renderTech']) {
   check(name, vm.runInContext(`${name}()`, context));
 }
+const publicPublications = vm.runInContext('renderPublications()', context);
+assert.doesNotMatch(publicPublications, /Historical abstract loss|historical-abstract-loss|23242635|historical-title-substitution/);
+assert.match(publicPublications, /When Evidence Sets Become Relevance Lists/);
+assert.equal(vm.runInContext("publications.find(paper => paper.title.startsWith('Historical abstract loss')).visible", context), false);
 for (const file of ['index.html', 'resume.html', 'hobbies/bird-photography.html', 'hobbies/phones-jailbreaking.html', 'hobbies/flight-log.html', 'hobbies/hifi-earphones.html']) {
   const html = readFileSync(file, 'utf8');
   check(file, html.match(/<main\b[\s\S]*?<\/main>/)[0]);
