@@ -2,7 +2,7 @@ const CONTACT = {
   github: 'https://github.com/YoyoLin008',
   linkedin: 'https://www.linkedin.com/in/yoyo-lin-631889299',
   email: 'mailto:yoyolin2@illinois.edu',
-  cv: 'assets/documents/yunya-lin-cv.pdf?v=20261022-peer-review-ended'
+  cv: 'assets/documents/yunya-lin-cv.pdf?v=20261022-conceptual-modeling'
 };
 
 const EBIRD_PROFILE_URL = 'https://ebird.org/profile/Mzc5ODc4NQ/world';
@@ -22,7 +22,7 @@ const timelineData = [
     date: 'Fall 2026 - Present',
     logoUrl: 'assets/images/logos/uiuc-logo.png?v=20260427-logos',
     description:
-      'Working with Prof. Bertram Ludäscher and Yuanxi Fu on a conceptual model and Neo4j graph database to help university researchers find funding opportunities and collaborators. Developing a human-designed baseline for a planned comparison with LLM-generated graph structures and their representation of domain relationships in Cypher.'
+      'Working with Prof. Bertram Ludäscher and Yuanxi Fu to compare AI-generated and human-created conceptual models of the same funding-opportunity domain. Examining how each approach represents the domain’s concepts and relationships.'
   },
   {
     role: 'Quantitative Research Intern',
