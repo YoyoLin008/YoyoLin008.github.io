@@ -45,27 +45,29 @@
     }
   </script>
   <link rel="preconnect" href="https://images.unsplash.com" />
-  <link rel="stylesheet" href="assets/css/site.css?v=20261013-bird-species-links" />
-  <script src="assets/js/site.js?v=20261022-resume-project-lead" defer></script>
+  <link rel="stylesheet" href="assets/css/site.css?v=20261022-accessibility" />
+  <script src="assets/js/accessibility.js?v=20261022-accessibility" defer></script>
+  <script src="assets/js/site.js?v=20261022-accessibility" defer></script>
 </head>
 <body>
+  <a class="skip-link" href="#app">Skip to main content</a>
   <nav class="site-nav" aria-label="Main navigation">
     <div class="nav-inner">
       <div class="desktop-nav" aria-label="Primary pages">
-        <button class="nav-link active" type="button" data-page="home">About</button>
-        <button class="nav-link" type="button" data-page="experience">Experience</button>
-        <button class="nav-link" type="button" data-page="publications">Publications</button>
-        <button class="nav-link" type="button" data-page="hobbies">Hobbies</button>
+        <a class="nav-link active" href="#home" data-page="home">About</a>
+        <a class="nav-link" href="#experience" data-page="experience">Experience</a>
+        <a class="nav-link" href="#publications" data-page="publications">Publications</a>
+        <a class="nav-link" href="#hobbies" data-page="hobbies">Hobbies</a>
       </div>
 
-      <div class="mobile-page-label" aria-live="polite">About</div>
+      <div class="mobile-page-label" aria-hidden="true">About</div>
     </div>
 
     <div class="mobile-nav" aria-label="Mobile pages">
-      <button class="nav-link active" type="button" data-page="home">About</button>
-      <button class="nav-link" type="button" data-page="experience">Experience</button>
-      <button class="nav-link" type="button" data-page="publications">Publications</button>
-      <button class="nav-link" type="button" data-page="hobbies">Hobbies</button>
+      <a class="nav-link active" href="#home" data-page="home">About</a>
+      <a class="nav-link" href="#experience" data-page="experience">Experience</a>
+      <a class="nav-link" href="#publications" data-page="publications">Publications</a>
+      <a class="nav-link" href="#hobbies" data-page="hobbies">Hobbies</a>
     </div>
   </nav>
 
@@ -99,11 +101,11 @@
       </p>
       <div class="footer-links" aria-label="Contact links">
         <a href="mailto:yoyolin2@illinois.edu" aria-label="Email Yoyo Lin">
-          <span class="footer-icon">Mail</span>
+          <span class="footer-icon" aria-hidden="true">Mail</span>
           <span>Email</span>
         </a>
         <a href="https://github.com/YoyoLin008" target="_blank" rel="noreferrer" aria-label="Yoyo Lin on GitHub">
-          <span class="footer-icon">GitHub</span>
+          <span class="footer-icon" aria-hidden="true">GitHub</span>
           <span>GitHub</span>
         </a>
         <a
@@ -112,7 +114,7 @@
           rel="noreferrer"
           aria-label="Yoyo Lin on LinkedIn"
         >
-          <span class="footer-icon">in</span>
+          <span class="footer-icon" aria-hidden="true">in</span>
           <span>LinkedIn</span>
         </a>
       </div>

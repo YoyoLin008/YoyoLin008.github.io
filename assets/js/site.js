@@ -466,14 +466,19 @@ const logoFallback = (name) =>
 const setPage = (pageId) => {
   currentPage = pageId;
   const hash = pageId === 'home' ? '' : `#${pageId}`;
-  window.history.replaceState(null, '', `${window.location.pathname}${window.location.search}${hash}`);
-  render();
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+  if (pageFromHash() !== pageId) {
+    window.history.pushState(null, '', `${window.location.pathname}${window.location.search}${hash}`);
+  }
+  render(true);
 };
 
 const updateNavigation = () => {
   document.querySelectorAll('[data-page]').forEach((button) => {
-    button.classList.toggle('active', button.dataset.page === currentPage);
+    const activePage = currentPage.startsWith('gallery-') ? 'hobbies' : currentPage;
+    const isCurrent = button.dataset.page === activePage;
+    button.classList.toggle('active', isCurrent);
+    if (isCurrent) button.setAttribute('aria-current', 'page');
+    else button.removeAttribute('aria-current');
   });
   document.querySelector('.mobile-page-label').textContent = pageLabels[currentPage] || pageLabels.hobbies;
 };
@@ -508,7 +513,7 @@ const renderAcademicBackground = () => `
   <section class="academic-background" aria-label="Education and honors">
     <div class="two-column">
       <section>
-        <h3 class="section-heading">${icon('Grad')} Education</h3>
+        <h2 class="section-heading">${icon('Grad')} Education</h2>
         <article class="education-item">
           <div class="logo-card">
             <img
@@ -518,7 +523,7 @@ const renderAcademicBackground = () => `
             />
           </div>
           <div class="border-note">
-            <h4>University of Illinois Urbana-Champaign</h4>
+            <h3>University of Illinois Urbana-Champaign</h3>
             <p class="accent-text">B.S. Information Sciences + Data Science</p>
             <p>Minor in Computer Science</p>
             <p>Current focus: LLMs, peer review, crop analytics, and human-centered design.</p>
@@ -527,14 +532,14 @@ const renderAcademicBackground = () => `
       </section>
 
       <section>
-        <h3 class="section-heading">${icon('Award')} Honors & Awards</h3>
+        <h2 class="section-heading">${icon('Award')} Honors & Awards</h2>
         <ul class="award-list">
           ${awards.map((award) => `
             <li class="award-entry">
               <div class="award-mark" aria-hidden="true">${icon(award.icon)}</div>
               <div class="award-copy">
                 <p class="award-category">${award.category}</p>
-                <h4>${award.title}</h4>
+                <h3>${award.title}</h3>
                 ${award.highlight ? `<p class="award-highlight">${award.highlight}</p>` : ''}
                 <p class="award-description">${award.description}</p>
               </div>
@@ -551,17 +556,20 @@ const renderExperience = () => `
   <section class="page">
     <header class="page-header split-header">
       <div>
-        <h2>Experience</h2>
+        <h1>Experience</h1>
         <p>My research, internships, education, and academic recognitions.</p>
       </div>
-      <a class="text-link resume-link" href="${CONTACT.cv}" target="_blank" rel="noreferrer">
-        ${icon('File')} View resume
-      </a>
+      <div class="resume-options">
+        <a class="text-link resume-link" href="${CONTACT.cv}" target="_blank" rel="noreferrer" aria-label="View resume (PDF)">
+          ${icon('File')} View resume
+        </a>
+        <a class="text-link" href="resume.html">Read resume as HTML</a>
+      </div>
     </header>
 
-    <div class="timeline">
+    <ol class="timeline" aria-label="Research and professional experience">
       ${timelineData.map((item) => `
-        <article class="timeline-item">
+        <li class="timeline-item">
           <div class="timeline-dot"></div>
           <div class="timeline-card">
             <div class="logo-card">
@@ -573,7 +581,7 @@ const renderExperience = () => `
             </div>
             <div class="timeline-content">
               <div class="timeline-title-row">
-                <h3>${escapeHtml(item.role)}</h3>
+                <h2>${escapeHtml(item.role)}</h2>
                 <span>${escapeHtml(item.date)}</span>
               </div>
               <p class="organization">
@@ -584,9 +592,9 @@ const renderExperience = () => `
               <p>${renderLinkedDescription(item)}</p>
             </div>
           </div>
-        </article>
+        </li>
       `).join('')}
-    </div>
+    </ol>
     ${renderAcademicBackground()}
   </section>
 `;
@@ -627,7 +635,7 @@ const publications = [
 const renderPublications = () => `
   <section class="page publications-page">
     <header class="page-header">
-      <h2>Publications</h2>
+      <h1>Publications</h1>
       <p>Research manuscripts and accompanying code and reproducibility materials.</p>
     </header>
     <div class="publication-list">
@@ -638,11 +646,11 @@ const renderPublications = () => `
             <span class="publication-status">${escapeHtml(paper.status)}</span>
             <span>${escapeHtml(paper.year)}</span>
           </div>
-          <h3>${escapeHtml(paper.title)}</h3>
+          <h2>${escapeHtml(paper.title)}</h2>
           <p class="publication-authors"><strong>${escapeHtml(paper.author)}</strong> · University of Illinois Urbana-Champaign</p>
           <p class="publication-description">${escapeHtml(paper.description)}</p>
           <div class="publication-links" aria-label="Resources for ${escapeHtml(paper.title)}">
-            ${paper.links.map((link) => `<a class="text-link" href="${link.href}" target="_blank" rel="noreferrer">${escapeHtml(link.label)}</a>`).join('')}
+            ${paper.links.map((link) => `<a class="text-link" href="${link.href}" target="_blank" rel="noreferrer" aria-label="${escapeHtml(link.label)}: ${escapeHtml(paper.title)}">${escapeHtml(link.label)}</a>`).join('')}
           </div>
           </div>
           <figure class="publication-visual">
@@ -659,20 +667,21 @@ const renderPublications = () => `
 
 const renderHobbies = () => `
   <section class="page hobbies-page" aria-label="Hobby galleries">
+    <h1 class="sr-only">Hobbies</h1>
     <div class="hobby-grid">
       ${Object.entries(galleryData).map(([id, hobby]) => `
-        <button class="hobby-button" type="button" data-gallery="${id}">
-          <span class="hobby-heading">
+        <a class="hobby-button" href="#gallery-${id}" data-gallery="${id}" aria-labelledby="hobby-${id}-title">
+          <div class="hobby-heading">
             <span class="hobby-icon">${icon(hobby.icon)}</span>
-            <strong>${hobby.title}</strong>
-          </span>
+            <h2 class="hobby-title" id="hobby-${id}-title">${hobby.title}</h2>
+          </div>
           <span class="hobby-preview ${id === 'tech' ? 'tech-cover-flow' : ''}">
             <img src="${id === 'birds' ? 'assets/images/gallery/birds/bird-03.jpg' : 'assets/images/gallery/phones/iphone-3gs-ios4-jailbreak-02.jpg'}"
               alt="${id === 'birds' ? 'A blue-winged bird perched on a branch in Shenzhen Bay' : 'An iPhone 3GS displaying the classic Cover Flow music interface'}"
               width="${id === 'birds' ? '2000' : '1080'}" height="${id === 'birds' ? '1333' : '1440'}" decoding="async" />
           </span>
           <span class="hobby-gallery-link">${id === 'tech' ? 'Explore Tech' : 'View gallery'} ${icon('Right')}</span>
-        </button>
+        </a>
       `).join('')}
     </div>
   </section>
@@ -788,7 +797,7 @@ const renderBirdPortfolio = () => `
     <header class="page-header split-header">
       <div>
 
-        <h2>Bird Photography</h2>
+        <h1>Bird Photography</h1>
         <p>${galleryData.birds.description}</p>
       </div>
       <a class="text-link" href="${EBIRD_PROFILE_URL}" target="_blank" rel="noreferrer">My eBird record ${icon('Right')}</a>
@@ -805,13 +814,13 @@ const renderTech = () => `
     <button class="back-button" type="button" data-back-hobbies>${icon('Left')} Back to Hobbies</button>
 
     <header class="page-header">
-      <h2>Tech</h2>
+      <h1>Tech</h1>
       <p>Devices I love, things I tinker with, and airplanes I've photographed.</p>
     </header>
     <article class="tech-story">
       <div class="tech-story-copy">
         <p class="tech-kind">Tinkering</p>
-        <h3>iPhone 3GS &amp; early iOS</h3>
+        <h2>iPhone 3GS &amp; early iOS</h2>
         <p>I brought my iPhone 3GS back from iOS 6.1 to iOS 4.1 and jailbroke it with Cydia. I especially love the skeuomorphic details of early iOS, including Cover Flow.</p>
         <details class="tech-process">
           <summary>See the jailbreak process</summary>
@@ -829,7 +838,7 @@ const renderTech = () => `
     <section class="tech-aviation" aria-labelledby="aviation-title">
       <header class="aviation-heading">
         <p class="tech-kind">Aviation</p>
-        <h3 id="aviation-title">Airplanes through my lens</h3>
+        <h2 id="aviation-title">Airplanes through my lens</h2>
         <p>I have a soft spot for the Boeing 737-200: its slim little engines make it look especially cute to me. I also collect aircraft models and enjoy photographing the airplanes I come across.</p>
       </header>
       <div class="aviation-photo-grid">
@@ -873,7 +882,7 @@ const renderGallery = (galleryId) => {
     <section class="page">
       <button class="back-button" type="button" data-back-hobbies>${icon('Left')} Back to Hobbies</button>
       <header class="page-header">
-        <div class="gallery-title">${icon(gallery.icon)}<h2>${gallery.title}</h2></div>
+        <div class="gallery-title">${icon(gallery.icon)}<h1>${gallery.title}</h1></div>
         <p>${gallery.description}</p>
       </header>
       ${renderEbirdPanel(gallery)}
@@ -989,14 +998,18 @@ const initEbirdMap = () => {
 
 const bindPageEvents = () => {
   document.querySelectorAll('[data-gallery]').forEach((button) => {
-    button.addEventListener('click', () => setPage(`gallery-${button.dataset.gallery}`));
+    button.addEventListener('click', (event) => {
+      if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+      event.preventDefault();
+      setPage(`gallery-${button.dataset.gallery}`);
+    });
   });
 
   document.querySelector('[data-back-hobbies]')?.addEventListener('click', () => setPage('hobbies'));
 
 };
 
-const render = () => {
+const render = (moveFocus = false) => {
   if (currentPage.startsWith('gallery-')) {
     app.innerHTML = renderGallery(currentPage.replace('gallery-', ''));
   } else {
@@ -1009,13 +1022,30 @@ const render = () => {
     app.innerHTML = (renderers[currentPage] || renderHome)();
   }
 
+  const heading = app.querySelector('h1');
+  if (heading) {
+    heading.id = 'page-title';
+    heading.tabIndex = -1;
+    app.setAttribute('aria-labelledby', heading.id);
+  }
+  const label = currentPage.startsWith('gallery-')
+    ? galleryData[currentPage.slice(8)].title : pageLabels[currentPage];
+  document.title = currentPage === 'home'
+    ? 'Yoyo Lin | UIUC Information Sciences & Data Science' : `${label} | Yoyo Lin`;
+  window.enhanceAccessibility?.(app);
   updateNavigation();
   bindPageEvents();
   initEbirdMap();
+  if (moveFocus) {
+    window.scrollTo({ top: 0, behavior: 'instant' });
+    heading?.focus({ preventScroll: true });
+  }
 };
 
 document.querySelectorAll('[data-page]').forEach((button) => {
-  button.addEventListener('click', () => {
+  button.addEventListener('click', (event) => {
+    if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+    event.preventDefault();
     setPage(button.dataset.page);
   });
 });
@@ -1025,8 +1055,9 @@ window.addEventListener('scroll', () => {
 });
 
 window.addEventListener('hashchange', () => {
+  if (window.location.hash === '#app') return;
   currentPage = pageFromHash();
-  render();
+  render(true);
 });
 
 document.getElementById('year').textContent = new Date().getFullYear();
