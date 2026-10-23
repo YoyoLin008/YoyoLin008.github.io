@@ -1269,7 +1269,7 @@ figcaption span {
 }
 
 .tech-page .page-header h1 { font-size: 2rem; line-height: 1.15; margin-bottom: 0.35rem; }
-.tech-story { display: grid; grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr); align-items: center; gap: 3rem; }
+.tech-story { display: grid; grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr); align-items: start; gap: 3rem; }
 .tech-kind { font-size: 0.75rem; color: var(--secondary); font-weight: 700; margin: 0 0 0.7rem; }
 .tech-story h2, .tech-story h3, .tech-favorites h3 { font-size: 1.3rem; line-height: 1.3; margin-bottom: 1rem; }
 .tech-story-copy > p:not(.tech-kind), .tech-favorites article > p:not(.tech-kind) { color: var(--muted); }
@@ -1278,13 +1278,17 @@ figcaption span {
 .tech-story-photo figcaption { text-align: center; font-size: 0.78rem; margin-top: 0.75rem; }
 .tech-cover-flow { position: relative; aspect-ratio: 4 / 3; overflow: hidden; border-radius: 0.5rem; }
 .tech-cover-flow img { position: absolute; width: 75%; height: 133.3333%; max-width: none; left: 12.5%; top: -16.6667%; object-fit: cover; transform: rotate(-90deg) scale(1.06); }
-.tech-process { margin-top: 1.25rem; }
+.tech-process { display: grid; grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr); gap: 3rem; margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid var(--faint); }
+.tech-process-copy h3 { font-size: 1rem; margin: 0 0 0.5rem; }
+.tech-process-copy p { color: var(--muted); font-size: 0.9rem; max-width: 28rem; }
+.tech-process .tech-process-photos { margin-top: 0; max-width: 25rem; width: 100%; justify-self: center; }
 .tech-process summary { color: var(--accent); cursor: pointer; font-size: 0.88rem; font-weight: 700; }
 .tech-process-photos { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem; }
 .tech-process-photos img { width: 100%; height: 13rem; object-fit: contain; background: var(--surface-soft); border-radius: 0.4rem; }
 .tech-favorites { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 3rem; border-top: 1px solid var(--faint); border-bottom: 1px solid var(--faint); padding: 2.25rem 0; margin: 3rem 0; }
 @media (max-width: 700px) {
   .tech-story, .tech-favorites { grid-template-columns: 1fr; gap: 1.5rem; }
+  .tech-process { grid-template-columns: 1fr; gap: 1rem; }
   .tech-favorites { margin: 2rem 0; padding: 2rem 0; }
 }
 

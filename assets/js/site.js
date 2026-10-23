@@ -2,7 +2,7 @@ const CONTACT = {
   github: 'https://github.com/YoyoLin008',
   linkedin: 'https://www.linkedin.com/in/yoyo-lin-631889299',
   email: 'mailto:yoyolin2@illinois.edu',
-  cv: 'assets/documents/yunya-lin-cv.pdf?v=20261022-conceptual-modeling'
+  cv: 'assets/documents/yunya-lin-cv.pdf?v=20261022-resume-tags'
 };
 
 const EBIRD_PROFILE_URL = 'https://ebird.org/profile/Mzc5ODc4NQ/world';
@@ -567,12 +567,9 @@ const renderExperience = () => `
         <h1>Experience</h1>
         <p>My research, internships, education, and academic recognitions.</p>
       </div>
-      <div class="resume-options">
-        <a class="text-link resume-link" href="${CONTACT.cv}" target="_blank" rel="noreferrer" aria-label="View resume (PDF)">
+      <a class="text-link resume-link" href="${CONTACT.cv}" target="_blank" rel="noreferrer" aria-label="View resume (PDF)">
           ${icon('File')} View resume
-        </a>
-        <a class="text-link" href="resume.html">Read resume as HTML</a>
-      </div>
+      </a>
     </header>
 
     <ol class="timeline" aria-label="Research and professional experience">
@@ -832,19 +829,23 @@ const renderTech = () => `
         <p class="tech-kind">Tinkering</p>
         <h2>iPhone 3GS &amp; early iOS</h2>
         <p>I brought my iPhone 3GS back from iOS 6.1 to iOS 4.1 and jailbroke it with Cydia. I especially love the skeuomorphic details of early iOS, including Cover Flow.</p>
-        <details class="tech-process">
-          <summary>See the jailbreak process</summary>
-          <div class="tech-process-photos">
-            <figure><div class="tech-process-frame tech-process-downgrade"><img src="assets/images/gallery/phones/iphone-3gs-ios4-jailbreak-01.jpg" alt="iPhone 3GS displaying the downgrade process" loading="lazy" /></div><figcaption>Downgrading to iOS 4.1</figcaption></figure>
-            <figure><div class="tech-process-frame tech-process-install"><img src="assets/images/gallery/phones/iphone-3gs-ios4-jailbreak-03.jpg" alt="iPhone 3GS installing the jailbreak" loading="lazy" /></div><figcaption>Installing the jailbreak</figcaption></figure>
-          </div>
-        </details>
+
       </div>
       <figure class="tech-story-photo">
         <div class="tech-cover-flow"><img src="assets/images/gallery/phones/iphone-3gs-ios4-jailbreak-02.jpg" alt="My iPhone 3GS showing Cover Flow in landscape orientation" /></div>
         <figcaption>Cover Flow on my iPhone 3GS</figcaption>
       </figure>
     </article>
+    <section class="tech-process" aria-labelledby="restoration-title">
+      <div class="tech-process-copy">
+        <h3 id="restoration-title">The restoration</h3>
+        <p>A few photographs from downgrading to iOS 4.1 and installing the jailbreak.</p>
+      </div>
+      <div class="tech-process-photos">
+            <figure><div class="tech-process-frame tech-process-downgrade"><img src="assets/images/gallery/phones/iphone-3gs-ios4-jailbreak-01.jpg" alt="iPhone 3GS displaying the downgrade process" loading="lazy" /></div><figcaption>Downgrading to iOS 4.1</figcaption></figure>
+            <figure><div class="tech-process-frame tech-process-install"><img src="assets/images/gallery/phones/iphone-3gs-ios4-jailbreak-03.jpg" alt="iPhone 3GS installing the jailbreak" loading="lazy" /></div><figcaption>Installing the jailbreak</figcaption></figure>
+          </div>
+    </section>
     <section class="tech-aviation" aria-labelledby="aviation-title">
       <header class="aviation-heading">
         <p class="tech-kind">Aviation</p>
