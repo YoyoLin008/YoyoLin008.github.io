@@ -2,7 +2,7 @@ const CONTACT = {
   github: 'https://github.com/YoyoLin008',
   linkedin: 'https://www.linkedin.com/in/yoyo-lin-631889299',
   email: 'mailto:yoyolin2@illinois.edu',
-  cv: 'assets/documents/yunya-lin-cv.pdf?v=20261022-project-lead'
+  cv: 'assets/documents/yunya-lin-cv.pdf?v=20261022-peer-review-ended'
 };
 
 const EBIRD_PROFILE_URL = 'https://ebird.org/profile/Mzc5ODc4NQ/world';
@@ -44,10 +44,10 @@ const timelineData = [
   {
     role: 'Undergraduate Research Assistant (LLMs as Peer Reviewers)',
     organization: 'University of Illinois Urbana-Champaign',
-    date: 'Jan 2026 - Present',
+    date: 'Jan 2026 - May 2026',
     logoUrl: 'assets/images/logos/uiuc-logo.png?v=20260427-logos',
     description:
-      'Working with Prof. Nitin Verma to explore how large language models can support academic peer review. Designing prompts and evaluation frameworks to generate specific, helpful feedback rather than vague summaries.',
+      'Worked with Prof. Nitin Verma to explore how large language models could support academic peer review. Designed prompts and evaluation frameworks to generate specific, helpful feedback rather than vague summaries.',
     links: [{ label: 'Prof. Nitin Verma', href: 'https://ischool.illinois.edu/people/nitin-verma' }]
   },
   {
