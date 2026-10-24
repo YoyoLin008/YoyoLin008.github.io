@@ -492,7 +492,6 @@ const updateNavigation = () => {
     if (isCurrent) button.setAttribute('aria-current', 'page');
     else button.removeAttribute('aria-current');
   });
-  document.querySelector('.mobile-page-label').textContent = pageLabels[currentPage] || pageLabels.hobbies;
 };
 
 const renderHome = () => `
