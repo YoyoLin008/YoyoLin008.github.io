@@ -22,7 +22,11 @@ const timelineData = [
     date: 'Fall 2026 - Present',
     logoUrl: 'assets/images/logos/uiuc-logo.png?v=20260427-logos',
     description:
-      'Working with Prof. Bertram Ludäscher and Yuanxi Fu to compare AI-generated and human-created conceptual models of the same funding-opportunity domain. Examining how each approach represents the domain’s concepts and relationships.'
+      'Working with Prof. Bertram Ludäscher and Yuanxi Fu to compare AI-generated and human-created conceptual models of the same funding-opportunity domain. Examining how each approach represents the domain’s concepts and relationships.',
+    links: [
+      { label: 'Prof. Bertram Ludäscher', href: 'https://ischool.illinois.edu/people/bertram-ludascher' },
+      { label: 'Yuanxi Fu', href: 'https://yuanxifu.site/' }
+    ]
   },
   {
     role: 'Quantitative Research Intern',
