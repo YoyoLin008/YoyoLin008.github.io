@@ -1273,7 +1273,7 @@ figcaption span {
 .tech-story-photo { margin: 0; min-width: 0; }
 .tech-story-photo > img { width: 100%; height: auto; border-radius: 0.5rem; }
 .tech-story-photo figcaption { text-align: center; font-size: 0.78rem; margin-top: 0.75rem; }
-.tech-cover-flow { position: relative; aspect-ratio: 4 / 3; overflow: hidden; border-radius: 0.5rem; }
+.tech-cover-flow { position: relative; aspect-ratio: 4 / 3; overflow: hidden; }
 .tech-cover-flow img { position: absolute; width: 75%; height: 133.3333%; max-width: none; left: 12.5%; top: -16.6667%; object-fit: cover; transform: rotate(-90deg) scale(1.06); }
 .tech-process { display: grid; grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr); gap: 3rem; margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid var(--faint); }
 .tech-process-copy h3 { font-size: 1rem; margin: 0 0 0.5rem; }
@@ -1318,7 +1318,7 @@ figcaption span {
 .aviation-photo-landscape-crop img { object-fit: cover; object-position: center 46%; }
 
 /* Trim only the top and bottom of the landscape Cover Flow photograph. */
-.tech-story-photo .tech-cover-flow { aspect-ratio: 25 / 16; }
+.tech-story-photo .tech-cover-flow { aspect-ratio: 25 / 16; border-radius: 0.5rem; }
 .tech-story-photo .tech-cover-flow img { height: 156.25%; top: -31.25%; }
 
 /* A rectangular crop keeps the visible A380 wingtip, engines and tail. */
