@@ -1050,6 +1050,52 @@ figcaption span {
   color: #ffffff;
 }
 
+.visitor-map {
+  margin: 2.5rem auto 0;
+  max-width: 300px;
+}
+
+.visitor-map img {
+  display: block;
+  height: auto;
+  width: 100%;
+}
+
+.visitor-map-canvas {
+  min-height: 147px;
+}
+
+.visitor-map figcaption {
+  font-size: 0.8rem;
+  margin-top: 0.65rem;
+}
+
+.visitor-map a,
+.visitor-privacy a {
+  color: #d6d3d1;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.visitor-map a:hover,
+.visitor-privacy a:hover {
+  color: #fff;
+}
+
+.visitor-privacy {
+  font-size: 0.75rem;
+  margin: 0.7rem auto 0;
+  max-width: 30rem;
+}
+
+.visitor-privacy summary {
+  cursor: pointer;
+}
+
+.visitor-privacy p {
+  margin-top: 0.75rem;
+}
+
 .copyright {
   border-top: 1px solid #292524;
   font-size: 0.88rem;
