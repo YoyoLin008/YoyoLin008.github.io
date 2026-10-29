@@ -9,6 +9,8 @@ GLYPHS = [
     [(6, 15), (14, 15), (22, 28), (30, 15), (38, 15), (26, 35), (26, 49), (18, 49), (18, 35)],
     [(40, 15), (48, 15), (48, 41), (59, 41), (59, 49), (40, 49)],
 ]
+# Optical centering: move the monogram left while keeping the background fixed.
+GLYPHS = [[(x - 2, y) for x, y in glyph] for glyph in GLYPHS]
 
 svg = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">\n'
 svg += f'  <rect width="64" height="64" rx="12" fill="{BACKGROUND}"/>\n'
